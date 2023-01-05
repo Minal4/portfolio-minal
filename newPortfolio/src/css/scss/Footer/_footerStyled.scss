@@ -1,0 +1,20 @@
+.footer {
+  padding: 20px 0;
+  .social {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    li:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  .copyright-text {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

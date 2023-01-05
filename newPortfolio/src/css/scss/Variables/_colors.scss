@@ -1,0 +1,27 @@
+$theme-color: (
+  primary-color: #fff,
+
+  secondary-color: #06b7ff,
+
+  dark-color: #333,
+
+  btn-background: #fff,
+);
+
+// color: map-get($theme-color, theme-dark-color); // #000
+
+$theme-background-color: (
+  background-primary-color: #fff,
+
+  background-secondary-color: #f8f8f8,
+
+  background-dark-color: #333,
+);
+
+$button-color: (
+  background-button: #000,
+
+  button-color: #fff,
+
+  background-hover-button: #05a394,
+);

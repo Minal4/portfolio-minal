@@ -1,0 +1,48 @@
+section:nth-child(odd).faq .faq__accordion h3 {
+  background-color: #fff;
+}
+
+section:nth-child(even).faq .faq__accordion h3 {
+  background-color: map-get($theme-background-color,
+      background-secondary-color);
+  ;
+
+}
+
+.faq__accordion {
+  h3 {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  p {
+    border: 1px solid #ebebeb;
+    padding: 15px;
+  }
+}
+
+.stats {
+  li {
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.faq .inner-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+}
