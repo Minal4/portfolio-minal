@@ -2,9 +2,11 @@
   section {
     padding: 40px 0;
   }
+
   .stats {
     margin-top: 0;
   }
+
   .about__inner {
     display: flex;
     max-width: 1200px;
@@ -14,11 +16,24 @@
   .portfolio .portfolio__content ul {
     grid-template-columns: 3fr 3fr 3fr;
   }
-}
 
+  .container,
+  .header__top {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 
-.container,
-.header__top {
-  padding-left: 50px;
-  padding-right: 50px;
+  .hamburger {
+    display: none;
+  }
+
+  .header__top .navbar .navbar-nav {
+    flex-direction: row;
+    display: flex;
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    padding: 0;
+    transform: none;
+  }
 }

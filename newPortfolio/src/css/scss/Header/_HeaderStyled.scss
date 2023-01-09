@@ -3,6 +3,7 @@
     left: 0;
     width: 100%;
     z-index: 1;
+
     h1 {
       margin: 0;
     }
@@ -10,6 +11,21 @@
     .navbar-nav {
       display: flex;
       gap: 10px;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: 30px;
+      background: map-get($theme-color , btn-background);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      top: 100%;
+      transform: translateX(-100%);
+      transition: 0.5s ease-in-out;
+
+      &.active {
+        transform: translateX(0);
+      }
+
       a {
         font-size: 14px;
         text-transform: uppercase;
@@ -54,10 +70,28 @@
 header {
   border-bottom: 1px solid #ebebeb;
   padding: 15px 0;
+  position: relative;
 }
 
-.navbar .container {
+.navbar .inner-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+
+.hamburger {
+  display: block;
+}
+
+button.hamburger {
+  background: transparent;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  svg {
+    font-size: 20px;
+  }
 }

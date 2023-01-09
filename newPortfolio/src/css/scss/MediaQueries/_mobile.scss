@@ -27,4 +27,8 @@
   .contact .input-row {
     grid-template-columns: 1fr 1fr;
   }
+
+  .footer-inner {
+    flex-direction: row;
+  }
 }

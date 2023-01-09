@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="container">
-        <div className="row">
-          <div className="col-sm-6">
+        <div className="footer-inner">
+          <div className="footer-social">
             <ul className="social">
               <li>
                 <Link to={"https://www.facebook.com/minal.munakarmi/"}>
@@ -25,7 +25,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-sm-6">
+          <div className="footer-site">
             <div className="copyright-text">
               <p>{`Copyright © ${new Date().getFullYear()} Minal | All Rights Reserved`}</p>
             </div>
