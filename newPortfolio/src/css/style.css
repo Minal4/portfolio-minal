@@ -183,6 +183,51 @@ button.hamburger svg {
   font-size: 20px;
 }
 
+.client.section {
+  background: url("../assets/images/client-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding: clamp(120px, 8vw, 450px) 0;
+}
+.client.section .client-wrapper {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr;
+}
+.client.section .client-wrapper .client-title {
+  color: #fff;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+}
+.client.section .client-wrapper .client-content-inner {
+  max-width: 400px;
+  padding: clamp(30px, 3vw, 40px);
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.client.section .client-wrapper .client-content-inner h2 {
+  font-size: 24px;
+  margin-bottom: 21px;
+  font-family: "Montserrat", sans-serif;
+}
+.client.section .client-wrapper .client-content-inner .author {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  gap: 10px;
+}
+.client.section .client-wrapper .client-content-inner .author .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
 section:nth-child(odd).faq .faq__accordion h3 {
   background-color: #fff;
 }
@@ -197,6 +242,9 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 .faq .sub-title h2 {
   margin-bottom: 0;
+}
+.faq .highlight {
+  padding: 0 10px;
 }
 
 .faq__accordion h3 {
@@ -401,8 +449,8 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .section {
-  padding-bottom: clamp(42px, 3.5vw, 70px);
-  padding-top: clamp(42px, 3.5vw, 70px);
+  padding-bottom: clamp(42px, 5.5vw, 120px);
+  padding-top: clamp(42px, 5.5vw, 120px);
 }
 
 .about__inner {
@@ -411,6 +459,19 @@ section:nth-child(even).faq .faq__accordion h3 {
 
 a {
   color: #333;
+}
+
+.faq .highlight {
+  color: #fff;
+}
+
+.client-content-inner {
+  background-color: #fff;
+}
+
+.avatar,
+.faq .highlight {
+  background-color: #05a394;
 }
 
 @media only screen and (min-width: 660px) {
@@ -437,6 +498,10 @@ a {
   }
   .footer-inner {
     flex-direction: row;
+  }
+  .client.section .client-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -470,6 +535,9 @@ a {
     position: relative;
     padding: 0;
     transform: none;
+  }
+  .client.section .client-wrapper .client-content-inner {
+    margin-bottom: -200px;
   }
 }
 @media only screen and (min-width: 1024px) {

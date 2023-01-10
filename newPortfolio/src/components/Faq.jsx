@@ -20,13 +20,13 @@ export default function Faq() {
   return (
     <section className="faq section">
       <div className="container">
-      <div className='section__heading sub-title text-left'>
-            <p>I MAKE THE FUTURE</p>
-            <h2 className='section-title'>I Develop & Create Digital Future.</h2>
-            <p>ellentesque magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi senectus dictum.</p>
-          </div>
+        <div className='section__heading sub-title text-left'>
+          <p>I MAKE THE FUTURE</p>
+          <h2 className='section-title'>I Develop & <span className='highlight'>Create</span> Digital Future.</h2>
+          <p>ellentesque magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi senectus dictum.</p>
+        </div>
         <div className="inner-container">
-          <div className="faq-content">   
+          <div className="faq-content">
             <div className="faq__accordion">
               {questions.map((item, index) => <Accordion key={index} item={item} />)}
             </div>

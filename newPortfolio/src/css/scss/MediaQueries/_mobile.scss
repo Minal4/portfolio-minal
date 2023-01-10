@@ -31,4 +31,9 @@
   .footer-inner {
     flex-direction: row;
   }
+
+  .client.section .client-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+  }
 }
