@@ -1,13 +1,14 @@
 // core
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
+// import { RouterProvider } from 'react-router-dom';
 // custom
-import router from './services/router';
+// import router from './services/router';
 // css
 import './css/style.css';
 // others
 import reportWebVitals from './reportWebVitals';
+import Main from './components/Main';
 
 
 
@@ -15,7 +16,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router()} />
+    <Main />
   </React.StrictMode>
 );
 

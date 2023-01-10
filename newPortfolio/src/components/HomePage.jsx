@@ -1,15 +1,17 @@
-import { Outlet } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
+import Hero from './Hero';
+import Faq from './Faq';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
 
 export default function HomePage() {
   return (
       <div className="App">
-        <Header />
-        <main className='main'>
-          <Outlet />
-        </main>
-        <Footer />
-      </div>      
+          <main className='main'>
+            <Hero/>
+            <Portfolio/>
+            <Faq/>
+            <Contact/>
+          </main>
+      </div>
   );
 };

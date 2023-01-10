@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -55,7 +58,7 @@ section:nth-child(odd) {
   padding-bottom: 28px;
 }
 .section__heading h2 {
-  font-size: clamp(24px, 3.5vw, 36px);
+  font-size: clamp(42px, 3.5vw, 65px);
 }
 
 .stats {
@@ -70,6 +73,10 @@ h5,
 h6 {
   font-family: "Ibarra Real Nova", serif;
   margin-top: 0;
+}
+
+.faq .section__heading {
+  text-align: left;
 }
 
 .header__top .navbar {
@@ -169,7 +176,6 @@ section:nth-child(even).faq .faq__accordion h3 {
   margin-bottom: clamp(21px, 3vw, 50px);
 }
 .faq .sub-title h2 {
-  font-size: 60px;
   margin-bottom: 0;
 }
 
@@ -356,6 +362,9 @@ section:nth-child(even).faq .faq__accordion h3 {
   justify-content: space-between;
   align-items: center;
 }
+.footer-inner p {
+  margin: 0;
+}
 
 .btn__link {
   background-color: #000;
@@ -434,7 +443,7 @@ a {
     padding-left: 50px;
     padding-right: 50px;
   }
-  .hamburger {
+  button.hamburger {
     display: none;
   }
   .header__top .navbar .navbar-nav {

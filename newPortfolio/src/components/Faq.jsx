@@ -20,9 +20,9 @@ export default function Faq() {
   return (
     <section className="faq section">
       <div className="container">
-      <div className='sub-title'>
+      <div className='section__heading sub-title text-left'>
             <p>I MAKE THE FUTURE</p>
-            <h2>I Develop & Create Digital Future.</h2>
+            <h2 className='section-title'>I Develop & Create Digital Future.</h2>
             <p>ellentesque magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi senectus dictum.</p>
           </div>
         <div className="inner-container">

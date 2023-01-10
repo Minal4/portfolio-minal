@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaFacebook, FaLinkedin, FaGithubSquare } from 'react-icons/fa';
 
 export default function Footer() {
@@ -9,19 +9,19 @@ export default function Footer() {
           <div className="footer-social">
             <ul className="social">
               <li>
-                <Link to={"https://www.facebook.com/minal.munakarmi/"}>
+                <NavLink to={"https://www.facebook.com/minal.munakarmi/"}>
                   <FaFacebook />
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={"https://www.linkedin.com/in/minal-munakarmi-240692a3/"}>
+                <NavLink to={"https://www.linkedin.com/in/minal-munakarmi-240692a3/"}>
                   <FaLinkedin />
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={"https://github.com/Minal4"}>
+                <NavLink to={"https://github.com/Minal4"}>
                   <FaGithubSquare />
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

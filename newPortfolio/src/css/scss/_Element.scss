@@ -56,7 +56,7 @@ section:nth-child(odd) {
   padding-bottom: 28px;
 
   h2 {
-    font-size: $heading;
+    font-size: $huge;
   }
 }
 
@@ -72,4 +72,10 @@ h5,
 h6 {
   font-family: 'Ibarra Real Nova', serif;
   margin-top: 0;
+}
+
+.faq {
+  .section__heading {
+    text-align: left;
+  }
 }

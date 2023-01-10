@@ -10,7 +10,7 @@ export default function Contact() {
           </div>
           <div className="contact-form">
             <div className="section__heading">
-              <h2>Contact</h2>
+              <h2 className="section-title">Contact</h2>
               <p>Any Questions or Remarks? Just write us a message.</p>
             </div>
             <form>
