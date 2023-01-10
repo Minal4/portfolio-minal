@@ -12,8 +12,8 @@ import HomePage from './HomePage';
 export default function Main() {
   return (
     <>
-    <BrowserRouter>
-      <Header/>
+      <BrowserRouter>
+        <Header />
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/portfolio' element={<Portfolio />}></Route>
@@ -21,7 +21,7 @@ export default function Main() {
           <Route path='/faq' element={<Faq />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
         </Routes>
-      <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
   );

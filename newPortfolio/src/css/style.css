@@ -85,7 +85,14 @@ h6 {
   z-index: 1;
 }
 .header__top .navbar h1 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 0;
+}
+.header__top .navbar h1 .logo {
+  max-width: 40px;
 }
 .header__top .navbar .navbar-nav {
   display: flex;
@@ -138,8 +145,21 @@ h6 {
 
 header {
   border-bottom: 1px solid #ebebeb;
-  padding: 15px 0;
+  padding: 40px 0;
   position: relative;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: fixed;
+  right: 0;
+  background-color: #fff;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+header.elem {
+  padding: 15px 0;
 }
 
 .navbar .inner-container {
@@ -330,9 +350,9 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .inner-slide {
-  -moz-animation: marquee 20s linear infinite;
-  -webkit-animation: marquee 20s linear infinite;
-  animation: marquee 20s linear infinite;
+  -moz-animation: marquee 50s linear infinite;
+  -webkit-animation: marquee 50s linear infinite;
+  animation: marquee 50s linear infinite;
   display: flex;
 }
 
@@ -378,10 +398,6 @@ section:nth-child(even).faq .faq__accordion h3 {
 .btn__link:hover, .btn__link:focus {
   background-color: #05a394;
   box-shadow: 0 16px 29px -17px #727272;
-}
-
-.btn {
-  margin-top: clamp(21px, 3vw, 35px);
 }
 
 .section {

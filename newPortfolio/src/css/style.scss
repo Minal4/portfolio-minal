@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 
+@import '../css/scss/mixin';
 @import '../css/scss/Variables/variables';
 @import '../css/scss/Element';
 @import '../css/scss/Header/HeaderStyled';
@@ -18,5 +19,4 @@
 @import '../css/scss/btn';
 @import '../css/scss/gap';
 @import '../css/scss/color';
-@import '../css/scss/mixin';
 @import '../css/scss/MediaQueries/media';
