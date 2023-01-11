@@ -19,7 +19,6 @@
     grid-template-columns: 2fr 2fr;
   }
 
-  .faq .inner-container,
   .contact .inner-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -35,5 +34,19 @@
   .client.section .client-wrapper {
     grid-template-columns: 1fr 1fr;
     grid-gap: 60px;
+  }
+
+  .faq .inner-container {
+    gap: 60px;
+    flex-direction: row;
+
+    >div {
+      width: 47%;
+
+      .stats {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
   }
 }

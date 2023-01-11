@@ -246,7 +246,31 @@ section:nth-child(even).faq .faq__accordion h3 {
 .faq .highlight {
   padding: 0 10px;
 }
+.faq .stats h3 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.faq .stats .swiper-button-next,
+.faq .stats .swiper-button-prev {
+  -moz-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.faq .CircularProgressbar .CircularProgressbar-path {
+  animation: slideGradient 20s ease-in-out infinite;
+  stroke: rgb(0, 168, 151);
+}
 
+@keyframes slideGradient {
+  50% {
+    stroke: rgb(6, 184, 255);
+  }
+  100% {
+    stroke: rgb(0, 168, 151);
+  }
+}
 .faq__accordion h3 {
   padding: 20px;
   cursor: pointer;
@@ -273,9 +297,19 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .faq .inner-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 40px;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column;
+}
+.faq .inner-container > div {
+  width: 100%;
 }
 
 .portfolio .portfolio__content ul {
@@ -489,7 +523,6 @@ a {
   .portfolio .portfolio__content ul {
     grid-template-columns: 2fr 2fr;
   }
-  .faq .inner-container,
   .contact .inner-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -502,6 +535,17 @@ a {
   .client.section .client-wrapper {
     grid-template-columns: 1fr 1fr;
     grid-gap: 60px;
+  }
+  .faq .inner-container {
+    gap: 60px;
+    flex-direction: row;
+  }
+  .faq .inner-container > div {
+    width: 47%;
+  }
+  .faq .inner-container > div .stats {
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 @media only screen and (min-width: 768px) {

@@ -22,6 +22,34 @@ section:nth-child(even).faq .faq__accordion h3 {
   .highlight {
     padding: 0 10px;
   }
+
+  .stats {
+    h3 {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      @include transform(translateY(100%));
+    }
+  }
+
+  .CircularProgressbar .CircularProgressbar-path {
+    animation: slideGradient 20s ease-in-out infinite;
+    stroke: rgba(0, 168, 151, 1);
+  }
+}
+
+@keyframes slideGradient {
+  50% {
+    stroke: rgba(6, 184, 255, 1);
+  }
+
+  100% {
+    stroke: rgba(0, 168, 151, 1);
+  }
 }
 
 .faq__accordion {
@@ -33,7 +61,6 @@ section:nth-child(even).faq .faq__accordion h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
   &:not(:last-child) {
@@ -58,7 +85,11 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .faq .inner-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 40px;
+  @include flex;
+  gap: 30px;
+  flex-direction: column;
+
+  >div {
+    width: 100%;
+  }
 }

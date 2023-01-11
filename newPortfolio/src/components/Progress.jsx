@@ -1,43 +1,42 @@
 import React from 'react';
-import ProgressBar from '@ramonak/react-progress-bar';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+// core version + navigation, pagination modules:
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+
+// import required modules
+import { Navigation } from "swiper";
 
 export default function Progress() {
   return (
     <div className="stats">
-      <ul>
-        <li>
-          <h3>Photoshop</h3>
-          <ProgressBar className='progressbar' bgColor="#00f5ff" completed={50} />
-        </li>
-        <li>
-          <h3>CSS3</h3>
-          <ProgressBar className='progressbar' bgColor="#264de4" completed={85} />
-        </li>
-        <li>
-          <h3>HTML5</h3>
-          <ProgressBar className='progressbar' bgColor="#00f5ff" completed={85} />
-        </li>
-        <li>
-          <h3>JQUERY</h3>
-          <ProgressBar className='progressbar' bgColor="#00f5ff" completed={50} />
-        </li>
-        <li>
-          <h3>SASS</h3>
-          <ProgressBar className='progressbar' bgColor="#c69" completed={65} />
-        </li>
-        <li>
-          <h3>Bootstrap</h3>
-          <ProgressBar className='progressbar' bgColor="#563d7c" completed={75} />
-        </li>
-        <li>
-          <h3>Wordpress</h3>
-          <ProgressBar className='progressbar' bgColor="#21759b" completed={55} />
-        </li>
-        <li>
-          <h3>React (Learning)</h3>
-          <ProgressBar className='progressbar' bgColor="#61dbfb" completed={75} />
-        </li>
-      </ul>
+      <Swiper className="mySwiper" navigation={true} modules={[Navigation]}>
+        <SwiperSlide className="swiper-slide"><h3>Photoshop</h3>
+          <CircularProgressbar value={50} text={`50%`} /></SwiperSlide>
+        <SwiperSlide className="swiper-slide"><h3>CSS3</h3>
+          <CircularProgressbar value={85} text={`85%`} /></SwiperSlide>
+        <SwiperSlide className="swiper-slide"><h3>HTML5</h3>
+          <CircularProgressbar value={85} text={`85%`} /></SwiperSlide>
+
+        <SwiperSlide className="swiper-slide"><h3>JS</h3>
+          <CircularProgressbar value={50} text={`50%`} /></SwiperSlide>
+        <SwiperSlide className="swiper-slide"><h3>SASS</h3>
+          <CircularProgressbar value={65} text={`65%`} /></SwiperSlide>
+        <SwiperSlide className="swiper-slide"><h3>Bootstrap</h3>
+          <CircularProgressbar value={75} text={`75%`} /></SwiperSlide>
+        <SwiperSlide className="swiper-slide"><h3>Wordpress</h3>
+          <CircularProgressbar value={55} text={`55%`} /></SwiperSlide>
+        <SwiperSlide className="swiper-slide"><h3>React (Learning)</h3>
+          <CircularProgressbar value={25} text={`25%`} /></SwiperSlide>
+
+      </Swiper>
+
     </div>
   );
 };
