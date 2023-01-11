@@ -11,12 +11,16 @@ import "swiper/css/navigation";
 
 
 // import required modules
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 export default function Progress() {
+
   return (
-    <div className="stats">
-      <Swiper className="mySwiper" navigation={true} modules={[Navigation]}>
+    <div className="stats" >
+      <Swiper className="mySwiper" navigation={true} modules={[Navigation, Autoplay]} loop={true} autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}>
         <SwiperSlide className="swiper-slide"><h3>Photoshop</h3>
           <CircularProgressbar value={50} text={`50%`} /></SwiperSlide>
         <SwiperSlide className="swiper-slide"><h3>CSS3</h3>
@@ -37,6 +41,6 @@ export default function Progress() {
 
       </Swiper>
 
-    </div>
+    </div >
   );
 };

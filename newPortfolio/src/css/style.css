@@ -246,6 +246,9 @@ section:nth-child(even).faq .faq__accordion h3 {
 .faq .highlight {
   padding: 0 10px;
 }
+.faq .stats .swiper-slide:hover, .faq .stats .swiper-slide:focus {
+  cursor: url(../assets/images/arrow-drag.png), auto;
+}
 .faq .stats h3 {
   text-align: center;
   font-size: 35px;
