@@ -9,6 +9,7 @@
 
 body {
   margin: 0;
+  z-index: 0;
 }
 
 .entry-content {
@@ -77,6 +78,22 @@ h6 {
 
 .faq .section__heading {
   text-align: left;
+}
+
+.cursor {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 76px;
+  height: 76px;
+  z-index: 999999;
+  pointer-events: none;
+  border-radius: 50%;
+  transform-origin: left top;
+  transition: 0.2s;
+  transform: scale(0.35) translate(-50%, -50%);
+  background-color: #fff;
+  mix-blend-mode: difference;
 }
 
 .header__top .navbar {
@@ -301,13 +318,6 @@ section:nth-child(even).faq .faq__accordion h3 {
 
 .faq .inner-container {
   display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
   flex-direction: column;
 }
@@ -481,7 +491,6 @@ section:nth-child(even).faq .faq__accordion h3 {
   padding: clamp(10px, 3.5vw, 15px) clamp(21px, 3.5vw, 45px);
 }
 .btn__link:hover, .btn__link:focus {
-  background-color: #05a394;
   box-shadow: 0 16px 29px -17px #727272;
 }
 

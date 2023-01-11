@@ -94,7 +94,7 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .faq .inner-container {
-  @include flex;
+  display: flex;
   gap: 30px;
   flex-direction: column;
 

@@ -9,8 +9,8 @@
 
   &:hover,
   &:focus {
-    background-color: map-get($button-color, background-hover-button);
-    color: map-get($theme-color, button-color);
+    // background-color: map-get($button-color, background-hover-button);
+    // color: map-get($theme-color, button-color);
     box-shadow: 0 16px 29px -17px #727272;
   }
 }
