@@ -10,14 +10,6 @@ export default function Header() {
   const reference = useRef();
 
 
-  const list = document.querySelectorAll('.navbar-nav');
-  list.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.target.classList.add('active');
-    })
-  })
-
-
   useEffect(() => {
     const headerTop = reference.current.clientHeight;
     const bodyWidth = document.querySelector('.App');

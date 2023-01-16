@@ -12,6 +12,10 @@ import Twe from '../assets/images/twe.jpg';
 import wedding from '../assets/images/wedding.jpg';
 import ecommerce from '../assets/images/ecommerce.jpg';
 import BodyLogic from '../assets/images/bodylogic.jpg';
+import Lyna from '../assets/images/lyna-pro.jpg';
+import Rhythmic from '../assets/images/rhythmic-pro.jpg';
+import Visionart from '../assets/images/visionart-pro.jpg';
+import Artsylens from '../assets/images/artsylens-pro.jpg';
 
 export default function Portfolio() {
   return (
@@ -99,6 +103,30 @@ export default function Portfolio() {
               <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
                 <img src={ecommerce} alt="Dark" />
                 <div className="caption">SignifyPro Ecommerce</div>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/lyna-pro/">
+                <img src={Lyna} alt="lyna" />
+                <div className="caption">Lyna Pro</div>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/artsylens-pro/">
+                <img src={Artsylens} alt="artsy" />
+                <div className="caption">Artsylens Pro</div>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/rhythmic-pro/">
+                <img src={Rhythmic} alt="artsy" />
+                <div className="caption">Rhythmic Pro</div>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/visionart-pro/">
+                <img src={Visionart} alt="artsy" />
+                <div className="caption">Visionart Pro</div>
               </a>
             </li>
           </ul>
