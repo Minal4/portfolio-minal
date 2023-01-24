@@ -96,3 +96,25 @@ h6 {
   background-color: #fff;
   mix-blend-mode: difference;
 }
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form {
+  form {
+    max-width: 850px;
+    margin: 0 auto;
+
+    .input-wrap:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 15px;
+    }
+  }
+}

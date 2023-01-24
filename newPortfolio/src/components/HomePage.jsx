@@ -4,11 +4,13 @@ import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Client from './Client';
 import Video from './Video';
+import FormField from './FormField';
 
 export default function HomePage() {
 
   return (
     <main className='main'>
+      <FormField />
       <Hero />
       <Portfolio />
       <Video />
