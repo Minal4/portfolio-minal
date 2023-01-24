@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import video from '../assets/video.mp4';
 
 import { MdPlayArrow, MdOutlinePause } from "react-icons/md";
@@ -6,9 +6,11 @@ import { MdPlayArrow, MdOutlinePause } from "react-icons/md";
 
 
 const Video = () => {
-    const [playVideo, setPlayVideo] = useState(false);
+    const [playVideo, setPlayVideo] = useState(true);
     const videoRef = useRef();
-
+    useEffect(() => {
+        console.log(videoRef, 'asd')
+    })
     const handleOnClick = () => {
         setPlayVideo((prevValue) => !prevValue);
 
@@ -17,11 +19,12 @@ const Video = () => {
         } else {
             videoRef.current.pause()
         }
+
     }
 
     return (
         <section className='video section' style={{ padding: 0 }}>
-            <div className="video__wrapper">
+            <div className="video__wrapper" >
                 <video
                     src={video}
                     ref={videoRef}
@@ -30,7 +33,7 @@ const Video = () => {
                     controls={false}
                 />
                 <div className="video__wrapper-overlay">
-                    <div className="button" onClick={handleOnClick}>
+                    <div className="button" onClick={handleOnClick} >
                         {playVideo ? <MdPlayArrow /> : <MdOutlinePause />}
                     </div>
                 </div>

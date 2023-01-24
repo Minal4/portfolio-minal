@@ -172,6 +172,7 @@ header {
   right: 0;
   background-color: #fff;
   left: 0;
+  top: 0;
   width: 100%;
   z-index: 9;
 }
@@ -246,7 +247,16 @@ button.hamburger svg {
 }
 
 .video {
+  height: 37vh;
   position: relative;
+}
+.video__wrapper {
+  height: 100%;
+}
+.video video {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 .video__wrapper-overlay {
   position: absolute;
@@ -609,6 +619,9 @@ a {
   }
   button.hamburger {
     display: none;
+  }
+  .video {
+    height: 100vh;
   }
   .header__top .navbar .navbar-nav {
     flex-direction: row;

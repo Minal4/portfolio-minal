@@ -8,15 +8,13 @@ import Video from './Video';
 export default function HomePage() {
 
   return (
-    <div className="App">
-      <main className='main'>
-        <Hero />
-        <Video />
-        <Portfolio />
-        <Client />
-        <Faq />
-        <Contact />
-      </main>
-    </div>
+    <main className='main'>
+      <Hero />
+      <Portfolio />
+      <Video />
+      <Client />
+      <Faq />
+      <Contact />
+    </main>
   );
 };

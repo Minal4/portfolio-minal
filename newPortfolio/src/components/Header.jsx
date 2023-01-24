@@ -12,10 +12,10 @@ export default function Header() {
 
   useEffect(() => {
     const headerTop = reference.current.clientHeight;
-    const bodyWidth = document.querySelector('.App');
+    const bodyWidth = document.body;
     bodyWidth.style.paddingBottom = headerTop;
     bodyWidth.setAttribute('style', `padding-top: ${headerTop}px`)
-  }, [])
+  })
 
 
   window.addEventListener('scroll', function () {

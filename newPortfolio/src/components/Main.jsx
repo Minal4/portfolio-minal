@@ -13,17 +13,20 @@ export default function Main() {
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<HomePage />}></Route>
-          <Route path='/portfolio' element={<Portfolio />}></Route>
-          <Route path='/hero' element={<Hero />}></Route>
-          <Route path='/faq' element={<Faq />}></Route>
-          <Route path='/contact' element={<Contact />}></Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <div className="App">
+
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path='/' element={<HomePage />}></Route>
+            <Route path='/portfolio' element={<Portfolio />}></Route>
+            <Route path='/hero' element={<Hero />}></Route>
+            <Route path='/faq' element={<Faq />}></Route>
+            <Route path='/contact' element={<Contact />}></Route>
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </>
   );
 };
