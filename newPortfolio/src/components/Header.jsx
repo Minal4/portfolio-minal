@@ -44,6 +44,7 @@ export default function Header() {
                 <li><NavLink className="nav-item nav-link" to={"/"}>Home</NavLink></li>
                 <li><NavLink className="nav-item nav-link" to={"./portfolio"}>Portfolio</NavLink></li>
                 <li><NavLink className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
+                <li><NavLink className="nav-item nav-link" to={"./recipe"}>Menus</NavLink></li>
                 <li><NavLink className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
               </ul>
             </div>
