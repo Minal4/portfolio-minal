@@ -9,7 +9,7 @@ const Recipe = () => {
         <section>
             <div className="container">
                 <Category />
-                <Veggies />
+                {/* <Veggies /> */}
             </div>
         </section>
     )
