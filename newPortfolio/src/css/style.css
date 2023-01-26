@@ -101,6 +101,7 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .form form {
@@ -114,6 +115,39 @@ h6 {
   padding: 15px;
 }
 
+.time.btn__link {
+  margin-top: 0;
+  text-align: center;
+  border-radius: 0;
+  padding: 2px 14px;
+  min-width: 90px;
+}
+
+.scroll-up {
+  position: fixed;
+  right: 50px;
+  cursor: pointer;
+  bottom: 50px;
+  transform: scale(4);
+  z-index: 99999;
+  opacity: 0;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.input-group {
+  position: relative;
+}
+.input-group .error {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .header__top .navbar {
   left: 0;
   width: 100%;
@@ -125,6 +159,8 @@ h6 {
   align-items: center;
   gap: 10px;
   margin: 0;
+  position: relative;
+  z-index: 9999;
 }
 .header__top .navbar h1 .logo {
   max-width: 40px;
@@ -133,13 +169,13 @@ h6 {
   display: flex;
   gap: 10px;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
+  height: 100%;
   left: 0;
   right: 0;
   padding: 30px;
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  top: 100%;
   transform: translateX(-100%);
   transition: 0.5s ease-in-out;
 }
@@ -180,7 +216,7 @@ h6 {
 
 header {
   border-bottom: 1px solid #ebebeb;
-  padding: 40px 0;
+  padding: clamp(15px, 3vw, 40px) 0;
   position: relative;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
@@ -196,6 +232,18 @@ header {
 }
 header.elem {
   padding: 15px 0;
+}
+
+.header__top .navbar .navbar-nav {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .navbar .inner-container {
@@ -214,6 +262,8 @@ button.hamburger {
   display: flex;
   gap: 5px;
   align-items: center;
+  position: relative;
+  z-index: 9999;
 }
 button.hamburger svg {
   font-size: 20px;
@@ -614,6 +664,9 @@ a {
     max-width: 300px;
     margin: 0 auto;
   }
+  .form form .input-wrap:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 @media only screen and (min-width: 768px) {
   section {
@@ -635,11 +688,16 @@ a {
     padding-left: 50px;
     padding-right: 50px;
   }
-  button.hamburger {
-    display: none;
-  }
   .video {
     height: 100vh;
+  }
+  .client.section .client-wrapper .client-content-inner {
+    margin-bottom: -200px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .portfolio .portfolio__content ul {
+    grid-gap: 35px;
   }
   .header__top .navbar .navbar-nav {
     flex-direction: row;
@@ -649,14 +707,13 @@ a {
     position: relative;
     padding: 0;
     transform: none;
+    align-items: center;
   }
-  .client.section .client-wrapper .client-content-inner {
-    margin-bottom: -200px;
+  button.hamburger {
+    display: none;
   }
-}
-@media only screen and (min-width: 1024px) {
-  .portfolio .portfolio__content ul {
-    grid-gap: 35px;
+  .header__top .navbar .navbar-nav {
+    position: relative;
   }
 }
 

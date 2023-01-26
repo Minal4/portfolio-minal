@@ -1,50 +1,79 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import '@splidejs/splide/css';
+
+// or only core styles
+import '@splidejs/splide/css/core';
 
 const Cuisine = () => {
     const [italian, setItalian] = useState([]);
-    const param = useParams;
-    console.log(param, 'param');
-
+    const param = useParams();
+    console.log(param, 'param')
 
     useEffect(() => {
-        ItalianApi();
-    }, [])
+        ItalianApi(param.type);
+        console.log(param.type);
+    }, [param.type])
 
     const ItalianApi = async (name) => {
 
-        const items = JSON.parse(localStorage.getItem('popular'));
-
-        if (items) {
-            setItalian(items);
-        } else {
-            let api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=06d8dd50dc8545b6884155c62ce064d7&number=9&cuisine=${name}`);
-            let data = await api.json();
-            localStorage.setItem('popular', JSON.stringify(data.recipes));
-            console.log(data, 'darta')
-        }
+        let api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=06d8dd50dc8545b6884155c62ce064d7&cuisine=${name}`);
+        let data = await api.json();
+        setItalian(data.results)
     }
-
-    const filteredItem = italian.filter((vegs) => {
-        return (vegs.vegetarian === true)
-    })
 
     return (
         <div>
             <div className="container">
-                <Heading>Italian</Heading>
-                <div className="wrapper">
+                <Heading>{param.type}</Heading>
+                <Wrap className="wrapper">
+                    <Splide options={{
+                        type: 'loop',
+                        gap: '1rem',
+                        AutoScroll: true,
+                        arrows: false,
+                        autoScroll: {
+                            pauseOnHover: true,
+                            pauseOnFocus: true,
+                            rewind: false,
+                            speed: 1
+                        },
+                        pagination: false,
+                        breakpoints: {
+                            1920: {
+                                perPage: 4,
 
-                    {filteredItem.map((item) => {
-                        return (
-                            <Card className="wrapper">
-                                <img src={item.image} alt="" />
-                                <p>{item.title}</p>
-                            </Card>
-                        )
-                    })}
-                </div>
+                            },
+                            1024: {
+                                perPage: 3,
+
+                            },
+                            767: {
+                                perPage: 2,
+
+                            },
+                            640: {
+                                perPage: 1,
+
+                            },
+                        },
+                    }}
+                        extensions={{ AutoScroll }}>
+                        {italian.map((item) => {
+                            return (
+                                <SplideSlide>
+                                    <Card className="card" key={item.id}>
+                                        <img src={item.image} alt="" />
+                                        <p>{item.title}</p>
+                                    </Card>
+                                </SplideSlide>
+                            )
+                        })}
+                    </Splide>
+                </Wrap>
             </div>
         </div>
     )
@@ -53,12 +82,17 @@ const Cuisine = () => {
 const Heading = styled.h2`
 font-size: 3rem;
 `
+const Wrap = styled.div`
+
+`
+
 
 const Card = styled.div`
     position: relative;
     border-radius: 45px;
     overflow: hidden;
     text-align: center;
+  
     &:before {
         position: absolute;
         top: 0;
@@ -67,6 +101,9 @@ const Card = styled.div`
         width: 100%;
         content:"";
         background-color: rgba(0,0,0,0.4);
+    }
+    img {
+        width: 100%;
     }
     p {
         position: absolute;

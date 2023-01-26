@@ -6,16 +6,27 @@ import logo from '../assets/images/logo.png';
 
 export default function Header() {
   const [active, setActive] = useState(false);
-
-  const reference = useRef();
+  const [dateTime, setTime] = useState(new Date());
 
 
   useEffect(() => {
+    const id = setInterval(() => setTime(new Date()), 1000);
+    return () => {
+      clearInterval(id);
+    }
+  }, []);
+
+  const reference = useRef();
+  const spaceAdd = () => {
     const headerTop = reference.current.clientHeight;
     const bodyWidth = document.body;
     bodyWidth.style.paddingBottom = headerTop;
     bodyWidth.setAttribute('style', `padding-top: ${headerTop}px`)
-  })
+  }
+
+  useEffect(() => {
+    spaceAdd();
+  }, [])
 
 
   window.addEventListener('scroll', function () {
@@ -44,13 +55,14 @@ export default function Header() {
                 <li><NavLink className="nav-item nav-link" to={"/"}>Home</NavLink></li>
                 <li><NavLink className="nav-item nav-link" to={"./portfolio"}>Portfolio</NavLink></li>
                 <li><NavLink className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
-                <li><NavLink className="nav-item nav-link" to={"./recipe"}>Menus</NavLink></li>
+                <li><NavLink className="nav-item nav-link" to={"./menus"}>Menus</NavLink></li>
                 <li><NavLink className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
+                <li className="nav-item nav-link time btn__link  ">{` ${dateTime.toLocaleTimeString()}`}</li>
               </ul>
             </div>
           </div>
         </nav>
-      </div>
-    </header>
+      </div >
+    </header >
   );
 };

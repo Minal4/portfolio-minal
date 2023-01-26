@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import '@splidejs/splide/css';
 
 // or only core styles
@@ -40,10 +41,34 @@ const Veggies = () => {
                         type: 'loop',
                         perPage: 3,
                         gap: '1rem',
-                        AutoScroll: true,
+                        autoScroll: {
+                            pauseOnHover: true,
+                            pauseOnFocus: true,
+                            rewind: false,
+                            speed: 1
+                        },
                         arrows: false,
                         pagination: false,
-                    }}>
+                        breakpoints: {
+                            1920: {
+                                perPage: 3,
+
+                            },
+                            1024: {
+                                perPage: 2,
+
+                            },
+                            767: {
+                                perPage: 2,
+
+                            },
+                            640: {
+                                perPage: 1,
+
+                            },
+                        },
+                    }}
+                        extensions={{ AutoScroll }}>
                         {filteredItem.map((item) => {
                             return (
                                 <SplideSlide key={item.id}>

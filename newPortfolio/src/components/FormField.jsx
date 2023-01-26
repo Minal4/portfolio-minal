@@ -8,10 +8,16 @@ const FormField = () => {
         lastName: ""
     }])
 
+    JSON.parse(localStorage.getItem('field'));
+
+
+
+
     const handleOnChange = (e, i) => {
         const { name, value } = e.target;
         let list = [...inputList];
         list[i][name] = value;
+        localStorage.setItem('field', JSON.stringify(list))
         setInputList(list);
     }
 
@@ -33,14 +39,17 @@ const FormField = () => {
                     <div className="input-wrapper">
                         {inputList.map((input, i) => {
                             return (
-                                <div key={i} className="input-wrap">
-                                    <input type="text" placeholder='Firstname' value={input.firstName} name="firstName" className="input-field" onChange={(e) => handleOnChange(e, i)} />
-                                    <input type="text" placeholder='Lastname' value={input.lastName} name="lastName" className="input-field" onChange={(e) => handleOnChange(e, i)} />
-                                    <div className=''>
+                                <>
+                                    <div key={i} className="input-wrap">
+                                        <input type="text" placeholder='Firstname' value={input.firstName} name="firstName" className="input-field" onChange={(e) => handleOnChange(e, i)} />
+                                        <input type="text" placeholder='Lastname' value={input.lastName} name="lastName" className="input-field" onChange={(e) => handleOnChange(e, i)} />
+
+                                    </div>
+                                    <div className='update_btn'>
                                         <button type='button' onClick={() => handleOnRemove(i)}><MdRestoreFromTrash /></button>
                                         {inputList.length - 1 === i && <button type='button' onClick={() => handleOnAdd(i)}><MdAddCircleOutline /></button>}
                                     </div>
-                                </div>
+                                </>
                             )
                         })}
                     </div>

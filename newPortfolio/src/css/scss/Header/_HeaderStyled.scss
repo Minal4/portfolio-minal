@@ -10,6 +10,8 @@
       align-items: center;
       gap: 10px;
       margin: 0;
+      position: relative;
+      z-index: 9999;
 
       .logo {
         max-width: 40px;
@@ -20,13 +22,13 @@
       display: flex;
       gap: 10px;
       flex-direction: column;
-      position: absolute;
+      position: fixed;
+      height: 100%;
       left: 0;
       right: 0;
       padding: 30px;
       background: map-get($theme-color , btn-background);
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      top: 100%;
       transform: translateX(-100%);
       transition: 0.5s ease-in-out;
 
@@ -77,7 +79,7 @@
 
 header {
   border-bottom: 1px solid #ebebeb;
-  padding: 40px 0;
+  padding: clamp(15px, 3vw, 40px) 0;
   position: relative;
   @include transition(0.3s ease-in-out);
   position: fixed;
@@ -91,6 +93,18 @@ header {
   &.elem {
     padding: 15px 0;
   }
+}
+
+.header__top .navbar .navbar-nav {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .navbar .inner-container {
@@ -110,6 +124,8 @@ button.hamburger {
   display: flex;
   gap: 5px;
   align-items: center;
+  position: relative;
+  z-index: 9999;
 
   svg {
     font-size: 20px;

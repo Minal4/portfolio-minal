@@ -1,12 +1,15 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Recipe from '../pages/Recipe'
+import { Outlet } from 'react-router-dom'
+import Veggies from '../pages/Veggies'
+import Category from './Category'
 
 const Menus = () => {
     return (
-        <div>
-            <Recipe />
-        </div>
+        <section className='section menus'>
+            <Category />
+            <Veggies />
+            <Outlet />
+        </section>
     )
 }
 

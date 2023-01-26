@@ -1,4 +1,34 @@
+import { useState } from "react";
+
 export default function Contact() {
+  const [error, setError] = useState(false);
+  const [check, setCheck] = useState([{
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  }])
+
+  const handleOnChange = (e, i) => {
+    const { name, value } = e.target;
+    let list = [...check];
+    list[i][name] = value;
+    setCheck(list);
+  }
+
+  const handleOnClick = (e, data) => {
+    e.preventDefault();
+    let list = [...check];
+
+    if (list.firstName < 2) {
+      setError(false);
+    } else {
+      setError(true);
+    }
+  }
+
+  console.log(error, 'asd')
+
   return (
     <section className="contact section">
       <div className="container">
@@ -14,33 +44,47 @@ export default function Contact() {
               <p>Any Questions or Remarks? Just write us a message.</p>
             </div>
             <form>
-              <div className="input-row">
-                <div className="input-group" style={{ marginRight: '20px' }}>
-                  <label>First Name</label>
-                  <input type="text" />
-                </div>
-                <div className="input-group">
-                  <label>Last Name</label>
-                  <input type="text" />
-                </div>
-              </div>
-              <div className="input-group">
-                <label>Email</label>
-                <input type="email" />
-              </div>
-              <div className="input-group">
-                <label>Message</label>
-                <textarea />
-              </div>
-              <div className="btn">
-                <button type="sumit" className="btn__link">
-                  Submit
-                </button>
-              </div>
+              {check.map((input, i) => {
+                return (
+                  <div key={i}>
+                    <div className="input-row">
+                      <div className="input-group" style={{ marginRight: '20px' }}>
+                        <label>First Name</label>
+                        <input type="text" name="firstName" value={input.firstName} onChange={(e) => handleOnChange(e, i)} />
+                        {error && <div className="error">Field Required</div>}
+                      </div>
+                      <div className="input-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" value={input.lastName} onChange={(e) => handleOnChange(e, i)} />
+                        {/* {error && <div className="error">Field Required</div>} */}
+
+                      </div>
+                    </div>
+                    <div className="input-group">
+                      <label>Email</label>
+                      <input type="email" name="email" value={input.email} onChange={(e) => handleOnChange(e, i)} />
+                      {/* {error && <div className="error">Field Required</div>} */}
+                    </div>
+                    <div className="input-group">
+                      <label>Message</label>
+                      <textarea name="message" value={input.message} onChange={(e) => handleOnChange(e, i)} />
+                      {/* {error && <div className="error">Field Required</div>} */}
+
+                    </div>
+                    <div className="btn">
+                      <button type="sumit" className="btn__link" onClick={(e) => handleOnClick(e, input)}>
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                )
+
+              })}
+
             </form>
           </div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };

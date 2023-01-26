@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import video from '../assets/video.mp4';
 
 import { MdPlayArrow, MdOutlinePause } from "react-icons/md";
@@ -8,9 +8,6 @@ import { MdPlayArrow, MdOutlinePause } from "react-icons/md";
 const Video = () => {
     const [playVideo, setPlayVideo] = useState(true);
     const videoRef = useRef();
-    useEffect(() => {
-        console.log(videoRef, 'asd')
-    })
     const handleOnClick = () => {
         setPlayVideo((prevValue) => !prevValue);
 
