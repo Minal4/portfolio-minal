@@ -1,0 +1,54 @@
+.contact {
+  .section__heading {
+    text-align: left;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    img {
+      width: 60%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  label {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  input,
+  textarea {
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 0;
+    border: 1px solid #e6e9e9;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+
+  .input-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+}
+
+.contact .inner-container {
+  grid-template-columns: 1fr;
+  display: grid;
+  grid-gap: 40px;
+}

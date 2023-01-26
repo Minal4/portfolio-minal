@@ -1,0 +1,56 @@
+@include media(mobile) {
+  .navbar-brand {
+    max-width: 100px;
+    display: block;
+  }
+
+  .footer {
+    .social {
+      justify-content: flex-start;
+    }
+
+    .copyright-text {
+      margin-top: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  .portfolio .portfolio__content ul {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  .contact .inner-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact .input-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+  }
+
+  .client.section .client-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+  }
+
+  .faq .inner-container {
+    gap: 60px;
+    flex-direction: row;
+
+    >div {
+      width: 47%;
+
+      .stats {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .form form .input-wrap:not(:last-child) {
+    margin-bottom: 0;
+  }
+}

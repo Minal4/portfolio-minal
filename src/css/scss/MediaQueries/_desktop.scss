@@ -1,0 +1,24 @@
+@include media(desktop) {
+  .portfolio .portfolio__content ul {
+    grid-gap: 35px;
+  }
+
+  .header__top .navbar .navbar-nav {
+    flex-direction: row;
+    display: flex;
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    padding: 0;
+    transform: none;
+    align-items: center;
+  }
+
+  button.hamburger {
+    display: none;
+  }
+
+  .header__top .navbar .navbar-nav {
+    position: relative;
+  }
+}

@@ -1,0 +1,133 @@
+.header__top {
+  .navbar {
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+    h1 {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      position: relative;
+      z-index: 9999;
+
+      .logo {
+        max-width: 40px;
+      }
+    }
+
+    .navbar-nav {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      left: 0;
+      right: 0;
+      padding: 30px;
+      background: map-get($theme-color , btn-background);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      transform: translateX(-100%);
+      transition: 0.5s ease-in-out;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      a {
+        font-size: 14px;
+        text-transform: uppercase;
+        position: relative;
+        transition: 0.5s ease-in-out;
+        padding: 10px 5px;
+
+        &:before {
+          position: absolute;
+          border-radius: 50%;
+          opacity: 0;
+          content: "";
+          bottom: 5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 3px;
+          height: 3px;
+          background-color: map-get($button-color , background-hover-button);
+        }
+
+        &.active {
+          color: map-get($button-color , background-hover-button);
+
+          &:before {
+            opacity: 1;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          color: map-get($button-color , background-hover-button);
+
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  border-bottom: 1px solid #ebebeb;
+  padding: clamp(15px, 3vw, 40px) 0;
+  position: relative;
+  @include transition(0.3s ease-in-out);
+  position: fixed;
+  right: 0;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+
+  &.elem {
+    padding: 15px 0;
+  }
+}
+
+.header__top .navbar .navbar-nav {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar .inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.hamburger {
+  display: block;
+}
+
+button.hamburger {
+  background: transparent;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+
+  svg {
+    font-size: 20px;
+  }
+}

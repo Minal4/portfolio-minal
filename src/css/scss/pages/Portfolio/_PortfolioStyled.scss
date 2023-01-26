@@ -1,0 +1,47 @@
+.portfolio {
+  .portfolio__content {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+      li {
+        box-shadow: 0 0 14px 2px #e1e0e0;
+        overflow: hidden;
+        padding: 10px;
+        position: relative;
+        .caption {
+          border-top: 1px solid #ebebeb;
+          bottom: 0;
+          background-color: #fff;
+          font-family: 'Ibarra Real Nova', serif;
+          font-size: 26px;
+          left: 0;
+          position: absolute;
+          padding: 15px;
+          transform: translateY(100%);
+          -webkit-transform: translateY(100%);
+          -moz-transform: translateY(100%);
+          width: 100%;
+          z-index: 9;
+        }
+        a {
+          display: block;
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+          }
+          img {
+            transition: 0.3s ease-in-out;
+            width: 100%;
+          }
+        }
+        &:hover {
+          .caption {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
