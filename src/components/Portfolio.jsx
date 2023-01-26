@@ -22,9 +22,13 @@ export default function Portfolio() {
     <section className="section portfolio">
       <div className="container">
         <div className="section__heading">
-          <h2>Portfolio</h2>
+          <h2 data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="800">Portfolio</h2>
         </div>
-        <div className="portfolio__content">
+        <div className="portfolio__content" data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1000">
           <ul>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://catchthemes.com/demo/abletone-dark/">

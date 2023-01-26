@@ -1,6 +1,21 @@
+section.contact {
+  padding-top: 0;
+}
+
 .contact {
+
   .section__heading {
     text-align: left;
+  }
+
+  .contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .contact-map {
+    height: clamp(450px, 3vw, 500px);
   }
 
   &__image {
@@ -28,10 +43,11 @@
     width: 100%;
     margin-bottom: 20px;
     border: 0;
-    border: 1px solid #e6e9e9;
-    box-sizing: border-box;
+    border: 2px solid #e6e9e9;
+    background-color: transparent;
 
     &:focus {
+      border-color: map-get($button-color, background-hover-button);
       outline: none;
     }
   }

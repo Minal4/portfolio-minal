@@ -1,10 +1,12 @@
 * {
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  z-index: 0;
+  box-sizing: border-box;
+
 }
 
 .entry-content {
@@ -137,6 +139,10 @@ h6 {
   z-index: 99999;
   opacity: 0;
   @include transition(0.5s ease-in-out);
+
+  &:hover {
+    @include transform(scale(2.5) !important);
+  }
 }
 
 .input-group {
@@ -148,5 +154,16 @@ h6 {
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.search-input {
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+
+  input {
+    padding: 15px;
+    width: 100%;
   }
 }

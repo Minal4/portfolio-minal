@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from './Hero';
 import Portfolio from './Portfolio';
 import Faq from './Faq';
@@ -11,11 +11,17 @@ import Menus from './Menus';
 import Cuisine from '../pages/Cuisine';
 import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import { useRef } from 'react';
-import { useEffect } from 'react';
+import Searched from '../pages/Searched';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 export default function Main() {
   const scrollBtn = useRef();
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
 
   useEffect(() => {
     window.addEventListener('scroll', function () {
@@ -49,6 +55,7 @@ export default function Main() {
             <Route path='/faq' element={<Faq />}></Route>
             <Route path='/menus/' element={<Menus />}>
               <Route path='/menus/cuisine/:type' element={<Cuisine />} />
+              <Route path='/menus/searched/:search' element={<Searched />} />
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
           </Routes>

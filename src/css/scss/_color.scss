@@ -17,3 +17,7 @@ a {
 .faq .highlight {
   background-color: map-get($button-color, background-hover-button);
 }
+
+.scroll-up:hover {
+  color: map-get($button-color, background-hover-button);
+}

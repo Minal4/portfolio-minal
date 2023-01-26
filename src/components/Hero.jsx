@@ -1,4 +1,5 @@
 import ExampleDoc from '../assets/resume.pdf';
+import Button from './Button';
 
 
 export default function Hero() {
@@ -6,9 +7,9 @@ export default function Hero() {
     let i = 0;
     let sliderElement = [];
 
-    while(i < 8) {
-      sliderElement.push(<span className='marque' key={i}>Portfolio</span>);
-      i++;
+    while (i < 8) {
+        sliderElement.push(<span className='marque' key={i}>Portfolio</span>);
+        i++;
     }
 
     return (
@@ -23,7 +24,7 @@ export default function Hero() {
                                 you'll discover some of my most changeling and intimate design
                                 I've taken date.</p>
                             <div className="excerpt-btn">
-                                <button className="btn__link">Contact us</button>
+                                <Button title='Contact us' />
                                 <a href={ExampleDoc} download="resume" target='_blank' rel='noopener noreferrer'>
                                     <button className='btn__link'>Download CV</button>
                                 </a>

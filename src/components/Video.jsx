@@ -30,7 +30,9 @@ const Video = () => {
                     controls={false}
                 />
                 <div className="video__wrapper-overlay">
-                    <div className="button" onClick={handleOnClick} >
+                    <div className="button" onClick={handleOnClick} data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000" >
                         {playVideo ? <MdPlayArrow /> : <MdOutlinePause />}
                     </div>
                 </div>

@@ -11,7 +11,6 @@ section:nth-child(even).faq .faq__accordion h3 {
 
 .faq {
   .sub-title {
-    max-width: 600px;
     margin-bottom: clamp(21px, 3vw, 50px);
 
     h2 {
@@ -47,16 +46,6 @@ section:nth-child(even).faq .faq__accordion h3 {
 
   .CircularProgressbar .CircularProgressbar-path {
     animation: slideGradient 20s ease-in-out infinite;
-    stroke: rgba(0, 168, 151, 1);
-  }
-}
-
-@keyframes slideGradient {
-  50% {
-    stroke: rgba(6, 184, 255, 1);
-  }
-
-  100% {
     stroke: rgba(0, 168, 151, 1);
   }
 }

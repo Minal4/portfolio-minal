@@ -20,7 +20,7 @@ const Cuisine = () => {
 
     const ItalianApi = async (name) => {
 
-        let api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=06d8dd50dc8545b6884155c62ce064d7&cuisine=${name}`);
+        let api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=65bf72d48a254dbdac85a358f66f57e1&cuisine=${name}`);
         let data = await api.json();
         setItalian(data.results)
     }
