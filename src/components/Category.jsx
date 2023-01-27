@@ -21,6 +21,7 @@ const ListWrap = styled.div`
     justify-content: center;
     align-center: center;
     gap: 20px;
+    flex-wrap: wrap;
 
     a {
         width: 100px;

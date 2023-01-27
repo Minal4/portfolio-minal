@@ -24,10 +24,14 @@
   }
 
   .video {
-    height: 100vh;
+    height: 50vh;
   }
 
   .client.section .client-wrapper .client-content-inner {
-    margin-bottom: -200px;
+    margin-bottom: -140px;
+  }
+
+  .contact .input-row {
+    grid-gap: 40px;
   }
 }

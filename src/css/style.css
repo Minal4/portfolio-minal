@@ -536,7 +536,6 @@ section.contact {
 .contact .inner-container {
   grid-template-columns: 1fr;
   display: grid;
-  grid-gap: 40px;
 }
 
 .about-section h2 {
@@ -715,10 +714,13 @@ a {
     padding-right: 50px;
   }
   .video {
-    height: 100vh;
+    height: 50vh;
   }
   .client.section .client-wrapper .client-content-inner {
-    margin-bottom: -200px;
+    margin-bottom: -140px;
+  }
+  .contact .input-row {
+    grid-gap: 40px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -740,6 +742,12 @@ a {
   }
   .header__top .navbar .navbar-nav {
     position: relative;
+  }
+  .client.section .client-wrapper .client-content-inner {
+    margin-bottom: -200px;
+  }
+  .video {
+    height: 100vh;
   }
 }
 
