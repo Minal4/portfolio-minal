@@ -39,97 +39,97 @@ export default function Portfolio() {
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://catchthemes.com/demo/simclick-pro/">
-                <img src={SimClick} alt="Dark" />
+                <img src={SimClick} alt="SimClick" />
                 <div className="caption">Simclick</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://catchthemes.com/demo/corporate-biz-pro/">
-                <img src={Biz} alt="Dark" />
+                <img src={Biz} alt="Biz" />
                 <div className="caption">Corporate Biz</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://catchthemes.com/demo/catch-sketch-blog/">
-                <img src={Blog} alt="Dark" />
+                <img src={Blog} alt="Blog" />
                 <div className="caption">Catch Sketch Blog</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://catchthemes.com/demo/catch-sketch-pro/">
-                <img src={Main} alt="Dark" />
+                <img src={Main} alt="Main" />
                 <div className="caption">Catch Sketch</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="http://fgtelecom.com.au/">
-                <img src={FgTelecom} alt="Dark" />
+                <img src={FgTelecom} alt="FgTelecom" />
                 <div className="caption">Fg Telecom</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://civilhomes.com.np/">
-                <img src={Civil} alt="Dark" />
+                <img src={Civil} alt="Civil" />
                 <div className="caption">Civil Homes</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://9ky.bcf.myftpupload.com/">
-                <img src={Texas} alt="Dark" />
+                <img src={Texas} alt="Texas" />
                 <div className="caption">Texas</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://twesupply.com/">
-                <img src={Twe} alt="Dark" />
+                <img src={Twe} alt="Twe" />
                 <div className="caption">TWE Supply</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://bodylogic.physio/">
-                <img src={BodyLogic} alt="Dark" />
+                <img src={BodyLogic} alt="BodyLogic" />
                 <div className="caption">BodyLogic</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
-                <img src={SignifyPro} alt="Dark" />
+                <img src={SignifyPro} alt="SignifyPro" />
                 <div className="caption">SignifyPro</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
-                <img src={wedding} alt="Dark" />
+                <img src={wedding} alt="wedding" />
                 <div className="caption">SignifyPro Wedding</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
-                <img src={ecommerce} alt="Dark" />
+                <img src={ecommerce} alt="ecommerce" />
                 <div className="caption">SignifyPro Ecommerce</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/lyna-pro/">
-                <img src={Lyna} alt="lyna" />
+                <img src={Lyna} alt="Lyna" />
                 <div className="caption">Lyna Pro</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/artsylens-pro/">
-                <img src={Artsylens} alt="artsy" />
+                <img src={Artsylens} alt="Artsylens" />
                 <div className="caption">Artsylens Pro</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/rhythmic-pro/">
-                <img src={Rhythmic} alt="artsy" />
+                <img src={Rhythmic} alt="Rhythmic" />
                 <div className="caption">Rhythmic Pro</div>
               </a>
             </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/visionart-pro/">
-                <img src={Visionart} alt="artsy" />
+                <img src={Visionart} alt="Visionart" />
                 <div className="caption">Visionart Pro</div>
               </a>
             </li>

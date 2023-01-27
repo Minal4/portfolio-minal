@@ -51,7 +51,7 @@ export default function Header() {
       <div className="header__top">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="inner-container">
-            <h1><img className='logo' src={logo} alt=""></img><NavLink className="nav-item nav-link" to={"/"}>Minal Munakarmi</NavLink></h1>
+            <h1><img className='logo' src={logo} alt="logo"></img><NavLink className="nav-item nav-link" to={"/"}>Minal Munakarmi</NavLink></h1>
             <div
               className="custom-nav">
               <button onClick={() => setActive(!active)} className='hamburger'>{active ? <IoCloseOutline /> : <IoMenu />}Menu</button>

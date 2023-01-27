@@ -5,15 +5,15 @@ export default function Faq() {
   const questions = [
     {
       question: 'Fully Customizable Design & Layout',
-      answer: 'The services we offer and involve preparing a financial plan or rendering financial consultation for client based on the client’s financial goals  and objectives asdas.',
+      answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
       question: 'Fluid, Responsive & Ratina Ready',
-      answer: 'The services we offer and involve preparing a financial plan or rendering financial consultation for client based on the client’s financial goals  and objectives asdas.',
+      answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
       question: 'Seo Optimized & Valid Code',
-      answer: 'The services we offer and involve preparing a financial plan or rendering financial consultation for client based on the client’s financial goals  and objectives asdas.',
+      answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ];
 

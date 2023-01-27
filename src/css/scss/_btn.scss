@@ -6,11 +6,12 @@
   text-transform: uppercase;
   border: 0;
   padding: $btn-vertical-spacing $btn-horizontal-spacing;
+  font-size: 0.8rem;
 
   &:hover,
   &:focus {
-    // background-color: map-get($button-color, background-hover-button);
-    // color: map-get($theme-color, button-color);
+    background-color: map-get($button-color, background-hover-button);
+    color: map-get($theme-color, button-color);
     box-shadow: 0 16px 29px -17px #727272;
   }
 }

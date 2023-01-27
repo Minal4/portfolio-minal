@@ -11,11 +11,9 @@ import '@splidejs/splide/css/core';
 const Cuisine = () => {
     const [italian, setItalian] = useState([]);
     const param = useParams();
-    console.log(param, 'param')
 
     useEffect(() => {
         ItalianApi(param.type);
-        console.log(param.type);
     }, [param.type])
 
     const ItalianApi = async (name) => {
