@@ -14,6 +14,7 @@ import { useRef } from 'react';
 import Searched from '../pages/Searched';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import TodoList from '../pages/TodoList';
 
 
 export default function Main() {
@@ -34,7 +35,7 @@ export default function Main() {
         scrollBtn.current.setAttribute('style', 'transform: translateY(-10px) scale(4);opacity: 0')
       }
     })
-  })
+  }, [])
 
 
 
@@ -58,6 +59,7 @@ export default function Main() {
               <Route path='/menus/searched/:search' element={<Searched />} />
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
+            <Route path='/form' element={<TodoList />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>

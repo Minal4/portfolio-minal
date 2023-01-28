@@ -57,10 +57,11 @@ export default function Header() {
               <button onClick={() => setActive(!active)} className='hamburger'>{active ? <IoCloseOutline /> : <IoMenu />}Menu</button>
               <ul className={`navbar-nav ${active ? 'active' : ''}`}>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"/"}>Home</NavLink></li>
-                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Portfolio</NavLink></li>
+                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Projects</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./menus"}>Menus</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
+                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./form"}>React Projects</NavLink></li>
                 <li className="nav-item nav-link time btn__link  ">{` ${dateTime.toLocaleTimeString()}`}</li>
               </ul>
             </div>
