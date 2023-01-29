@@ -497,10 +497,10 @@ section.todo {
   .todo .form-wrap select {
     padding: 10px; }
 
-form {
+.form-wrap form {
   display: flex;
   justify-content: center; }
-  form input {
+  .form-wrap form input {
     padding: 10px; }
 
 button.btn {
