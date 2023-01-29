@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
+import { BiChevronDown } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
 export default function Header() {
   const [active, setActive] = useState(false);
   const [dateTime, setTime] = useState(new Date());
+  const [subMenu, setSubMenu] = useState(false);
 
 
   useEffect(() => {
@@ -46,6 +48,10 @@ export default function Header() {
     setActive(false);
   }
 
+  const showHandler = () => {
+    setSubMenu(!subMenu);
+  }
+
   return (
     <header className='header' ref={reference}>
       <div className="header__top">
@@ -61,7 +67,11 @@ export default function Header() {
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./menus"}>Menus</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
-                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./form"}>React Projects</NavLink></li>
+                <li className='has-child'><NavLink onClick={showHandler} className="nav-item nav-link">React</NavLink><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />
+                  <ul className={`sub-menu ${subMenu ? 'show-sub' : ''}`}>
+                    <li><NavLink className='nav-item-nav-link' to={'/todo'}>Todo list</NavLink></li>
+                  </ul>
+                </li>
                 <li className="nav-item nav-link time btn__link  ">{` ${dateTime.toLocaleTimeString()}`}</li>
               </ul>
             </div>

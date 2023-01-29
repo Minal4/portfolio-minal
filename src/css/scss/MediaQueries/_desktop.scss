@@ -29,4 +29,35 @@
   .video {
     height: 100vh;
   }
+
+  .header__top .navbar .navbar-nav li.has-child {
+    &:hover {
+      .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .header__top .navbar .navbar-nav li .sub-menu {
+    position: absolute;
+    top: 140%;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      text-align: left;
+    }
+  }
+
+  .todo-result {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

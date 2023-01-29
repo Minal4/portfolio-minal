@@ -32,6 +32,24 @@
       transform: translateX(-100%);
       transition: 0.5s ease-in-out;
 
+      li {
+        position: relative;
+
+        .sub-menu {
+          top: 100%;
+          @include transition(0.5s ease-in-out);
+          left: 0;
+          width: 100%;
+          background-color: #f2f5f8;
+          display: none;
+
+          li {
+            padding: 10px;
+            text-align: center;
+          }
+        }
+      }
+
       &.active {
         transform: translateX(0);
       }
@@ -43,34 +61,13 @@
         transition: 0.5s ease-in-out;
         padding: 10px 5px;
 
-        &:before {
-          position: absolute;
-          border-radius: 50%;
-          opacity: 0;
-          content: "";
-          bottom: 5px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 3px;
-          height: 3px;
-          background-color: map-get($button-color , background-hover-button);
-        }
-
         &.active {
           color: map-get($button-color , background-hover-button);
-
-          &:before {
-            opacity: 1;
-          }
         }
 
         &:hover,
         &:focus {
           color: map-get($button-color , background-hover-button);
-
-          &:before {
-            opacity: 1;
-          }
         }
       }
     }
@@ -130,4 +127,61 @@ button.hamburger {
   svg {
     font-size: 20px;
   }
+}
+
+.header__top .navbar .navbar-nav li.has-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.custom-nav ul:not(.sub-menu) {
+  li a {
+    &:before {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      content: "";
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 3px;
+      background-color: map-get($button-color , background-hover-button);
+    }
+
+    &:hover:before {
+      opacity: 1;
+    }
+
+    &.active {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.custom-nav .navbar-nav ul.sub-menu li a {
+  &.active &:before {
+    content: '';
+  }
+
+  &:hover {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.custom-nav .navbar-nav ul.sub-menu li a.active {
+  &:before {
+    content: none;
+  }
+}
+
+.header__top .navbar .navbar-nav li .sub-menu.show-sub {
+  display: block;
 }

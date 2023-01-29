@@ -59,7 +59,7 @@ export default function Main() {
               <Route path='/menus/searched/:search' element={<Searched />} />
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
-            <Route path='/form' element={<TodoList />}></Route>
+            <Route path='/todo' element={<TodoList />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
