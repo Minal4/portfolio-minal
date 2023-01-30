@@ -15,6 +15,7 @@ import Searched from '../pages/Searched';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TodoList from '../pages/TodoList';
+import Weather from '../pages/Weather';
 
 
 export default function Main() {
@@ -60,6 +61,7 @@ export default function Main() {
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/todo' element={<TodoList />}></Route>
+            <Route path='/weather' element={<Weather />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
