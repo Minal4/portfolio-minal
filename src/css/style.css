@@ -578,7 +578,7 @@ button.btn {
   grid-template-columns: 1fr;
   grid-gap: 15px; }
   .todo-result div {
-    max-width: 420px;
+    max-width: 320px;
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
@@ -593,7 +593,7 @@ button.btn {
 
 p.input-field {
   text-align: left;
-  width: 250px;
+  width: 210px;
   background: #fff;
   padding: 15px; }
 
@@ -758,7 +758,10 @@ a {
     grid-gap: 40px; }
 
   .weather__forecast ul {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+
+  p.input-field {
+    width: 320px; } }
 @media only screen and (min-width: 1024px) {
   .portfolio .portfolio__content ul {
     grid-gap: 35px; }

@@ -38,4 +38,8 @@
   .weather__forecast ul {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  p.input-field {
+    width: 320px;
+  }
 }
