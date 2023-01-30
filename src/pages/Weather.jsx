@@ -41,7 +41,7 @@ const Weather = () => {
                         </div>
                         {show &&
                             <div className="weather__forecast">
-                                {/* {data.location ? <h2>{data.location.name}</h2> : null} */}
+                                {data.location ? <h2>{data.location.name}</h2> : null}
                                 <ul>
                                     <li>
                                         <div className="condition specs">
