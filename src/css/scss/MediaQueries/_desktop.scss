@@ -60,4 +60,11 @@
     margin-top: 30px;
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .weather__forecast ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 3rem;
+  }
 }

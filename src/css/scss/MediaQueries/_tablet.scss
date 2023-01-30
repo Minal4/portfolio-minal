@@ -34,4 +34,8 @@
   .contact .input-row {
     grid-gap: 40px;
   }
+
+  .weather__forecast ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
