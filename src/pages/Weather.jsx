@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react'
+import axios from 'axios';
 
 const Weather = () => {
     const [data, setData] = useState({});
@@ -12,19 +12,16 @@ const Weather = () => {
         axios.get(url).then((response) => {
             setData(response.data);
         })
-        setCondition(data.current ? data.current.condition.text : null);
     }, [location])
 
     const url = `http://api.weatherapi.com/v1/current.json?key=9d559f03fa41499b9a473811233001&q=${location}&aqi=no`
 
     const clickHandler = (e) => {
         e.preventDefault();
+        setShow(true)
         setLocation('')
-        setShow(!show)
+        setCondition(data.current ? data.current.condition.text : null);
     }
-
-    console.log(condition, 'asd')
-
 
     return (
         <div>
@@ -55,7 +52,7 @@ const Weather = () => {
                                         <div className="wind specs">
                                             <h2>Wind</h2>
                                             <div className="weather-data">
-                                                <div className='wind-mph'>{data.current ? `${data.current.wind_mph}` : null}</div>
+                                                <div className='wind-mph'>{data.current ? `${data.current.wind_mph}mph` : null}</div>
                                                 <div className="wind-kph">{data.current ? `${data.current.wind_kph}kph` : null} </div>
                                                 <div className="wind-degree">{data.current ? `${data.current.wind_degree}degree` : null} </div>
                                             </div>
@@ -68,7 +65,7 @@ const Weather = () => {
                                             <div className="weather-data">
                                                 <div className='wind-mph'>{data.current ? `${data.current.feelslike_c} ℃` : null}</div>
                                                 <div className="wind-kph">{data.current ? `${data.current.feelslike_f} ℉` : null} </div>
-                                                <div className="wind-degree">{data.current ? `${data.current.humidity}` : null} </div>
+                                                <div className="wind-degree">{data.current ? `${data.current.humidity} Humidity` : null} </div>
                                             </div>
                                         </div>
                                     </li>
