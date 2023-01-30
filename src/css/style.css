@@ -530,6 +530,10 @@ section:nth-child(even).faq .faq__accordion h3 {
 .weather .search input {
   width: 100%;
 }
+.weather__forecast h2 {
+  font-size: 3rem;
+  text-align: center;
+}
 .weather__forecast ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

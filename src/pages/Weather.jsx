@@ -5,6 +5,7 @@ import { useState } from 'react'
 const Weather = () => {
     const [data, setData] = useState({});
     const [location, setLocation] = useState('');
+    const [show, setShow] = useState('');
     const [condition, setCondition] = useState('');
     useEffect(() => {
 
@@ -19,6 +20,7 @@ const Weather = () => {
     const clickHandler = (e) => {
         e.preventDefault();
         setLocation('')
+        setShow(!show)
     }
 
     console.log(condition, 'asd')
@@ -36,40 +38,43 @@ const Weather = () => {
                             <input type="text" className='input-field' value={location} onChange={(e) => setLocation(e.target.value)} />
                             <button type='submit' className='btn__link' onClick={clickHandler}>Search</button>
                         </div>
-                        <div className="weather__forecast">
-                            <ul>
-                                <li>
-                                    <div className="condition specs">
-                                        <h2>Condition</h2>
-                                        <div className="weather-data">
-                                            <span className="img"><img src={data.current ? data.current.condition.icon : null} alt="icon" /></span>
-                                            <div className="condition-title">{data.current ? data.current.condition.text : null} </div>
+                        {show &&
+                            <div className="weather__forecast">
+                                {show && <h2>{data.location.name}</h2>}
+                                <ul>
+                                    <li>
+                                        <div className="condition specs">
+                                            <h2>Condition</h2>
+                                            <div className="weather-data">
+                                                <span className="img"><img src={data.current ? data.current.condition.icon : null} alt="icon" /></span>
+                                                <div className="condition-title">{data.current ? data.current.condition.text : null} </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="wind specs">
-                                        <h2>Wind</h2>
-                                        <div className="weather-data">
-                                            <div className='wind-mph'>{data.current ? `${data.current.wind_mph}` : null}</div>
-                                            <div className="wind-kph">{data.current ? `${data.current.wind_kph}kph` : null} </div>
-                                            <div className="wind-degree">{data.current ? `${data.current.wind_degree}degree` : null} </div>
+                                    </li>
+                                    <li>
+                                        <div className="wind specs">
+                                            <h2>Wind</h2>
+                                            <div className="weather-data">
+                                                <div className='wind-mph'>{data.current ? `${data.current.wind_mph}` : null}</div>
+                                                <div className="wind-kph">{data.current ? `${data.current.wind_kph}kph` : null} </div>
+                                                <div className="wind-degree">{data.current ? `${data.current.wind_degree}degree` : null} </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
 
-                                <li>
-                                    <div className="wind specs">
-                                        <h2>Temp</h2>
-                                        <div className="weather-data">
-                                            <div className='wind-mph'>{data.current ? `${data.current.feelslike_c} ℃` : null}</div>
-                                            <div className="wind-kph">{data.current ? `${data.current.feelslike_f} ℉` : null} </div>
-                                            <div className="wind-degree">{data.current ? `${data.current.humidity}` : null} </div>
+                                    <li>
+                                        <div className="wind specs">
+                                            <h2>Temp</h2>
+                                            <div className="weather-data">
+                                                <div className='wind-mph'>{data.current ? `${data.current.feelslike_c} ℃` : null}</div>
+                                                <div className="wind-kph">{data.current ? `${data.current.feelslike_f} ℉` : null} </div>
+                                                <div className="wind-degree">{data.current ? `${data.current.humidity}` : null} </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
                     </div>
                 </section>
             </>
