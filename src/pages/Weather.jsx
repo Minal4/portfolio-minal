@@ -12,6 +12,9 @@ const Weather = () => {
         axios.get(url).then((response) => {
             setData(response.data);
         })
+
+        // const lower = setCondition(condition.toLowerCase)
+        // console.log(lower)
     }, [location])
 
     const url = `http://api.weatherapi.com/v1/current.json?key=9d559f03fa41499b9a473811233001&q=${location}&aqi=no`
@@ -37,7 +40,7 @@ const Weather = () => {
                         </div>
                         {show &&
                             <div className="weather__forecast">
-                                {show && <h2>{data.location.name}</h2>}
+                                {data.location ? <h2>{data.location.name}</h2> : null}
                                 <ul>
                                     <li>
                                         <div className="condition specs">
