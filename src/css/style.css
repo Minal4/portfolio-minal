@@ -180,6 +180,8 @@ input {
         .header__top .navbar .navbar-nav li .sub-menu li {
           padding: 10px;
           text-align: center; }
+          .header__top .navbar .navbar-nav li .sub-menu li:not(:last-child) {
+            border-bottom: 1px solid darkgray; }
     .header__top .navbar .navbar-nav.active {
       transform: translateX(0); }
     .header__top .navbar .navbar-nav a {
@@ -439,14 +441,18 @@ section:nth-child(even).faq .faq__accordion h3 {
   margin: 0 auto; }
   .weather .search input {
     width: 100%; }
-.weather__forecast h2 {
+.weather__forecast .country {
   font-size: 3rem;
   text-align: center; }
+  .weather__forecast .country .country-title {
+    font-size: 1.5rem; }
 .weather__forecast ul {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 30px;
   margin-top: 3rem; }
+  .weather__forecast ul h2 {
+    font-size: 3rem; }
   .weather__forecast ul li {
     background: #fff;
     padding: 20px;
@@ -461,7 +467,7 @@ section:nth-child(even).faq .faq__accordion h3 {
       gap: 20px; }
 
 .snow.section {
-  background: url(../assets/images/snow.jpg) no-repeat center center;
+  background: url(../assets/images/mist.jpg) no-repeat center center;
   background-size: cover; }
 
 .Sunny.section {
@@ -469,8 +475,24 @@ section:nth-child(even).faq .faq__accordion h3 {
   background-size: cover; }
 
 .Mist.section {
-  background: url(../assets/images/mist.jpg) no-repeat center center;
+  background: url(../assets/images/snow.jpg) no-repeat center center;
   background-size: cover; }
+
+.wind, .temp {
+  background-image: url(../assets/images/wind.gif);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 50px 50px; }
+
+.temp {
+  background-image: url(../assets/images/temp.gif); }
+
+.specs {
+  position: relative; }
+
+.condition span.img {
+  position: absolute;
+  top: 0; }
 
 section.contact {
   padding-top: 0; }

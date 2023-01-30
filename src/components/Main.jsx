@@ -3,7 +3,7 @@ import Hero from './Hero';
 import Portfolio from './Portfolio';
 import Faq from './Faq';
 import Contact from './Contact';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import HomePage from './HomePage';
@@ -47,7 +47,7 @@ export default function Main() {
     <>
       <div className="App">
 
-        <BrowserRouter>
+        <HashRouter>
           <Header />
           <div className="scroll-up" ref={scrollBtn} onClick={UpArrow}><BsFillArrowUpCircleFill /></div>
           <Routes>
@@ -64,7 +64,7 @@ export default function Main() {
             <Route path='/weather' element={<Weather />}></Route>
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </>
   );
