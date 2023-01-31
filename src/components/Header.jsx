@@ -65,12 +65,12 @@ export default function Header() {
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"/"}>Home</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Projects</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
-                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./menus"}>Menus</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
                 <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link" >React</a><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />
                   <ul className={`sub-menu ${subMenu ? 'show-sub' : ''}`}>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/todo'}>Todo list</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/weather'}>Weather</NavLink></li>
+                    <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/menus'}>Restro</NavLink></li>
                   </ul>
                 </li>
                 <li className="nav-item nav-link time btn__link ">{` ${dateTime.toLocaleTimeString()}`}</li>

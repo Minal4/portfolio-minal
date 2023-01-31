@@ -92,19 +92,19 @@ export default function Portfolio() {
               </a>
             </li>
             <li>
-              <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
+              <a target="_blank" rel='noopener noreferrer' href="https://demo.wenthemes.com/signify-pro/">
                 <img src={SignifyPro} alt="SignifyPro" />
                 <div className="caption">SignifyPro</div>
               </a>
             </li>
             <li>
-              <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
+              <a target="_blank" rel='noopener noreferrer' href="https://demo.wenthemes.com/signify-pro-wedding/">
                 <img src={wedding} alt="wedding" />
                 <div className="caption">SignifyPro Wedding</div>
               </a>
             </li>
             <li>
-              <a target="_blank" rel='noopener noreferrer' href="https://themepalace.com/theme-demo/?demo=Mk56ZGY5TVJhVlg0enkwNWRkaW9hUT09">
+              <a target="_blank" rel='noopener noreferrer' href="https://demo.wenthemes.com/signify-pro-ecommerce/">
                 <img src={ecommerce} alt="ecommerce" />
                 <div className="caption">SignifyPro Ecommerce</div>
               </a>

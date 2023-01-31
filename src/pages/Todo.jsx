@@ -8,7 +8,6 @@ const Todo = ({ todos, setTodos, filtered }) => {
     }
 
     const completeHandler = (i) => {
-        console.log(i, 'as')
         setTodos(todos.map((item, index) => {
             if (index === i) {
                 return {
@@ -26,10 +25,12 @@ const Todo = ({ todos, setTodos, filtered }) => {
                 {
                     filtered.map((todo, index) => {
                         return (
-                            <div key={todo.id}>
+                            <div key={todo.id} className={` ${todo.completed === true ? 'clicked' : ''}`}>
                                 <p className={`input-field ${todo.completed === true ? 'completed' : ''}`}>{todo.text} </p>
-                                <button className={`btn ${todo.completed === true ? 'clicked' : ''}`} onClick={() => completeHandler(index)} type='submit'><TiTickOutline /></button>
-                                <button className='btn' onClick={() => deleteHandler(index)} type='submit' style={{ background: '#d83b3b', color: '#fff' }}> <AiFillDelete /></button>
+                                <div className="buttons">
+                                    <button className={`btn ${todo.completed === true ? 'clicked' : ''}`} onClick={() => completeHandler(index)} type='submit'><TiTickOutline /></button>
+                                    <button className='btn' onClick={() => deleteHandler(index)} type='submit' style={{ background: '#d83b3b', color: '#fff' }}> <AiFillDelete /></button>
+                                </div>
                             </div>
                         )
                     })

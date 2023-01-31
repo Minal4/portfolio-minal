@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const Weather = () => {
     const [data, setData] = useState({});
     const [location, setLocation] = useState('');
-    const [show, setShow] = useState('');
+    const [show, setShow] = useState(false);
     const url = `http://api.weatherapi.com/v1/current.json?key=9d559f03fa41499b9a473811233001&q=${location}&aqi=no`
 
     const clickHandler = (e) => {
@@ -13,10 +14,30 @@ const Weather = () => {
             setData(response.data);
         })
         setShow(true)
-        setLocation('')
     }
 
-    console.log(data, 'asd')
+    useEffect(() => {
+        setWeather();
+        setShow(true)
+    }, [])
+
+    useEffect(() => {
+        getWeather();
+    }, [data])
+
+    const setWeather = () => {
+
+        let check = JSON.parse(localStorage.getItem('weather'))
+        if (check) {
+            setData(check);
+            console.log(data, 'data')
+        }
+    }
+    const getWeather = () => {
+        if (location?.length) {
+            localStorage.setItem('weather', JSON.stringify(data));
+        }
+    }
     return (
         <div>
             <>

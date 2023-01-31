@@ -31,15 +31,19 @@ const TodoList = () => {
     }, [todos, option])
 
     const saveLocalTodos = () => {
-        localStorage.setItem('todos', JSON.stringify(todos))
+        if (todos?.length) {
+            localStorage.setItem('todos', JSON.stringify(todos))
+            localStorage.setItem('option', JSON.stringify(option))
+        }
     }
 
     const getLocalTodos = () => {
-        if (localStorage.getItem('todos') === null) {
-            localStorage.setItem('todos', JSON.stringify([]));
-        } else {
-            let check = JSON.parse(localStorage.getItem('todos'))
+
+        let check = JSON.parse(localStorage.getItem('todos'))
+        let checkOpt = JSON.parse(localStorage.getItem('option'))
+        if (check && checkOpt) {
             setTodos(check);
+            setOption(checkOpt);
         }
     }
 

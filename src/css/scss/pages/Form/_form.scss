@@ -44,15 +44,22 @@ button.btn {
     display: grid;
     margin-top: 30px;
     grid-template-columns: 1fr;
-    grid-gap: 15px;
+    grid-gap: 30px;
 
-    div {
-        max-width: 320px;
-        margin: 0 auto;
+    >div {
         margin-top: 10px;
         text-align: center;
-        display: flex;
-        justify-content: center;
+        background: #fff;
+        position: relative;
+        padding: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding-bottom: 50px;
+
+        .buttons {
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
 
         .btn {
             margin-left: 2px;
@@ -67,15 +74,16 @@ button.btn {
 
 p.input-field {
     text-align: left;
-    width: 210px;
-    background: #fff;
-    padding: 15px;
 }
 
 .completed {
     text-decoration: line-through;
 }
 
-.clicked.btn {
+.todo-result div.clicked {
     background-color: antiquewhite;
+}
+
+.clicked.btn {
+    background-color: #20e3b2;
 }
