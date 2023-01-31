@@ -22,30 +22,30 @@ const TodoList = () => {
     }
 
     useEffect(() => {
-        getLocalTodos();
+        // getLocalTodos();
     }, [])
 
     useEffect(() => {
         filterFunc();
-        saveLocalTodos();
+        // saveLocalTodos();
     }, [todos, option])
 
-    const saveLocalTodos = () => {
-        if (todos?.length) {
-            localStorage.setItem('todos', JSON.stringify(todos))
-            localStorage.setItem('option', JSON.stringify(option))
-        }
-    }
+    // const saveLocalTodos = () => {
+    //     if (todos?.length) {
+    //         localStorage.setItem('todos', JSON.stringify(todos))
+    //         localStorage.setItem('option', JSON.stringify(option))
+    //     }
+    // }
 
-    const getLocalTodos = () => {
+    // const getLocalTodos = () => {
 
-        let check = JSON.parse(localStorage.getItem('todos'))
-        let checkOpt = JSON.parse(localStorage.getItem('option'))
-        if (check && checkOpt) {
-            setTodos(check);
-            setOption(checkOpt);
-        }
-    }
+    //     let check = JSON.parse(localStorage.getItem('todos'))
+    //     let checkOpt = JSON.parse(localStorage.getItem('option'))
+    //     if (check && checkOpt) {
+    //         setTodos(check);
+    //         setOption(checkOpt);
+    //     }
+    // }
 
 
 
