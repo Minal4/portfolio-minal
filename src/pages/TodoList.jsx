@@ -4,9 +4,12 @@ import Todo from './Todo'
 
 const TodoList = () => {
     const [input, setInput] = useState('');
-    const [todos, setTodos] = useState([]);
-    const [option, setOption] = useState('all');
+    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || []);
+    const [option, setOption] = useState(JSON.parse(localStorage.getItem('option')) || 'all');
     const [filtered, setFiltered] = useState([]);
+    const [edit, setEdit] = useState(null);
+    const [updateText, setUpdateText] = useState('');
+
 
     const filterFunc = () => {
         switch (option) {
@@ -22,30 +25,31 @@ const TodoList = () => {
     }
 
     useEffect(() => {
-        // getLocalTodos();
-    }, [])
-
-    useEffect(() => {
         filterFunc();
-        // saveLocalTodos();
+        saveLocalTodos();
     }, [todos, option])
 
-    // const saveLocalTodos = () => {
-    //     if (todos?.length) {
-    //         localStorage.setItem('todos', JSON.stringify(todos))
-    //         localStorage.setItem('option', JSON.stringify(option))
-    //     }
-    // }
+    useEffect(() => {
+        getLocalTodos();
+    }, [])
 
-    // const getLocalTodos = () => {
+    const saveLocalTodos = () => {
+        // if (todos.length !== 0) {
+        localStorage.setItem('todos', JSON.stringify(todos))
+        localStorage.setItem('option', JSON.stringify(option))
+        // }
+    }
 
-    //     let check = JSON.parse(localStorage.getItem('todos'))
-    //     let checkOpt = JSON.parse(localStorage.getItem('option'))
-    //     if (check && checkOpt) {
-    //         setTodos(check);
-    //         setOption(checkOpt);
-    //     }
-    // }
+    const getLocalTodos = () => {
+        let check = JSON.parse(localStorage.getItem('todos'))
+        let getOption = JSON.parse(localStorage.getItem('option'))
+        if (check !== null) {
+            setTodos(check);
+        }
+        if (getOption !== null) {
+            setOption(getOption);
+        }
+    }
 
 
 
@@ -53,8 +57,8 @@ const TodoList = () => {
         <section className='section todo'>
             <div className="container">
                 <div className="section__heading"><h2>Todo List</h2></div>
-                <Field input={input} setInput={setInput} todos={todos} setTodos={setTodos} option={option} setOption={setOption} filtered={filtered} setFiltered={setFiltered} />
-                <Todo todos={todos} setTodos={setTodos} input={input} filtered={filtered} />
+                <Field input={input} setInput={setInput} todos={todos} setTodos={setTodos} option={option} setOption={setOption} filtered={filtered} setFiltered={setFiltered} edit={edit} />
+                <Todo todos={todos} setTodos={setTodos} input={input} filtered={filtered} edit={edit} setEdit={setEdit} setUpdateText={setUpdateText} updateText={updateText} />
             </div>
         </section>
     )
