@@ -49,4 +49,8 @@
   .form form .input-wrap:not(:last-child) {
     margin-bottom: 0;
   }
+
+  .todo-result {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

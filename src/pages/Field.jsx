@@ -1,9 +1,30 @@
-import { AiOutlinePlusSquare } from 'react-icons/ai';
+import { forwardRef, useEffect, useRef } from 'react';
+import { AiFillEdit, AiOutlinePlusSquare } from 'react-icons/ai';
+
 // import db from '../firebase';
 // import { collection, addDoc, getDocs, doc, setDoc } from "firebase/firestore";
 
 
-const Field = ({ input, setInput, todos, setTodos, option, setOption, edit }) => {
+const Field = forwardRef(({
+    input,
+    setInput,
+    todos,
+    setTodos,
+    option,
+    setOption,
+    edit,
+    showModal,
+    setShowModal,
+    updateText,
+    setUpdateText
+}, ref) => {
+
+    const activeRef = useRef(null);
+
+    useEffect(() => {
+        activeRef.current.focus();
+    }, [])
+
     const changeHandler = (e) => {
         setInput(e.target.value);
     }
@@ -48,23 +69,47 @@ const Field = ({ input, setInput, todos, setTodos, option, setOption, edit }) =>
             //     body: JSON.stringify(todos)
             // });
             setInput('');
-        } else if (todos.id === edit) {
-            console.log('matched')
         } else {
             return;
         }
+
+        setShowModal(false)
     }
+    console.log(todos, 'todos')
 
     const selectHandler = (e) => {
         setOption(e.target.value);
     }
 
+    const updateHandler = (e) => {
+        e.preventDefault();
+        if (window.confirm('Are you sure??')) {
+            let updateData = todos.map((item) => {
+                if (item.id === edit) {
+                    return { ...item, text: updateText }
+                }
+                return item;
+            })
+
+            setTodos(updateData)
+
+            setShowModal(false)
+
+            activeRef.current.focus()
+        }
+    }
     return (
         <div className='form-wrap'>
             <form action="" method='POST'>
-                <input type="text" value={input} onChange={changeHandler} className='input-field' />
+                <input ref={activeRef} type="text" value={input} onChange={changeHandler} placeholder="Place your Todos.." className='input-field' />
                 <button onClick={clickHandler} type='submit' className='btn'> <AiOutlinePlusSquare /></button>
             </form>
+            <div className={`modal ${showModal && 'show-modal'}`} >
+                <form>
+                    <input ref={ref} type="text" value={updateText} onChange={(e) => setUpdateText(e.target.value)} className='input-field' />
+                    <button onClick={updateHandler} type='submit' className='btn'> <AiFillEdit /></button>
+                </form>
+            </div>
             <select onChange={selectHandler} name="todo" value={option ? option : ''}>
                 <option value="all">all</option>
                 <option value="completed">Completed</option>
@@ -72,6 +117,6 @@ const Field = ({ input, setInput, todos, setTodos, option, setOption, edit }) =>
             </select>
         </div>
     )
-}
+})
 
 export default Field
