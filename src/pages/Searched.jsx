@@ -11,7 +11,6 @@ const Searched = () => {
 
     useEffect(() => {
         searchApi(param.search);
-        console.log(param.search);
     }, [param.search])
 
     const searchApi = async (name) => {

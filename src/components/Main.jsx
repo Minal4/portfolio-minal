@@ -16,6 +16,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import TodoList from '../pages/TodoList';
 import Weather from '../pages/Weather';
+import Tab from './React/Tab/Tab';
 
 
 export default function Main() {
@@ -62,6 +63,7 @@ export default function Main() {
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/todo' element={<TodoList />}></Route>
             <Route path='/weather' element={<Weather />}></Route>
+            <Route path='/tab' element={<Tab />}></Route>
           </Routes>
           <Footer />
         </HashRouter>

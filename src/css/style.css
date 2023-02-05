@@ -316,6 +316,34 @@ button.hamburger {
           -moz-border-radius: 50%;
           -o-border-radius: 50%; }
 
+.tab__lists {
+  max-width: 500px;
+  display: flex;
+  gap: 20px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .tab__lists li {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border: 1px solid #000;
+    position: relative; }
+    .tab__lists li.active-tab {
+      background-color: #fff;
+      border-color: transparent; }
+.tab .tabs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px; }
+.tab .content {
+  padding: 20px;
+  background: #fff; }
+  .tab .content .title {
+    margin: 1rem 0;
+    font-weight: 700; }
+  .tab .content ul li:not(:last-child) {
+    margin-bottom: 1.3rem; }
+
 .video {
   height: 37vh;
   position: relative; }
@@ -788,7 +816,23 @@ a {
     grid-gap: 40px; }
 
   .weather__forecast ul {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+
+  .tab .tabs {
+    grid-template-columns: 20% 80%; }
+    .tab .tabs ul {
+      flex-direction: column;
+      margin: 0;
+      justify-content: flex-start; }
+
+  .tab__lists li.active-tab:after {
+    position: absolute;
+    right: -21px;
+    top: 0;
+    background: #fff;
+    width: 20px;
+    height: 100%;
+    content: ""; } }
 @media only screen and (min-width: 1024px) {
   .portfolio .portfolio__content ul {
     grid-gap: 35px; }
