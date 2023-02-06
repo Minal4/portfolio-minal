@@ -4,6 +4,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BiChevronDown } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import Theme from './Theme';
 
 export default function Header() {
   const [active, setActive] = useState(false);
@@ -74,6 +75,7 @@ export default function Header() {
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/tab'}>Tabs</NavLink></li>
                   </ul>
                 </li>
+                <li><Theme /></li>
                 <li className="nav-item nav-link time btn__link ">{` ${dateTime.toLocaleTimeString()}`}</li>
               </ul>
             </div>

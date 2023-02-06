@@ -17,6 +17,7 @@ import 'aos/dist/aos.css';
 import TodoList from '../pages/TodoList';
 import Weather from '../pages/Weather';
 import Tab from './React/Tab/Tab';
+import Theme from './Theme';
 
 
 export default function Main() {
@@ -47,7 +48,6 @@ export default function Main() {
   return (
     <>
       <div className="App">
-
         <HashRouter>
           <Header />
           <div className="scroll-up" ref={scrollBtn} onClick={UpArrow}><BsFillArrowUpCircleFill /></div>

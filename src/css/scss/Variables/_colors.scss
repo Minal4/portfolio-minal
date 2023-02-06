@@ -1,27 +1,50 @@
-$theme-color: (
-  primary-color: #fff,
+    :root {
+        --primary-color: #fff;
 
-  secondary-color: #06b7ff,
+        --secondary-color: #06b7ff;
 
-  dark-color: #333,
+        --dark-color: #333;
 
-  btn-background: #fff,
-);
+        --btn-background: #fff;
 
-// color: map-get($theme-color, theme-dark-color); // #000
+        // color: map-get(--theme-color, theme-dark-color); // #000
 
-$theme-background-color: (
-  background-primary-color: #fff,
+        --background-primary-color: #fff;
 
-  background-secondary-color: #f8f8f8,
+        --background-secondary-color: #f8f8f8;
 
-  background-dark-color: #333,
-);
+        --background-dark-color: #333;
 
-$button-color: (
-  background-button: #000,
+        --background-button: #000;
 
-  button-color: #fff,
+        --button-color: #fff;
 
-  background-hover-button: #05a394,
-);
+        --background-hover-button: #05a394;
+        --border-color: #e6e6e6;
+
+    }
+
+    .dark {
+        --primary-color: #fff;
+
+        --secondary-color: #06b7ff;
+
+        --dark-color: #fff;
+
+        --btn-background: #fff;
+
+        // color: map-get(--theme-color, theme-dark-color); // #000
+
+        --background-primary-color: #000;
+
+        --background-secondary-color: #403f3f;
+
+        --background-dark-color: #333;
+
+        --background-button: #fff;
+
+        --button-color: #000;
+
+        --background-hover-button: #05a394;
+        --border-color: #2e2d2d;
+    }

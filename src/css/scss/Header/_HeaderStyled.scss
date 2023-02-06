@@ -27,7 +27,7 @@
       left: 0;
       right: 0;
       padding: 30px;
-      background: map-get($theme-color , btn-background);
+      background: var(--background-secondary-color);
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       transform: translateX(-100%);
       transition: 0.5s ease-in-out;
@@ -40,7 +40,7 @@
           @include transition(0.5s ease-in-out);
           left: 0;
           width: 100%;
-          background-color: #f2f5f8;
+          background-color: var(--background-secondary-color);
           display: none;
 
           li {
@@ -66,12 +66,12 @@
         padding: 10px 5px;
 
         &.active {
-          color: map-get($button-color , background-hover-button);
+          color: var(--background-hover-button);
         }
 
         &:hover,
         &:focus {
-          color: map-get($button-color , background-hover-button);
+          color: var(--background-hover-button);
         }
       }
     }
@@ -79,13 +79,13 @@
 }
 
 header {
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid var(--border-color);
   padding: clamp(15px, 3vw, 40px) 0;
   position: relative;
   @include transition(0.3s ease-in-out);
   position: fixed;
   right: 0;
-  background-color: #fff;
+  background-color: var(--background-primary-color);
   left: 0;
   top: 0;
   width: 100%;
@@ -153,7 +153,7 @@ button.hamburger {
       transform: translateX(-50%);
       width: 3px;
       height: 3px;
-      background-color: map-get($button-color , background-hover-button);
+      background-color: var(--background-hover-button);
     }
 
     &:hover:before {

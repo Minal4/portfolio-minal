@@ -1,23 +1,23 @@
 a {
-  color: map-get($theme-color, dark-color);
+  color: var(--dark-color);
 }
 
 
 .faq .highlight {
-  color: map-get($theme-color, primary-color);
+  color: var(--primary-color);
 }
 
 .client-content-inner {
-  background-color: map-get($theme-background-color, background-primary-color);
+  background-color: var(--background-primary-color);
 }
 
 // button background COlor
 
 .avatar,
 .faq .highlight {
-  background-color: map-get($button-color, background-hover-button);
+  background-color: var(--background-hover-button);
 }
 
 .scroll-up:hover {
-  color: map-get($button-color, background-hover-button);
+  color: var(--background-hover-button);
 }

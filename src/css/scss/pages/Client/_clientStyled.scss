@@ -11,7 +11,7 @@
         grid-template-columns: (1fr);
 
         .client-title {
-            color: map-get($theme-color , primary-color);
+            color: var(--primary-color);
             font-size: 35px;
             display: flex;
             align-items: center;
