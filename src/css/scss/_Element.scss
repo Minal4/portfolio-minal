@@ -5,8 +5,8 @@
 }
 
 body.dark {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--background-dark-color);
+  color: var(--primary-color);
 }
 
 body {
