@@ -48,7 +48,7 @@ export default function Contact() {
             <div>
               <form onSubmit={(e) => handleOnClick(e)}>
                 <div className="input-row">
-                  <div className="input-group" style={{ marginRight: '20px' }}>
+                  <div className="input-group">
                     <label>First Name</label>
                     <input type="text" name="firstName" value={check.firstName} required onChange={(e) => handleOnChange(e)} />
                     {error && <div className="error">Field Required</div>}

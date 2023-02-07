@@ -53,4 +53,8 @@
   .todo-result {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .contact .input-row {
+    gap: 40px;
+  }
 }

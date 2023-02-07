@@ -39,6 +39,7 @@ section.todo {
 
     select {
         padding: 10px;
+        background-color: var(--background-primary-color);
     }
 }
 
@@ -48,17 +49,35 @@ section.todo {
 
     input {
         padding: 10px;
+        background-color: var(--background-primary-color);
     }
+
 }
 
 button.btn {
-    background: #fff;
+    background: var(--btn-background);
     padding: 5px 15px;
     border: 1px solid transparent;
 
     &:hover {
-        border-color: #fff;
+        border-color: var(--btn-background);
         background-color: #20e3b2;
+    }
+}
+
+section:nth-child(odd) {
+
+    input,
+    textarea {
+        background-color: var(--background-primary-color);
+    }
+}
+
+section:nth-child(even) {
+
+    input,
+    textarea {
+        background-color: var(--background-secondary-color);
     }
 }
 
@@ -71,7 +90,7 @@ button.btn {
     >div {
         margin-top: 10px;
         text-align: center;
-        background: #fff;
+        background: var(--background-secondary-color);
         position: relative;
         padding: 30px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

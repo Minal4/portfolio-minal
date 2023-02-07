@@ -6,15 +6,15 @@
       grid-gap: 30px;
 
       li {
-        box-shadow: 0 0 14px 2px #4b4949;
+        box-shadow: 0 0 14px 2px #4b49492e;
         overflow: hidden;
         padding: 10px;
         position: relative;
 
         .caption {
-          border-top: 1px solid #ebebeb;
+          border-top: 1px solid var(--border-color);
           bottom: 0;
-          background-color: #fff;
+          background-color: var(--background-primary-color);
           font-family: 'Ibarra Real Nova', serif;
           font-size: 26px;
           left: 0;

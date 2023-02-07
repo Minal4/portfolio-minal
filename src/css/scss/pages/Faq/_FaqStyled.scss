@@ -1,5 +1,5 @@
 section:nth-child(odd).faq .faq__accordion h3 {
-  background-color: #fff;
+  background-color: var(--background-primary-color)
 }
 
 section:nth-child(even).faq .faq__accordion h3 {

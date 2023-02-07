@@ -21,7 +21,7 @@
   --primary-color: #fff;
   --secondary-color: #06b7ff;
   --dark-color: #fff;
-  --btn-background: #fff;
+  --btn-background: #3d3d3d;
   --background-primary-color: #000;
   --background-secondary-color: #403f3f;
   --background-dark-color: #333;
@@ -478,6 +478,18 @@ button.hamburger svg {
   -o-border-radius: 50%;
 }
 
+section:nth-child(odd) .tab__lists li.active-tab,
+section:nth-child(odd) .tabs .content,
+section:nth-child(odd) .tab__lists li.active-tab:after {
+  background-color: var(--background-primary-color);
+}
+
+section:nth-child(even) .tab li.active-tab,
+section:nth-child(even) .tabs .content,
+section:nth-child(even) .tab__lists li.active-tab:after {
+  background-color: var(--background-secondary-color);
+}
+
 .tab__lists {
   max-width: 500px;
   display: flex;
@@ -493,7 +505,6 @@ button.hamburger svg {
   position: relative;
 }
 .tab__lists li.active-tab {
-  background-color: #fff;
   border-color: transparent;
 }
 .tab .tabs {
@@ -550,7 +561,7 @@ button.hamburger svg {
 }
 
 section:nth-child(odd).faq .faq__accordion h3 {
-  background-color: #fff;
+  background-color: var(--background-primary-color);
 }
 
 section:nth-child(even).faq .faq__accordion h3 {
@@ -626,15 +637,15 @@ section:nth-child(even).faq .faq__accordion h3 {
   grid-gap: 30px;
 }
 .portfolio .portfolio__content ul li {
-  box-shadow: 0 0 14px 2px #4b4949;
+  box-shadow: 0 0 14px 2px rgba(75, 73, 73, 0.1803921569);
   overflow: hidden;
   padding: 10px;
   position: relative;
 }
 .portfolio .portfolio__content ul li .caption {
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid var(--border-color);
   bottom: 0;
-  background-color: #fff;
+  background-color: var(--background-primary-color);
   font-family: "Ibarra Real Nova", serif;
   font-size: 26px;
   left: 0;
@@ -685,7 +696,7 @@ section:nth-child(even).faq .faq__accordion h3 {
   font-size: 3rem;
 }
 .weather__forecast ul li {
-  background: #fff;
+  background: var(--background-primary-color);
   padding: 20px;
   text-align: center;
 }
@@ -771,8 +782,8 @@ section.contact {
   width: 100%;
   margin-bottom: 20px;
   border: 0;
-  border: 2px solid #e6e9e9;
-  background-color: transparent;
+  border: 2px solid var(--border-color);
+  background-color: transparent !important;
 }
 .contact input:focus,
 .contact textarea:focus {
@@ -786,7 +797,6 @@ section.contact {
 .contact .input-row {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 40px;
 }
 
 .contact .inner-container {
@@ -837,6 +847,7 @@ section.todo {
 }
 .todo .form-wrap select {
   padding: 10px;
+  background-color: var(--background-primary-color);
 }
 
 .form-wrap form {
@@ -845,16 +856,27 @@ section.todo {
 }
 .form-wrap form input {
   padding: 10px;
+  background-color: var(--background-primary-color);
 }
 
 button.btn {
-  background: #fff;
+  background: var(--btn-background);
   padding: 5px 15px;
   border: 1px solid transparent;
 }
 button.btn:hover {
-  border-color: #fff;
+  border-color: var(--btn-background);
   background-color: #20e3b2;
+}
+
+section:nth-child(odd) input,
+section:nth-child(odd) textarea {
+  background-color: var(--background-primary-color);
+}
+
+section:nth-child(even) input,
+section:nth-child(even) textarea {
+  background-color: var(--background-secondary-color);
 }
 
 .todo-result {
@@ -866,7 +888,7 @@ button.btn:hover {
 .todo-result > div {
   margin-top: 10px;
   text-align: center;
-  background: #fff;
+  background: var(--background-secondary-color);
   position: relative;
   padding: 30px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -944,6 +966,7 @@ p.input-field {
 
 .footer {
   padding: 20px 0;
+  background-color: var(--background-primary-color);
 }
 .footer .social {
   margin-bottom: 0;
@@ -990,7 +1013,7 @@ p.input-field {
   --primary-color: #fff;
   --secondary-color: #06b7ff;
   --dark-color: #fff;
-  --btn-background: #fff;
+  --btn-background: #3d3d3d;
   --background-primary-color: #000;
   --background-secondary-color: #403f3f;
   --background-dark-color: #333;
@@ -1087,6 +1110,9 @@ a {
   }
   .todo-result {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .contact .input-row {
+    gap: 40px;
   }
 }
 @media only screen and (min-width: 768px) {
