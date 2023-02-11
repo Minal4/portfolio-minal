@@ -19,9 +19,6 @@ const Theme = () => {
         localStorage.setItem('toggle', JSON.stringify(toggleCheck))
 
     }, [theme])
-
-
-    console.log(theme, 'dark')
     return (
         <>
             <div className="toggle">

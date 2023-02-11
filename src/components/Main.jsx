@@ -18,6 +18,7 @@ import TodoList from '../pages/TodoList';
 import Weather from '../pages/Weather';
 import Tab from './React/Tab/Tab';
 import Theme from './Theme';
+import Home from '../pages/TMDB/Home';
 
 
 export default function Main() {
@@ -64,6 +65,7 @@ export default function Main() {
             <Route path='/todo' element={<TodoList />}></Route>
             <Route path='/weather' element={<Weather />}></Route>
             <Route path='/tab' element={<Tab />}></Route>
+            <Route path='/movie' element={<Home />}></Route>
           </Routes>
           <Footer />
         </HashRouter>

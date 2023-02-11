@@ -73,6 +73,7 @@ export default function Header() {
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/weather'}>Weather</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/menus'}>Restro</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/tab'}>Tabs</NavLink></li>
+                    <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/movie'}>TMDB</NavLink></li>
                   </ul>
                 </li>
                 <li><Theme /></li>
