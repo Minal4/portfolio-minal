@@ -1,11 +1,11 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Card = ({ movie }) => {
     return (
         <>
             <div className="card">
                 <div className="card__image">
-                    <a href="#"> <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="image" /></a>
+                    <Link to={`/details/${movie.id}`}> <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="image" /></Link>
                 </div>
                 <div className="card__content">
                     <div className="title">

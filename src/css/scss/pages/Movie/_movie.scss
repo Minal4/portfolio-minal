@@ -1,5 +1,5 @@
 section.movies {
-    padding: 0;
+    padding-top: 0;
 }
 
 .movies {
@@ -58,12 +58,22 @@ section.movies {
     }
 }
 
+// TRENDING
+
 .trending {
+    margin-top: 3rem;
+
     .swiper {
         background-image: url(../assets/images/chart.svg);
         background-position: 0% 90px;
         background-repeat: no-repeat;
-        padding: 0 2rem;
+        padding: 3rem 2rem;
+
+        .card {
+            &__image {
+                margin-bottom: 1rem;
+            }
+        }
 
         img {
             @include border(10px);
@@ -75,6 +85,144 @@ section.movies {
 
         .card__date {
             font-size: 0.8rem;
+        }
+    }
+}
+
+// Single Detail
+
+.single {
+    .banner {
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+
+        .back {
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        &::after {
+            content: "";
+            background: rgba(45, 28, 111, 0.8);
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+    }
+
+    &__poster {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 2rem 0;
+        position: relative;
+        z-index: 3;
+        grid-gap: 2rem;
+
+        .poster {
+            position: relative;
+        }
+
+        .status {
+            padding: 0.2rem 0.8rem;
+            background-color: var(--background-hover-button);
+            color: var(--primary-color);
+            font-style: italic;
+            width: auto;
+            display: inline-block;
+            @include border(45px);
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        img {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    }
+
+    &__content {
+        color: var(--primary-color);
+
+        .title {
+            font-size: 1.35rem;
+            font-weight: 700;
+
+            h2 {
+                font-family: 'Inter', sans-serif;
+            }
+
+            .lang {
+                text-transform: uppercase;
+            }
+        }
+
+        .popularity,
+        .duration {
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            @include flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .overview {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+
+            strong {
+                margin-bottom: 0.5rem;
+                display: block;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+// PROFILE
+
+.profile {
+    margin: 2rem 0 3rem;
+    color: var(--primary-color);
+    text-align: center;
+
+    &__img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        margin-bottom: 0.8rem;
+
+        img {
+            @include border(50%);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.trending {
+    .card {
+        @include transition(0.5s ease-in-out);
+
+        &:hover,
+        &:focus {
+            @include transform(scale(1.3))
         }
     }
 }

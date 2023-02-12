@@ -8,27 +8,29 @@ import { Autoplay } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
+
 
 const Home = () => {
     const [data, setData] = useState([]);
+    const [latest, setLatest] = useState([]);
     useEffect(() => {
         movieApi()
+        latestMovie()
     }, [])
 
-    const movieApi = async (title) => {
-        const api = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=fcbeecaa82658f6bf032028787c418e4&language=en-US`)
+    const movieApi = async () => {
+        const api = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=fcbeecaa82658f6bf032028787c418e4&language=en-US`)
         const data = await api.json();
         setData(data.results)
     }
 
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-        progressCircle.current.style.setProperty('--progress', 1 - progress);
-        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    };
+    const latestMovie = async () => {
+        const api = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=fcbeecaa82658f6bf032028787c418e4&language=en-US`)
+        const data = await api.json();
+        setLatest(data.results)
+    }
 
+    console.log(data, 'data')
     return (
         <section className='section movies'>
             <div className="banner">
@@ -40,11 +42,13 @@ const Home = () => {
             </div>
             <div className="container">
                 <div className="trending">
+                    <div className="section__heading">
+                        <h2>Now Playing</h2>
+                    </div>
                     <Swiper
-                        modules={[Autoplay]}
-                        onAutoplayTimeLeft={onAutoplayTimeLeft}
+                        // modules={[Autoplay]}
                         className="mySwiper"
-                        slidesPerView={7}
+                        slidesPerView={1}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -64,7 +68,39 @@ const Home = () => {
                         }}
                     >
                         {data.map((movie) => {
-                            return <SwiperSlide className="swiper-slide"><Card key={movie.id} movie={movie} /></SwiperSlide>
+                            return <SwiperSlide key={movie.id} className="swiper-slide"><Card movie={movie} /></SwiperSlide>
+                        })}
+                    </Swiper>
+                </div>
+
+                <div className="popular trending">
+                    <div className="section__heading">
+                        <h2>Upcoming</h2>
+                    </div>
+                    <Swiper
+                        modules={[Autoplay]}
+                        className="mySwiper"
+                        slidesPerView={1}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        spaceBetween={30}
+                        loop={true}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 2,
+                            },
+                            768: {
+                                slidesPerView: 4,
+                            },
+                            1024: {
+                                slidesPerView: 7,
+                            },
+                        }}
+                    >
+                        {latest.map((movie) => {
+                            return <SwiperSlide key={movie.id} className="swiper-slide"><Card movie={movie} /></SwiperSlide>
                         })}
                     </Swiper>
                 </div>

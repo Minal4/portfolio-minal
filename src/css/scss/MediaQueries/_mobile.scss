@@ -61,4 +61,13 @@
   .movies .banner__content h2 {
     font-size: 3.75rem;
   }
+
+  .single__poster {
+    grid-template-columns: 30% 1fr;
+
+    .single__content {
+      margin-top: 2rem;
+    }
+  }
+
 }
