@@ -58,11 +58,22 @@
     content: "";
   }
 
-  .movies .banner {
-    min-height: 420px;
-  }
-
   .single__content .title {
     font-size: 2rem;
+  }
+
+  .trending {
+    .card {
+      @include transition(0.5s ease-in-out);
+
+      &:hover,
+      &:focus {
+        @include transform(scale(1.3))
+      }
+    }
+  }
+
+  .trending .swiper {
+    padding: 3rem 2rem;
   }
 }

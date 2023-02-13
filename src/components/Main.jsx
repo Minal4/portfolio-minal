@@ -17,9 +17,9 @@ import 'aos/dist/aos.css';
 import TodoList from '../pages/TodoList';
 import Weather from '../pages/Weather';
 import Tab from './React/Tab/Tab';
-import Theme from './Theme';
 import Home from '../pages/TMDB/Home';
 import Details from '../pages/TMDB/Details';
+import SearchItem from '../pages/TMDB/SearchItem';
 
 
 export default function Main() {
@@ -67,6 +67,8 @@ export default function Main() {
             <Route path='/weather' element={<Weather />}></Route>
             <Route path='/tab' element={<Tab />}></Route>
             <Route path='/movie' element={<Home />}>
+            </Route>
+            <Route path='/searchitem' element={<SearchItem />}>
             </Route>
             <Route path='/details/:id' element={<Details />}></Route>
           </Routes>

@@ -123,8 +123,10 @@ h6 {
   }
 }
 
-input {
-  padding: 15px;
+input,
+textarea {
+  padding: 12px;
+  color: var(--dark-color);
 }
 
 .time.btn__link {

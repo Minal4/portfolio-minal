@@ -69,7 +69,7 @@ const Details = () => {
                     <Swiper
                         // modules={[Autoplay]}
                         className="mySwiper"
-                        slidesPerView={1}
+                        slidesPerView={2}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
