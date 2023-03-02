@@ -119,10 +119,7 @@ p.input-field {
 
 .completed {
     text-decoration: line-through;
-}
-
-.todo-result div.clicked {
-    background-color: antiquewhite;
+    background-color: antiquewhite !important;
 }
 
 .clicked.btn {

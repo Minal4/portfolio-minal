@@ -1,122 +1,55 @@
-import { forwardRef, useEffect, useRef } from 'react';
 import { AiFillEdit, AiOutlinePlusSquare } from 'react-icons/ai';
 
-// import db from '../firebase';
-// import { collection, addDoc, getDocs, doc, setDoc } from "firebase/firestore";
 
 
-const Field = forwardRef(({
-    input,
-    setInput,
-    todos,
-    setTodos,
-    option,
-    setOption,
-    edit,
-    showModal,
-    setShowModal,
-    updateText,
-    setUpdateText
-}, ref) => {
-
-    const activeRef = useRef(null);
-
-    useEffect(() => {
-        activeRef.current.focus();
-    }, [])
-
+const Field = ({ input, setInput, todos, setTodos, setCheck, check, setFiltered, modal, setUpdateInput, updateInput, itemIndex, setModal }) => {
     const changeHandler = (e) => {
-        setInput(e.target.value);
+        const { value } = e.target;
+        setInput(value)
     }
-
-    // useEffect(() => {
-    //     fetchPost();
-    // }, [])
-
-    // const fetchPost = async () => {
-
-    //     await getDocs(collection(db, "cities")) FIREBASE DATABASE
-    //         .then((querySnapshot) => {
-    //             const newData = querySnapshot.docs
-    //                 .map((doc) => ({ ...doc.data().todo }));
-    //             setTodos(newData);
-    //             console.log(newData, 'todo');
-    //         })
-
-    // }
-
-    const clickHandler = async (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
-        // await addDoc(collection(db, "cities"), { REALTIME DATABASE
-        //     todo: todos
-        // });
-        // try {
-        //     const docRef = await addDoc(collection(db, "todos"), {
-        //         todo: todos,
-        //     });
-        //     console.log("Document written with ID: ", docRef.id);
-        // } catch (e) {
-        //     console.error("Error adding document: ", e);
-        // }
-
         if (input !== '') {
-            setTodos([...todos, { text: input, completed: false, id: Date.now() }]);
-            // await fetch('https://todo-982fa-default-rtdb.firebaseio.com/todo.json', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(todos)
-            // });
-            setInput('');
-        } else {
-            return;
+            setTodos([...todos, { completed: false, text: input, id: Date.now() }])
+            setFiltered(todos)
         }
 
-        setShowModal(false)
-    }
-    console.log(todos, 'todos')
-
-    const selectHandler = (e) => {
-        setOption(e.target.value);
+        setInput('')
     }
 
     const updateHandler = (e) => {
-        e.preventDefault();
-        if (window.confirm('Are you sure??')) {
-            let updateData = todos.map((item) => {
-                if (item.id === edit) {
-                    return { ...item, text: updateText }
+        e.preventDefault()
+        setTodos(todos.map((todo) => {
+            if (todo.id === itemIndex) {
+                return {
+                    ...todo, text: updateInput
                 }
-                return item;
-            })
+            }
+            return todo
+        }))
 
-            setTodos(updateData)
-
-            setShowModal(false)
-
-            activeRef.current.focus()
-        }
+        setModal(false)
     }
+
     return (
         <div className='form-wrap'>
-            <form action="" method='POST'>
-                <input ref={activeRef} type="text" value={input} onChange={changeHandler} placeholder="Place your Todos.." className='input-field' />
-                <button onClick={clickHandler} type='submit' className='btn'> <AiOutlinePlusSquare /></button>
+            <form>
+                <input type="text" placeholder="Place your Todos.." className='input-field' value={input} onChange={changeHandler} />
+                <button type='submit' onClick={submitHandler} className='btn'> <AiOutlinePlusSquare /></button>
             </form>
-            <div className={`modal ${showModal && 'show-modal'}`} >
+            <div className={`modal ${modal && 'show-modal'}`} >
                 <form>
-                    <input ref={ref} type="text" value={updateText} onChange={(e) => setUpdateText(e.target.value)} className='input-field' />
-                    <button onClick={updateHandler} type='submit' className='btn'> <AiFillEdit /></button>
+                    <input type="text" value={updateInput} onChange={(e) => setUpdateInput(e.target.value)} className='input-field' />
+                    <button type='submit' onClick={updateHandler} className='btn'> <AiFillEdit /></button>
                 </form>
             </div>
-            <select onChange={selectHandler} name="todo" value={option ? option : ''}>
+            <select name="todo" value={check} onChange={(e) => setCheck(e.target.value)}>
                 <option value="all">all</option>
                 <option value="completed">Completed</option>
                 <option value="uncompleted">Not completed</option>
             </select>
-        </div>
+        </div >
     )
-})
+}
 
 export default Field
