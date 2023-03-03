@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from './Hero';
 import Portfolio from './Portfolio';
 import Faq from './Faq';
@@ -20,9 +20,14 @@ import Tab from './React/Tab/Tab';
 import Home from '../pages/TMDB/Home';
 import Details from '../pages/TMDB/Details';
 import SearchItem from '../pages/TMDB/SearchItem';
+import Shop from '../pages/eCommerce/Shop';
+import CartPage from '../pages/eCommerce/CartPage';
 
 
 export default function Main() {
+  const [shopData, setShopData] = useState([])
+  const [fakeEntry, setFakeEntry] = useState(JSON.parse(localStorage.getItem('product')) || [])
+  const [quantity, setQuantity] = useState(1)
   const scrollBtn = useRef();
   useEffect(() => {
     AOS.init();
@@ -42,16 +47,34 @@ export default function Main() {
     })
   }, [])
 
+  const fetchApi = async () => {
+    let data = await fetch("https://fakestoreapi.com/products");
+    let res = await data.json();
+    setShopData(res)
+  }
+  useEffect(() => {
+    fetchApi()
+  }, [])
 
+
+  const cartHandler = (data) => {
+    setFakeEntry([...fakeEntry, { ...data, quantity: 1 }])
+  }
 
   const UpArrow = () => {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
   }
+
+  localStorage.setItem('product', JSON.stringify(fakeEntry));
+
+  useEffect(() => {
+    JSON.parse(localStorage.getItem('product'))
+  }, [fakeEntry])
   return (
     <>
       <div className="App">
         <HashRouter>
-          <Header />
+          <Header fakeEntry={fakeEntry} />
           <div className="scroll-up" ref={scrollBtn} onClick={UpArrow}><BsFillArrowUpCircleFill /></div>
           <Routes>
             <Route path='/' element={<HomePage />}></Route>
@@ -64,6 +87,8 @@ export default function Main() {
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/todo' element={<TodoList />}></Route>
+            <Route path='/shop' element={<Shop shopData={shopData} cartHandler={cartHandler} fakeEntry={fakeEntry} />}></Route>
+            <Route path='/cartpage' element={<CartPage fakeEntry={fakeEntry} setFakeEntry={setFakeEntry} quantity={quantity} setQuantity={setQuantity} />}></Route>
             <Route path='/weather' element={<Weather />}></Route>
             <Route path='/tab' element={<Tab />}></Route>
             <Route path='/movie' element={<Home />}>

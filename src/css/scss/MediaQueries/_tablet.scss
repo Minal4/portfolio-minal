@@ -76,4 +76,8 @@
   .trending .swiper {
     padding: 3rem 2rem;
   }
+
+  .shop__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

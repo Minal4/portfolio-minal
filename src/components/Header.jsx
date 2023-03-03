@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiChevronDown } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import Theme from './Theme';
 
-export default function Header() {
+export default function Header({ fakeEntry, showCartHandler }) {
   const [active, setActive] = useState(false);
   const [dateTime, setTime] = useState(new Date());
   const [subMenu, setSubMenu] = useState(false);
@@ -67,8 +68,9 @@ export default function Header() {
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Projects</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
-                <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link" >React</a><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />
+                <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link" >App</a><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />
                   <ul className={`sub-menu ${subMenu ? 'show-sub' : ''}`}>
+                    <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/shop'}>eCommerce</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/todo'}>Todo list</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/weather'}>Weather</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/menus'}>Restro</NavLink></li>
@@ -77,6 +79,7 @@ export default function Header() {
                   </ul>
                 </li>
                 <li><Theme /></li>
+                <li style={{ cursor: 'pointer', display: 'flex', gap: '0.5rem', position: 'relative' }} onClick={showCartHandler}><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/cartpage'}><AiOutlineShoppingCart /> <span className='number'>{fakeEntry.length > 0 ? fakeEntry.length : '0'}</span></NavLink></li>
                 <li className="nav-item nav-link time btn__link ">{` ${dateTime.toLocaleTimeString()}`}</li>
               </ul>
             </div>
