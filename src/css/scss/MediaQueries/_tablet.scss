@@ -80,4 +80,9 @@
   .shop__wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .single-product {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+  }
 }

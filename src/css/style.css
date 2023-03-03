@@ -1326,6 +1326,26 @@ span.number {
   -o-border-radius: 5px;
 }
 
+.single-product {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.single-product .single__image {
+  overflow: hidden;
+}
+.single-product .single__image img {
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.single-product .single__image:hover img {
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 .section {
   padding-bottom: clamp(42px, 5.5vw, 120px);
   padding-top: clamp(42px, 5.5vw, 120px);
@@ -1482,6 +1502,10 @@ a {
   }
   .shop__wrapper {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .single-product {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
   }
 }
 @media only screen and (min-width: 1024px) {

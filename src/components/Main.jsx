@@ -3,7 +3,7 @@ import Hero from './Hero';
 import Portfolio from './Portfolio';
 import Faq from './Faq';
 import Contact from './Contact';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import HomePage from './HomePage';
@@ -22,6 +22,7 @@ import Details from '../pages/TMDB/Details';
 import SearchItem from '../pages/TMDB/SearchItem';
 import Shop from '../pages/eCommerce/Shop';
 import CartPage from '../pages/eCommerce/CartPage';
+import SingleProduct from '../pages/eCommerce/SingleProduct';
 
 
 export default function Main() {
@@ -87,7 +88,9 @@ export default function Main() {
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/todo' element={<TodoList />}></Route>
-            <Route path='/shop' element={<Shop shopData={shopData} cartHandler={cartHandler} fakeEntry={fakeEntry} />}></Route>
+            <Route path='/shop/' element={<Shop shopData={shopData} cartHandler={cartHandler} fakeEntry={fakeEntry} />}>
+            </Route>
+            <Route path='/singleProduct/:id' element={<SingleProduct cartHandler={cartHandler} />}></Route>
             <Route path='/cartpage' element={<CartPage fakeEntry={fakeEntry} setFakeEntry={setFakeEntry} quantity={quantity} setQuantity={setQuantity} />}></Route>
             <Route path='/weather' element={<Weather />}></Route>
             <Route path='/tab' element={<Tab />}></Route>

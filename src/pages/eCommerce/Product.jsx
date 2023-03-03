@@ -5,7 +5,7 @@ const Product = ({ data, cartHandler }) => {
 
     return (
         <>
-            <Link>
+            <Link to={`/singleProduct/${data.id}`}>
                 <div className="shop__image">
                     <img src={data.image} alt={data.title} />
                 </div>

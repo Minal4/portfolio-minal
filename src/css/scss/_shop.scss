@@ -71,3 +71,22 @@ span.number {
         }
     }
 }
+
+.single-product {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    .single__image {
+        overflow: hidden;
+
+        img {
+            @include transition(0.5s ease-in-out)
+        }
+
+        &:hover {
+            img {
+                @include transform(scale(1.2))
+            }
+        }
+    }
+}
