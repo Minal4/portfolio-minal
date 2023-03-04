@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 
 export default function Contact() {
-  const [error, setError] = useState(false);
+  const [error, setError] = useState({});
   const [check, setCheck] = useState({
     firstName: '',
     lastName: '',
@@ -15,18 +15,26 @@ export default function Contact() {
     setCheck({ ...check, [name]: value });
   }
 
-  const handleOnClick = (e) => {
-    e.preventDefault();
+  const validateForm = () => {
+    let err = {};
     if (check.firstName === '') {
-      setError(true)
-    } else {
-      setError(false)
+      err.firstName = 'first name should not be empty'
     }
     if (check.lastName === '') {
-      setError(true)
-    } else {
-      setError(false)
+      err.lastName = 'last name should not be empty'
     }
+    if (check.email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) {
+      err.email = 'Valid Email Required'
+    }
+    if (check.message === '') {
+      err.message = 'Message should not be empty'
+    }
+    setError({ ...err })
+  }
+  console.log(error, 'check')
+  const handleOnClick = (e) => {
+    e.preventDefault();
+    validateForm()
   }
 
 
@@ -50,26 +58,26 @@ export default function Contact() {
                 <div className="input-row">
                   <div className="input-group">
                     <label>First Name</label>
-                    <input type="text" name="firstName" value={check.firstName} required onChange={(e) => handleOnChange(e)} />
-                    {error && <div className="error">Field Required</div>}
+                    <input type="text" name="firstName" value={check.firstName} onChange={(e) => handleOnChange(e)} />
+                    {error.firstName}
                   </div>
                   <div className="input-group">
                     <label>Last Name</label>
-                    <input type="text" name="lastName" value={check.lastName} required onChange={(e) => handleOnChange(e)} />
-                    {/* {error && <div className="error">Field Required</div>} */}
+                    <input type="text" name="lastName" value={check.lastName} onChange={(e) => handleOnChange(e)} />
+                    {error.lastName}
 
                   </div>
                 </div>
                 <div className="input-group">
                   <label>Email</label>
-                  <input type="email" name="email" value={check.email} required onChange={(e) => handleOnChange(e)} />
-                  {/* {error && <div className="error">Field Required</div>} */}
+                  <input type="text" name="email" value={check.email} onChange={(e) => handleOnChange(e)} />
+                  {error.email}
+
                 </div>
                 <div className="input-group">
                   <label>Message</label>
-                  <textarea name="message" value={check.message} required onChange={(e) => handleOnChange(e)} />
-                  {/* {error && <div className="error">Field Required</div>} */}
-
+                  <textarea name="message" value={check.message} onChange={(e) => handleOnChange(e)} />
+                  {error.message}
                 </div>
                 <div className="btn">
                   <Button type="button" title='Submit' />

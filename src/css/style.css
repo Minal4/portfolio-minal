@@ -974,6 +974,11 @@ section.contact {
   padding-top: 0;
 }
 
+.contact input:invalid {
+  background-color: ivory;
+  border: 2px solid red;
+  border-radius: 5px;
+}
 .contact .section__heading {
   text-align: left;
 }
@@ -1000,11 +1005,13 @@ section.contact {
   width: 100%;
   margin-bottom: 15px;
 }
+.contact .input-group {
+  margin-bottom: 20px;
+}
 .contact input,
 .contact textarea {
   padding: 15px;
   width: 100%;
-  margin-bottom: 20px;
   border: 0;
   border: 2px solid var(--border-color);
   background-color: transparent !important;
