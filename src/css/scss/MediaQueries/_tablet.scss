@@ -85,4 +85,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 3.5rem;
   }
+
+  .faq .inner-container {
+    grid-template-columns: repeat(2, 1fr);
+
+    .skills {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
 }

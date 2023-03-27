@@ -76,4 +76,8 @@
   .cart-wrapper {
     grid-template-columns: 70% 1fr
   }
+
+  .faq .inner-container .skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

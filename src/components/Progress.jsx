@@ -1,23 +1,77 @@
 import React from 'react';
-import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-// core version + navigation, pagination modules:
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { AiFillHtml5, AiFillGithub } from 'react-icons/ai';
+import { DiCss3, DiSass, DiJavascript, DiReact } from 'react-icons/di'
+import { SiTailwindcss, SiAdobephotoshop, SiFigma, SiWordpress } from 'react-icons/si'
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-
-
-// import required modules
-import { Navigation, Autoplay } from "swiper";
 
 export default function Progress() {
 
   return (
     <div className="stats" >
-      <Swiper className="mySwiper" navigation={true} modules={[Navigation, Autoplay]} loop={true} autoplay={{
+      <ul className="skills">
+        <li>
+          <SiAdobephotoshop />
+          <h2 className="title">
+            Photoshop
+          </h2>
+        </li>
+        <li>
+          <SiFigma />
+          <h2 className="title">
+            Figma
+          </h2>
+        </li>
+        <li>
+          <AiFillHtml5 />
+          <h2 className="title">
+            HTML5
+          </h2>
+        </li>
+        <li>
+          <DiCss3 />
+          <h2 className="title">
+            CSS3
+          </h2>
+        </li>
+        <li>
+          <DiSass />
+          <h2 className="title">
+            Sass
+          </h2>
+        </li>
+        <li>
+          <SiTailwindcss />
+          <h2 className="title">
+            Tailwind
+          </h2>
+        </li>
+        <li>
+          <DiJavascript />
+          <h2 className="title">
+            Javascript
+          </h2>
+        </li>
+        <li>
+          <DiReact />
+          <h2 className="title">
+            React
+          </h2>
+        </li>
+        <li>
+          <SiWordpress />
+          <h2 className="title">
+            Wordpress
+          </h2>
+        </li>
+        <li>
+          <AiFillGithub />
+          <h2 className="title">
+            Git
+          </h2>
+        </li>
+      </ul>
+      {/* <Swiper className="mySwiper" navigation={true} modules={[Navigation, Autoplay]} loop={true} autoplay={{
         delay: 2500,
         disableOnInteraction: false,
       }}>
@@ -39,7 +93,7 @@ export default function Progress() {
         <SwiperSlide className="swiper-slide"><h3>React (Learning)</h3>
           <CircularProgressbar value={25} text={`25%`} /></SwiperSlide>
 
-      </Swiper>
+      </Swiper> */}
 
     </div >
   );

@@ -2,17 +2,16 @@ import { AiFillDelete } from 'react-icons/ai';
 import { AiFillEdit } from 'react-icons/ai';
 import { TiTickOutline } from 'react-icons/ti';
 
-const Todo = ({ todos, setTodos, filtered, setModal, modal, setItemIndex, setUpdateInput }) => {
-
-    const deleteHandler = (id) => {
-        let delItem = todos.filter((todo) => {
+const Todo = ({ todos, setTodos, filtered, setModal, setUpdateValue, setUpdatedIndex }) => {
+    const delteHandler = (id) => {
+        setTodos(todos.filter((todo) => {
             return todo.id !== id
-        })
-        setTodos(delItem)
+        }))
     }
-    const completeHandler = (index) => {
+
+    const completeHandler = (id) => {
         setTodos(todos.map((todo) => {
-            if (todo.id === index) {
+            if (todo.id === id) {
                 return {
                     ...todo, completed: !todo.completed
                 }
@@ -21,12 +20,12 @@ const Todo = ({ todos, setTodos, filtered, setModal, modal, setItemIndex, setUpd
         }))
     }
 
-    const editHandler = (id) => {
-        setItemIndex(id);
-        let updateText = todos.find((todo) => {
+    const toggleHandler = (id) => {
+        setUpdatedIndex(id);
+        let newArr = todos.find(todo => {
             return todo.id === id
         })
-        setUpdateInput(updateText.text)
+        setUpdateValue(newArr.text)
         setModal(true)
     }
 
@@ -34,19 +33,19 @@ const Todo = ({ todos, setTodos, filtered, setModal, modal, setItemIndex, setUpd
         <div className='result-wrapper'>
             <h2>Result Below Here!!</h2>
             <div className='todo-result'>
-                {filtered.map((todo) => {
-                    return (
-                        <div key={todo.id} className={todo.completed ? 'completed' : ''}>
-                            <p className='input-field'>{todo.text} </p>
-                            <div className="buttons">
-                                <button className='btn' type='submit' onClick={() => completeHandler(todo.id)}><TiTickOutline /></button>
-                                <button className='btn' type='submit' onClick={() => deleteHandler(todo.id)}> <AiFillDelete /></button>
-                                <button className='btn' type='submit' onClick={() => editHandler(todo.id)}> <AiFillEdit /></button>
-                            </div>
-                        </div>
-                    )
-                })}
-
+                {
+                    filtered.map(item => {
+                        return (
+                            <div key={item.id}>
+                                <p className={`input-field ${item.completed ? 'completed' : ''}`}>{item.text}</p>
+                                <div className="buttons">
+                                    <button className='btn' onClick={() => completeHandler(item.id)} type='submit'><TiTickOutline /></button>
+                                    <button className='btn' onClick={() => delteHandler(item.id)} type='submit'> <AiFillDelete /></button>
+                                    <button className='btn' onClick={() => toggleHandler(item.id)} type='submit'> <AiFillEdit /></button>
+                                </div>
+                            </div>)
+                    })
+                }
 
             </div>
         </div >

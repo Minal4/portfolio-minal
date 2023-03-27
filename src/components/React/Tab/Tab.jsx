@@ -13,10 +13,10 @@ const Tab = () => {
         const store = await res.json();
         setDatas(store)
     }
-
     const showHandler = (i) => {
         setActive(i)
     }
+
     return (
         <section className='section tab'>
             <div className="container">
@@ -29,13 +29,15 @@ const Tab = () => {
                     {datas.map((data, index) => {
                         if (active === index) {
                             return (
-                                <div className="content" key={data.id}>
-                                    <h2 className='company'>{data.company} || {data.dates}</h2>
+                                <div className="content" key={index}>
+                                    <h2 className='company'>{data.company}</h2>
                                     <h2 className='title'>{data.title}</h2>
                                     <ul>
-                                        {data.duties.map((duty, index) => {
-                                            return <li key={index}>{duty}</li>
-                                        })}
+                                        {
+                                            data.duties.map((duty, index) => {
+                                                return <p key={index}>{duty}</p>
+                                            })
+                                        }
                                     </ul>
                                 </div>
                             )

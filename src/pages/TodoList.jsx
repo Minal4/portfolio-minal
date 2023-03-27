@@ -3,48 +3,52 @@ import Field from './Field'
 import Todo from './Todo'
 
 const TodoList = () => {
-    const [input, setInput] = useState('');
-    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todo')) || []);
-    const [filtered, setFiltered] = useState([]);
-    const [check, setCheck] = useState(JSON.parse(localStorage.getItem('check')) || 'all');
-    const [modal, setModal] = useState(false);
-    const [updateInput, setUpdateInput] = useState('');
-    const [itemIndex, setItemIndex] = useState(null);
+    const [todos, setTodos] = useState([])
+    const [input, setInput] = useState('')
+    const [option, setOption] = useState('all')
+    const [filtered, setFiltered] = useState([])
+    const [updatedIndex, setUpdatedIndex] = useState(null)
+    const [modal, setModal] = useState(false)
+    const [updateValue, setUpdateValue] = useState('')
 
-    const filterFunc = () => {
-        switch (check) {
+    const filteredOption = () => {
+        switch (option) {
             case 'completed':
-                setFiltered(todos.filter((todo) => todo.completed === true));
+                setFiltered(todos.filter(todo => todo.completed === true))
                 break;
             case 'uncompleted':
-                setFiltered(todos.filter((todo) => todo.completed === false));
+                setFiltered(todos.filter(todo => todo.completed === false))
                 break;
-            default:
-                return setFiltered(todos)
+            default: setFiltered(todos)
         }
     }
     useEffect(() => {
-        if (todos !== null) {
-            JSON.parse(localStorage.getItem('todo'))
-        }
-    }, [])
-
-    useEffect(() => {
-        filterFunc()
-        saveLocal()
-    }, [todos, check])
-
-    const saveLocal = () => {
-        localStorage.setItem('todo', JSON.stringify(todos))
-        localStorage.setItem('check', JSON.stringify(check))
-    }
+        filteredOption()
+    }, [todos, option])
 
     return (
         <section className='section todo'>
             <div className="container">
                 <div className="section__heading"><h2>Todo List</h2></div>
-                <Field setInput={setInput} input={input} todos={todos} setTodos={setTodos} setCheck={setCheck} check={check} setFiltered={setFiltered} modal={modal} setModal={setModal} updateInput={updateInput} setUpdateInput={setUpdateInput} itemIndex={itemIndex} />
-                <Todo todos={todos} setTodos={setTodos} filtered={filtered} setModal={setModal} modal={modal} setItemIndex={setItemIndex} setUpdateInput={setUpdateInput} />
+                <Field
+                    todos={todos}
+                    setTodos={setTodos}
+                    input={input}
+                    setInput={setInput}
+                    option={option}
+                    modal={modal}
+                    setModal={setModal}
+                    setOption={setOption}
+                    updatedIndex={updatedIndex}
+                    setUpdateValue={setUpdateValue}
+                    updateValue={updateValue} />
+                <Todo
+                    todos={todos}
+                    setTodos={setTodos}
+                    setUpdateValue={setUpdateValue}
+                    setUpdatedIndex={setUpdatedIndex}
+                    setModal={setModal}
+                    filtered={filtered} />
             </div>
         </section>
     )

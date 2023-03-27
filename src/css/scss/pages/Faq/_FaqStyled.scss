@@ -20,33 +20,6 @@ section:nth-child(even).faq .faq__accordion h3 {
   .highlight {
     padding: 0 10px;
   }
-
-  .stats {
-
-    .swiper-slide {
-
-      &:hover,
-      &:focus {
-        cursor: url(../assets/images/arrow-drag.png), auto
-      }
-    }
-
-    h3 {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 20px;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      @include transform(translateY(100%));
-    }
-  }
-
-  .CircularProgressbar .CircularProgressbar-path {
-    animation: slideGradient 20s ease-in-out infinite;
-    stroke: rgba(0, 168, 151, 1);
-  }
 }
 
 .faq__accordion {
@@ -70,23 +43,43 @@ section:nth-child(even).faq .faq__accordion h3 {
   }
 }
 
-.stats {
-  li {
-    margin-bottom: 30px;
+.skills {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr;
+  gap: 5px;
 
-    h3 {
-      font-size: 1.5rem;
+  li {
+    color: var(--color-light);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 0.7rem;
+    background: var(--dark-color);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    @include transition(0.5s ease-in-out);
+
+    &:hover {
+      color: var(--dark-color);
+      flex: 5;
+      @include transform(scale(1.1));
+      background: var(--background-secondary-color);
+
+    }
+
+    h2 {
+      font-size: 0.8rem;
       font-family: "Montserrat", sans-serif;
     }
   }
 }
 
 .faq .inner-container {
-  display: flex;
+  display: grid;
   gap: 30px;
-  flex-direction: column;
+  grid-template-columns: 1fr;
 
-  >div {
-    width: 100%;
-  }
 }

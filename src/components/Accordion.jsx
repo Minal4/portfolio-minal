@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 export default function Accordion({ item }) {
 
   const [active, setActive] = useState(false);
-  
+
   return (
     <div className="faq__accordion">
       <h3 onClick={() => setActive(!active)}>

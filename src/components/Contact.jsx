@@ -31,7 +31,6 @@ export default function Contact() {
     }
     setError({ ...err })
   }
-  console.log(error, 'check')
   const handleOnClick = (e) => {
     e.preventDefault();
     validateForm()
