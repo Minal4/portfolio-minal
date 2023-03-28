@@ -1,10 +1,8 @@
-import { useRef } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 
 export default function Accordion({ item, index, onToggle, active }) {
 
-  const answerHeight = useRef(null)
   return (
     <div className="faq__accordion">
       <h3 onClick={onToggle}>
