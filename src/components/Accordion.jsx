@@ -1,18 +1,17 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 
-export default function Accordion({ item }) {
+export default function Accordion({ item, index, onToggle, active }) {
 
-  const [active, setActive] = useState(false);
-
+  const answerHeight = useRef(null)
   return (
     <div className="faq__accordion">
-      <h3 onClick={() => setActive(!active)}>
+      <h3 onClick={onToggle}>
         {item.question}{' '}
-        <span>{active ? <FaChevronUp /> : <FaChevronDown />}</span>
+        <span>{active === index ? <FaChevronUp /> : <FaChevronDown />}</span>
       </h3>
-      {active && <p className={active ? 'active' : ''}>{item.answer}</p>}
+      <p className={`answer ${active === index ? 'active' : ''}`}>{item.answer}</p>
     </div>
   );
 };

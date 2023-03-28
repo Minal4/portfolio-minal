@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Accordion from './Accordion';
+
 import Progress from './Progress';
 
 export default function Faq() {
@@ -17,6 +19,15 @@ export default function Faq() {
     },
   ];
 
+  const [active, setActive] = useState(0);
+
+  const clickHandler = (i) => {
+    if (active === i) {
+      setActive('0')
+    }
+    setActive(i)
+  }
+
   return (
     <section className="faq section">
       <div className="container">
@@ -28,7 +39,7 @@ export default function Faq() {
         <div className="inner-container">
           <div className="faq-content">
             <div className="faq__accordion">
-              {questions.map((item, index) => <Accordion key={index} item={item} />)}
+              {questions.map((item, index) => <Accordion key={index} item={item} index={index} onToggle={() => clickHandler(index)} active={active} />)}
             </div>
           </div>
           <div className="progress">

@@ -22,6 +22,18 @@ section:nth-child(even).faq .faq__accordion h3 {
   }
 }
 
+.answer {
+  height: 0;
+  overflow: hidden;
+  @include transition(height 0.5s ease-in-out);
+}
+
+.answer.active {
+  @include transition(height 0.5s ease-in-out);
+  padding: 15px;
+  height: auto;
+}
+
 .faq__accordion {
   h3 {
     padding: 20px;
@@ -39,7 +51,6 @@ section:nth-child(even).faq .faq__accordion h3 {
 
   p {
     border: 1px solid #ebebeb;
-    padding: 15px;
   }
 }
 

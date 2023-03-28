@@ -679,6 +679,22 @@ section:nth-child(even).faq .faq__accordion h3 {
 .faq .highlight {
   padding: 0 10px; }
 
+.answer {
+  height: 0;
+  overflow: hidden;
+  -moz-transition: height 0.5s ease-in-out;
+  -o-transition: height 0.5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out; }
+
+.answer.active {
+  -moz-transition: height 0.5s ease-in-out;
+  -o-transition: height 0.5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+  padding: 15px;
+  height: auto; }
+
 .faq__accordion h3 {
   padding: 20px;
   cursor: pointer;
@@ -690,8 +706,7 @@ section:nth-child(even).faq .faq__accordion h3 {
 .faq__accordion:not(:last-child) {
   margin-bottom: 20px; }
 .faq__accordion p {
-  border: 1px solid #ebebeb;
-  padding: 15px; }
+  border: 1px solid #ebebeb; }
 
 .skills {
   display: grid;
