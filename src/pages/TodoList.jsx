@@ -3,9 +3,9 @@ import Field from './Field'
 import Todo from './Todo'
 
 const TodoList = () => {
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todo')) || [])
     const [input, setInput] = useState('')
-    const [option, setOption] = useState('all')
+    const [option, setOption] = useState(JSON.parse(localStorage.getItem('option')) || 'all')
     const [filtered, setFiltered] = useState([])
     const [updatedIndex, setUpdatedIndex] = useState(null)
     const [modal, setModal] = useState(false)
@@ -22,6 +22,10 @@ const TodoList = () => {
             default: setFiltered(todos)
         }
     }
+
+    localStorage.setItem('todo', JSON.stringify(todos));
+    localStorage.setItem('option', JSON.stringify(option));
+
     useEffect(() => {
         filteredOption()
     }, [todos, option])

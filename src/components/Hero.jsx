@@ -21,7 +21,7 @@ export default function Hero() {
                         <div className="about__content">
                             <p>Hello, I'm Minal. My relationship with Web Design started at a
                                 young age, and has become my life-long love. On this website,
-                                you'll discover some of my most changeling and intimate design
+                                you'll discover some of my most challenging and intimate design
                                 I've taken date.</p>
                             <div className="excerpt-btn">
                                 <Button title='Contact us' />
