@@ -2,51 +2,45 @@ import { AiFillDelete } from 'react-icons/ai';
 import { AiFillEdit } from 'react-icons/ai';
 import { TiTickOutline } from 'react-icons/ti';
 
-const Todo = ({ todos, setTodos, filtered, setModal, setUpdateValue, setUpdatedIndex }) => {
-    const delteHandler = (id) => {
-        setTodos(todos.filter((todo) => {
-            return todo.id !== id
+const Todo = ({ todos, setTodos, filtered, handleOnEdit }) => {
+    const handleOnDelete = (id) => {
+        setTodos(todos.filter((todoDelete, i) => {
+            return todoDelete.id !== id
         }))
     }
 
-    const completeHandler = (id) => {
-        setTodos(todos.map((todo) => {
+    const handleOnCheck = (id) => {
+        let checkTodos = todos.map((todo, i) => {
             if (todo.id === id) {
-                return {
-                    ...todo, completed: !todo.completed
-                }
+                return { ...todo, completed: !todo.completed }
             }
-            return todo
-        }))
-    }
-
-    const toggleHandler = (id) => {
-        setUpdatedIndex(id);
-        let newArr = todos.find(todo => {
-            return todo.id === id
+            return todo;
         })
-        setUpdateValue(newArr.text)
-        setModal(true)
-    }
 
+        setTodos(checkTodos)
+    }
     return (
         <div className='result-wrapper'>
-            <h2>Result Below Here!!</h2>
+            {todos.length > 0 &&
+                <h2>Result Below Here!!</h2>
+            }
             <div className='todo-result'>
                 {
-                    filtered.map(item => {
-                        return (
-                            <div key={item.id}>
-                                <p className={`input-field ${item.completed ? 'completed' : ''}`}>{item.text}</p>
-                                <div className="buttons">
-                                    <button className='btn' onClick={() => completeHandler(item.id)} type='submit'><TiTickOutline /></button>
-                                    <button className='btn' onClick={() => delteHandler(item.id)} type='submit'> <AiFillDelete /></button>
-                                    <button className='btn' onClick={() => toggleHandler(item.id)} type='submit'> <AiFillEdit /></button>
+                    filtered.map((todo, i) => {
+                        if (todo.text !== '') {
+                            return (
+                                <div key={todo.id}>
+                                    <p className="input-field">{todo.text}</p>
+                                    <div className="buttons">
+                                        <button className={`btn ${todo.completed === true ? 'completed' : ''}`} onClick={() => handleOnCheck(todo.id)} type='submit'><TiTickOutline /></button>
+                                        <button className='btn' onClick={() => handleOnDelete(todo.id)} type='submit'> <AiFillDelete /></button>
+                                        <button className='btn' onClick={() => handleOnEdit(todo.id)} type='submit'> <AiFillEdit /></button>
+                                    </div>
                                 </div>
-                            </div>)
+                            )
+                        }
                     })
                 }
-
             </div>
         </div >
     )
