@@ -41,6 +41,12 @@ const TodoList = () => {
         }
     }
 
+<<<<<<< HEAD
+=======
+    localStorage.setItem('todo', JSON.stringify(todos));
+    localStorage.setItem('option', JSON.stringify(option));
+
+>>>>>>> a2c23c557c46b1b34ec75227295f6df231add3ef
     useEffect(() => {
         filterOption()
     }, [todos, option])
