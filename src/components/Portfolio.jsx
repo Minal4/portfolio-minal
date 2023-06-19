@@ -16,6 +16,8 @@ import Lyna from '../assets/images/lyna-pro.jpg';
 import Rhythmic from '../assets/images/rhythmic-pro.jpg';
 import Visionart from '../assets/images/visionart-pro.jpg';
 import Artsylens from '../assets/images/artsylens-pro.jpg';
+import Drinkify from '../assets/images/drinkify.png';
+import Outwit from '../assets/images/outwit.png';
 
 export default function Portfolio() {
   return (
@@ -30,6 +32,13 @@ export default function Portfolio() {
           data-aos-easing="linear"
           data-aos-duration="1000">
           <ul>
+            <li>
+              <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/drinkify/">
+                <img src={Drinkify} alt="Dark" />
+                <div className="caption">Drinkify</div>
+              </a>
+              <p></p>
+            </li>
             <li>
               <a target="_blank" rel='noopener noreferrer' href="https://catchthemes.com/demo/abletone-dark/">
                 <img src={Abletone} alt="Dark" />
@@ -132,6 +141,13 @@ export default function Portfolio() {
                 <img src={Visionart} alt="Visionart" />
                 <div className="caption">Visionart Pro</div>
               </a>
+            </li>
+            <li>
+              <a target="_blank" rel='noopener noreferrer' href="https://fse.catchthemes.com/outwit/">
+                <img src={Outwit} alt="Dark" />
+                <div className="caption">Outwtt</div>
+              </a>
+              <p></p>
             </li>
           </ul>
         </div>
