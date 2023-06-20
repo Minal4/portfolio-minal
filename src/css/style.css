@@ -137,7 +137,7 @@ textarea {
   text-align: center;
   border-radius: 0;
   padding: 2px 14px;
-  min-width: 90px; }
+  min-width: 100px; }
 
 .scroll-up {
   position: fixed;
@@ -768,11 +768,11 @@ section:nth-child(even).faq .faq__accordion h3 {
       -moz-transform: translateY(100%);
       width: 100%;
       z-index: 9; }
-    .portfolio .portfolio__content ul li a {
+    .portfolio .portfolio__content ul li .project {
       display: block; }
-      .portfolio .portfolio__content ul li a:hover img {
+      .portfolio .portfolio__content ul li .project:hover img {
         transform: scale(1.1); }
-      .portfolio .portfolio__content ul li a img {
+      .portfolio .portfolio__content ul li .project img {
         transition: 0.3s ease-in-out;
         width: 100%; }
     .portfolio .portfolio__content ul li:hover .caption {
