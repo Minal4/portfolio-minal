@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Abletone from '../assets/images/abletone-dark.jpg';
 import SimClick from '../assets/images/simClick.jpg';
 import Biz from '../assets/images/biz.jpg';
@@ -20,6 +20,65 @@ import Drinkify from '../assets/images/drinkify.png';
 import Outwit from '../assets/images/outwit.png';
 
 export default function Portfolio() {
+
+  const [datas, setDatas] = useState();
+  let portfolioData = [
+    {
+      id: 1,
+      link: 'https://fse.catchthemes.com/drinkify/',
+      title: 'Drinkify',
+      image: '../assets/images/drinkify.png'
+    },
+    {
+      id: 2,
+      link: 'https://fse.catchthemes.com/outwit/',
+      title: 'OutWit',
+      image: '../assets/images/outwit.png'
+    },
+    {
+      id: 3,
+      link: 'https://fse.catchthemes.com/artsylens-pro/',
+      title: 'Atstsylens',
+      image: '../assets/images/artsylens.png'
+    },
+    {
+      id: 4,
+      link: 'https://fse.catchthemes.com/visionart-pro/',
+      title: 'Visionart',
+      image: '../assets/images/visionart-pro.jpg'
+    },
+    {
+      id: 5,
+      link: 'https://fse.catchthemes.com/rhythimic-pro/',
+      title: 'Rhythmic',
+      image: '../assets/images/rhythmic-pro.jpg'
+    },
+    {
+      id: 6,
+      link: 'https://fse.catchthemes.com/lyna-pro',
+      title: 'Lyna',
+      image: '../assets/images/lyna-pro.jpg'
+    },
+    {
+      id: 7,
+      link: 'https://bodylogic.physio/',
+      title: 'BodyLogic',
+      image: '../assets/images/bodylogic.jpg'
+    },
+    {
+      id: 8,
+      link: 'https://demo.wenthemes.com/signify-pro-ecommerce/',
+      title: 'Signify Ecommerce',
+      image: '../assets/images/ecommerce.jpg'
+    },
+    {
+      id: 8,
+      link: 'https://demo.wenthemes.com/signify-pro-ecommerce/',
+      title: 'Signify Ecommerce',
+      image: '../assets/images/ecommerce.jpg'
+    }
+  ]
+
   return (
     <section className="section portfolio">
       <div className="container">
