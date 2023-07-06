@@ -59,6 +59,7 @@ export default function Contact() {
                   const {
                     errors,
                     isValid,
+                    touched,
                     dirty,
                   } = formik;
                   return (
@@ -66,7 +67,7 @@ export default function Contact() {
                       <div className="input-row">
                         <div className="input-group">
                           <label>First Name</label>
-                          <Field placeholder="First Name" style={{ borderColor: `${errors.name ? " red" : " #e6e6e6  "}` }} type="text" name="name" />
+                          <Field placeholder="First Name" style={{ borderColor: `${errors.name && touched.name ? " red" : " var(--border-color)"}` }} type="text" name="name" />
                           <ErrorMessage name="name" component="div" />
                         </div>
                         <div className="input-group">
@@ -77,7 +78,7 @@ export default function Contact() {
                       </div>
                       <div className="input-group">
                         <label>Email</label>
-                        <Field placeholder="Your Email" style={{ borderColor: `${errors.email ? "red" : " #e6e6e6  "}` }} type="text" name="email" />
+                        <Field placeholder="Your Email" style={{ borderColor: `${errors.email && touched.email ? "red" : " var(--border-color)"}` }} type="text" name="email" />
                         <ErrorMessage name="email" component="div" />
 
 
