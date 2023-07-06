@@ -14,6 +14,10 @@ export default function Hero() {
 
     sliderElement.keys('')
 
+    const handleOnSwitch = () => {
+        window.location.replace('/#contact')
+    }
+
 
     return (
         <>
@@ -22,12 +26,12 @@ export default function Hero() {
                     <div className="about__inner ">
                         <h2 className='md:w-5/12 md:mb-0 mb-4'>{`Minal - FrontEnd Web Designer & Enthusiast`}</h2>
                         <div className="about__content md:w-7/12">
-                            <p>Hello, I'm Minal. My relationship with Web Design started at a
+                            <p className='first-letter:text-7xl first-letter:font-extrabold'>Hello, I'm Minal. My relationship with Web Design started at a
                                 young age, and has become my life-long love. On this website,
                                 you'll discover some of my most challenging and intimate design
                                 I've taken date.</p>
                             <div className="excerpt-btn gap-4">
-                                <Button title='Contact us' />
+                                <Button title='Contact us' click={handleOnSwitch} />
                                 <a href={ExampleDoc} download="resume" target='_blank' rel='noopener noreferrer'>
                                     <button className='btn__link'>Download CV</button>
                                 </a>

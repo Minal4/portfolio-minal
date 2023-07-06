@@ -22,6 +22,7 @@ const TodoList = () => {
         setModal(!modal)
     }
 
+
     const filterOption = () => {
         switch (option) {
             case 'completed':
@@ -64,6 +65,7 @@ const TodoList = () => {
                     setUpdateValue={setUpdateValue}
                     updateValue={updateValue}
                     setUpdateIndex={setUpdateIndex}
+                    updateIndex={updateIndex}
                 />
                 <Todo
                     todos={todos}

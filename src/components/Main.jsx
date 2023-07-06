@@ -99,7 +99,7 @@ export default function Main() {
             <Route path='/gallery/:id' element={<ProductDetail />}></Route>
             <Route path='/movie' element={<Home />}>
             </Route>
-            <Route path='/searchitem' element={<SearchItem />}>
+            <Route path='/movie/searchitem' element={<SearchItem />}>
             </Route>
             <Route path='/details/:id' element={<Details />}></Route>
           </Routes>

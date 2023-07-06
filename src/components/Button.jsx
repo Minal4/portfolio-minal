@@ -1,8 +1,9 @@
-import React from 'react'
 
-const Button = ({ title }) => {
+const Button = ({ page, title, dirty, isValid, click }) => {
     return (
-        <><button className="btn__link">{title}</button></>
+        <>
+            <button onClick={click} type='submit' disabled={isValid ? !(dirty && isValid) : false} className="btn__link">{title}</button >
+        </>
     )
 }
 

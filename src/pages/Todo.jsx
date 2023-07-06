@@ -1,12 +1,15 @@
 import { AiFillDelete } from 'react-icons/ai';
 import { AiFillEdit } from 'react-icons/ai';
 import { TiTickOutline } from 'react-icons/ti';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Todo = ({ todos, setTodos, filtered, handleOnEdit }) => {
+    const notify = () => toast("Delete TODO Successfully !!");
     const handleOnDelete = (id) => {
         setTodos(todos.filter((todoDelete, i) => {
             return todoDelete.id !== id
         }))
+        notify()
     }
 
     const handleOnCheck = (id) => {
@@ -24,6 +27,7 @@ const Todo = ({ todos, setTodos, filtered, handleOnEdit }) => {
             {todos.length > 0 &&
                 <h2>Result Below Here!!</h2>
             }
+            <ToastContainer />
             <div className='todo-result'>
                 {
                     filtered.map((todo, i) => {
