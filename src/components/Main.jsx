@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import Hero from './Hero';
-import Portfolio from './Portfolio';
-import Faq from './Faq';
-import Contact from './Contact';
-import { HashRouter, Outlet, Route, Routes } from 'react-router-dom';
-import Footer from './Footer';
-import Header from './Header';
-import HomePage from './HomePage';
-import Menus from './Menus';
-import Cuisine from '../pages/Cuisine';
-import { BsFillArrowUpCircleFill } from 'react-icons/bs';
-import { useRef } from 'react';
-import Searched from '../pages/Searched';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import React, { useEffect, useRef, useState } from 'react';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Cuisine from '../pages/Cuisine';
+import { ProductGallery } from '../pages/Product Gallery';
+import { ProductDetail } from '../pages/Product Gallery/ProductDetail';
+import Searched from '../pages/Searched';
+import Details from '../pages/TMDB/Details';
+import Home from '../pages/TMDB/Home';
+import SearchItem from '../pages/TMDB/SearchItem';
 import TodoList from '../pages/TodoList';
 import Weather from '../pages/Weather';
-import Tab from './React/Tab/Tab';
-import Home from '../pages/TMDB/Home';
-import Details from '../pages/TMDB/Details';
-import SearchItem from '../pages/TMDB/SearchItem';
-import Shop from '../pages/eCommerce/Shop';
 import CartPage from '../pages/eCommerce/CartPage';
+import Shop from '../pages/eCommerce/Shop';
 import SingleProduct from '../pages/eCommerce/SingleProduct';
+import Contact from './Contact';
+import Faq from './Faq';
+import Footer from './Footer';
+import Header from './Header';
+import Hero from './Hero';
+import HomePage from './HomePage';
+import Menus from './Menus';
+import Portfolio from './Portfolio';
+import Tab from './React/Tab/Tab';
 
 
 export default function Main() {
@@ -74,7 +75,7 @@ export default function Main() {
   return (
     <>
       <div className="App">
-        <HashRouter>
+        <BrowserRouter>
           <Header fakeEntry={fakeEntry} />
           <div className="scroll-up" ref={scrollBtn} onClick={UpArrow}><BsFillArrowUpCircleFill /></div>
           <Routes>
@@ -94,6 +95,8 @@ export default function Main() {
             <Route path='/cartpage' element={<CartPage fakeEntry={fakeEntry} setFakeEntry={setFakeEntry} quantity={quantity} setQuantity={setQuantity} />}></Route>
             <Route path='/weather' element={<Weather />}></Route>
             <Route path='/tab' element={<Tab />}></Route>
+            <Route path='/gallery' element={<ProductGallery />}></Route>
+            <Route path='/gallery/:id' element={<ProductDetail />}></Route>
             <Route path='/movie' element={<Home />}>
             </Route>
             <Route path='/searchitem' element={<SearchItem />}>
@@ -101,7 +104,7 @@ export default function Main() {
             <Route path='/details/:id' element={<Details />}></Route>
           </Routes>
           <Footer />
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </>
   );

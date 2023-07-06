@@ -38,6 +38,7 @@ const Details = () => {
     }, [params.id])
 
 
+
     return (
         <div className='single'>
             <div className="banner" style={{

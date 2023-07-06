@@ -65,7 +65,7 @@ export default function Header({ fakeEntry, showCartHandler }) {
               <button onClick={() => setActive(!active)} className='hamburger'>{active ? <IoCloseOutline /> : <IoMenu />}Menu</button>
               <ul className={`navbar-nav ${active ? 'active' : ''}`}>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"/"}>Home</NavLink></li>
-                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Projects</NavLink></li>
+                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Portfolio</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
                 <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link" >App</a><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />
@@ -76,6 +76,7 @@ export default function Header({ fakeEntry, showCartHandler }) {
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/menus'}>Restro</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/tab'}>Tabs</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/movie'}>TMDB</NavLink></li>
+                    <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/gallery'}>Product  Gallery</NavLink></li>
                   </ul>
                 </li>
                 <li><Theme /></li>

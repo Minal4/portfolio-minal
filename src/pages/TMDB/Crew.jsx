@@ -2,7 +2,6 @@ import Blog from '../../assets/images/blog.jpg';
 
 
 const Crew = ({ cast }) => {
-    console.log(cast, 'cast')
     return (
         <>
             <div className="profile">

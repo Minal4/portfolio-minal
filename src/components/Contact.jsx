@@ -1,41 +1,15 @@
-import { useState } from "react";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import Button from "./Button";
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
+import * as Yup from 'yup';
 
 export default function Contact() {
-  const [error, setError] = useState({});
-  const [check, setCheck] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
+  const form = useRef();
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().min(2).required("max 2 character"),
+    email: Yup.string().email().required('Invalid email')
   })
-
-  const handleOnChange = (e, i) => {
-    const { name, value } = e.target;
-    setCheck({ ...check, [name]: value });
-  }
-
-  const validateForm = () => {
-    let err = {};
-    if (check.firstName === '') {
-      err.firstName = 'first name should not be empty'
-    }
-    if (check.lastName === '') {
-      err.lastName = 'last name should not be empty'
-    }
-    if (check.email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) {
-      err.email = 'Valid Email Required'
-    }
-    if (check.message === '') {
-      err.message = 'Message should not be empty'
-    }
-    setError({ ...err })
-  }
-  const handleOnClick = (e) => {
-    e.preventDefault();
-    validateForm()
-  }
-
 
   return (
     <section className="contact section">
@@ -51,37 +25,69 @@ export default function Contact() {
               <h2 className="section-title">Contact</h2>
               <p>Any Questions or Remarks? Just write us a message.</p>
             </div>
-
             <div>
-              <form onSubmit={(e) => handleOnClick(e)}>
-                <div className="input-row">
-                  <div className="input-group">
-                    <label>First Name</label>
-                    <input type="text" name="firstName" value={check.firstName} onChange={(e) => handleOnChange(e)} />
-                    {error.firstName}
-                  </div>
-                  <div className="input-group">
-                    <label>Last Name</label>
-                    <input type="text" name="lastName" value={check.lastName} onChange={(e) => handleOnChange(e)} />
-                    {error.lastName}
+              <Formik
+                initialValues={{
+                  name: '',
+                  lastName: '',
+                  email: '',
+                  message: ''
+                }
+                }
+                validationSchema={validationSchema}
 
-                  </div>
-                </div>
-                <div className="input-group">
-                  <label>Email</label>
-                  <input type="text" name="email" value={check.email} onChange={(e) => handleOnChange(e)} />
-                  {error.email}
+                onSubmit={(values) => {
 
-                </div>
-                <div className="input-group">
-                  <label>Message</label>
-                  <textarea name="message" value={check.message} onChange={(e) => handleOnChange(e)} />
-                  {error.message}
-                </div>
-                <div className="btn">
-                  <Button type="button" title='Submit' />
-                </div>
-              </form>
+                  emailjs.send('service_yegsmuy', 'template_n0f5tem', values, 'Bq4MAsmGLD2kcfgxB')
+                    .then((result) => {
+                      console.log('asd');
+                    }, (error) => {
+                      console.log(error.text);
+                    });
+                }}
+
+              >
+                {({
+                  handleSubmit,
+                  handleChange,
+                  values,
+                  errors,
+                  touched,
+                  isValid,
+                  handleBlur,
+                }) => (
+                  < Form ref={form}>
+                    <div className="input-row">
+                      <div className="input-group">
+                        <label>First Name</label>
+                        <Field style={{ borderColor: `${errors.name ? " red" : " #e6e6e6  "}` }} type="text" name="name" />
+                        <ErrorMessage name="name" component="div" />
+                      </div>
+                      <div className="input-group">
+                        <label>Last Name</label>
+                        <Field type="text" name="lastName" />
+                        <ErrorMessage name="lastName" component="div" />
+                      </div>
+                    </div>
+                    <div className="input-group">
+                      <label>Email</label>
+                      <Field style={{ borderColor: `${errors.email ? "red" : " #e6e6e6  "}` }} type="text" name="email" />
+                      <ErrorMessage name="email" component="div" />
+
+
+                    </div>
+                    <div className="input-group">
+                      <label>Message</label>
+                      <Field name="message" />
+                      <ErrorMessage name="message" component="div" />
+
+                    </div>
+                    <div className="btn">
+                      <Button type='submit' title='Submit' disabled={!isValid} />
+                    </div>
+                  </Form>
+                )}
+              </Formik>
             </div>
 
           </div>

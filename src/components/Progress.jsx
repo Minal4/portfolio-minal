@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-circular-progressbar/dist/styles.css';
 import { AiFillHtml5, AiFillGithub } from 'react-icons/ai';
 import { DiCss3, DiSass, DiJavascript, DiReact } from 'react-icons/di'
 import { SiTailwindcss, SiAdobephotoshop, SiFigma, SiWordpress } from 'react-icons/si'
