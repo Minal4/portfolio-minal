@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useContext, useEffect } from 'react';
+import { CartContext } from '../../context';
 
-const CartPage = ({ fakeEntry, setFakeEntry, setQuantity, quantity }) => {
+const CartPage = () => {
+    const { fakeEntry, setFakeEntry } = useContext(CartContext);
 
     const deleteHandler = (i) => {
         setFakeEntry(fakeEntry.filter((item, index) => {

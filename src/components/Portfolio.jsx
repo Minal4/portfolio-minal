@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import { BsSearch } from "react-icons/bs";
 
 import portfolioData from '../Datas/portfolioData';
 
 export default function Portfolio() {
 
-  const [datas, setDatas] = useState(portfolioData);
 
   return (
     <section className="section portfolio">
@@ -20,7 +18,7 @@ export default function Portfolio() {
           data-aos-duration="1000">
           <ul>
             {
-              datas.map((data) => {
+              portfolioData.map((data) => {
                 return (
                   <li key={data.id}>
                     <div className='project group'>

@@ -5,7 +5,7 @@ const Card = ({ movie }) => {
         <>
             <div className="card">
                 <div className="card__image">
-                    <Link to={`/details/${movie.id}`}> <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="image" /></Link>
+                    <Link to={`/details/${movie.id}`}> <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="poster" /></Link>
                 </div>
                 <div className="card__content">
                     <div className="title">

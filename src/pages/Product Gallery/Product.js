@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
 
@@ -14,7 +13,7 @@ const Product = ({ image, index, brand, title, id, cat, desc, price }) => {
                 <ul className='gap-y-1 grid p-3 border-2 text-center hover:scale-105 transition duration-300'>
                     <>
                         <Link to={`/gallery/${id}`}>
-                            <li><img className="h-64 mb-5 object-cover rounded-full w-64 mx-auto" src={image}></img></li>
+                            <li><img className="h-64 mb-5 object-cover rounded-full w-64 mx-auto" src={image} alt="gallery-poster"></img></li>
                             <li><strong>Brand:</strong> {brand}</li>
                             <li><strong>Title:</strong> {title}</li>
                             <li><strong>Category:</strong> {cat.toUpperCase()}</li>

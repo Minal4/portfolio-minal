@@ -6,8 +6,6 @@ import Button from "./Button";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-tooltip/dist/react-tooltip.css'
-import { Tooltip } from 'react-tooltip'
-import { Placeholder } from 'reactstrap';
 
 export default function Contact() {
   const form = useRef();

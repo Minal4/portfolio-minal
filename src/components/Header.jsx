@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -6,11 +6,13 @@ import { BiChevronDown } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import Theme from './Theme';
+import { CartContext } from '../context';
 
-export default function Header({ fakeEntry, showCartHandler }) {
+export default function Header({ showCartHandler }) {
   const [active, setActive] = useState(false);
   const [dateTime, setTime] = useState(new Date());
   const [subMenu, setSubMenu] = useState(false);
+  const { fakeEntry } = useContext(CartContext);
 
 
   useEffect(() => {

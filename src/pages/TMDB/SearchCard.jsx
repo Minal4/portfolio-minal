@@ -4,7 +4,7 @@ const SearchCard = ({ movie }) => {
     return (
         <> <div className="card" key={movie.id}>
             <div className="card__image">
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="image" />
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="poster" />
             </div>
             <div className="card__content p-4">
                 <div className="title">

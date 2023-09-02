@@ -16,28 +16,30 @@ const Weather = () => {
         setShow(true)
     }
 
-    useEffect(() => {
-        setWeather();
-        setShow(true)
-    }, [])
-
-    useEffect(() => {
-        getWeather();
-    }, [data])
 
     const setWeather = () => {
 
         let check = JSON.parse(localStorage.getItem('weather'))
         if (check) {
             setData(check);
-            console.log(data, 'data')
         }
     }
+
+    useEffect(() => {
+        setWeather();
+        setShow(true)
+    }, [])
+
     const getWeather = () => {
         if (location?.length) {
             localStorage.setItem('weather', JSON.stringify(data));
         }
     }
+
+    useEffect(() => {
+        getWeather();
+    }, [data])
+
     return (
         <div>
             <>

@@ -1,4 +1,3 @@
-import CartPage from "./CartPage";
 import Product from "./Product";
 
 const Shop = ({ shopData, cartHandler }) => {

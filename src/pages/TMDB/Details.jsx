@@ -7,8 +7,6 @@ import Crew from './Crew';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
-import { Autoplay } from 'swiper';
-
 // Import Swiper styles
 import "swiper/css";
 

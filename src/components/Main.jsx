@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cuisine from '../pages/Cuisine';
@@ -24,12 +24,12 @@ import HomePage from './HomePage';
 import Menus from './Menus';
 import Portfolio from './Portfolio';
 import Tab from './React/Tab/Tab';
+import { CartContext } from '../context';
 
 
-export default function Main() {
+export default function Main({ quantity, setQuantity }) {
   const [shopData, setShopData] = useState([])
-  const [fakeEntry, setFakeEntry] = useState(JSON.parse(localStorage.getItem('product')) || [])
-  const [quantity, setQuantity] = useState(1)
+  const { fakeEntry, setFakeEntry } = useContext(CartContext);
   const scrollBtn = useRef();
   useEffect(() => {
     AOS.init();
@@ -89,10 +89,10 @@ export default function Main() {
             </Route>
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/todo' element={<TodoList />}></Route>
-            <Route path='/shop/' element={<Shop shopData={shopData} cartHandler={cartHandler} fakeEntry={fakeEntry} />}>
+            <Route path='/shop/' element={<Shop shopData={shopData} cartHandler={cartHandler} />}>
             </Route>
             <Route path='/singleProduct/:id' element={<SingleProduct cartHandler={cartHandler} />}></Route>
-            <Route path='/cartpage' element={<CartPage fakeEntry={fakeEntry} setFakeEntry={setFakeEntry} quantity={quantity} setQuantity={setQuantity} />}></Route>
+            <Route path='/cartpage' element={<CartPage />}></Route>
             <Route path='/weather' element={<Weather />}></Route>
             <Route path='/tab' element={<Tab />}></Route>
             <Route path='/gallery' element={<ProductGallery />}></Route>

@@ -8,7 +8,6 @@ import { Autoplay } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
-import SearchItem from './SearchItem';
 import { useNavigate } from 'react-router-dom';
 
 
