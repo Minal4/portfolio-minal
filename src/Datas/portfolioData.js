@@ -17,118 +17,132 @@ import Visionart from '../assets/images/visionart-pro.jpg';
 import Artsylens from '../assets/images/artsylens-pro.jpg';
 import Drinkify from '../assets/images/drinkify.png';
 import Outwit from '../assets/images/outwit.png';
+import Sportspot from '../assets/images/sportspot.jpg';
+import Pawscentral from '../assets/images/pawscentral.jpg';
 
 let portfolioData = [
     {
         id: 1,
+        link: 'https://fse.catchthemes.com/pawscentral-pro/',
+        title: 'PawsCentral',
+        image: Pawscentral
+    },
+    {
+        id: 2,
+        link: 'https://fse.catchthemes.com/sportspot-pro/',
+        title: 'Sportspot',
+        image: Sportspot
+    },
+    {
+        id: 3,
         link: 'https://fse.catchthemes.com/drinkify/',
         title: 'Drinkify',
         image: Drinkify
     },
     {
-        id: 2,
+        id: 4,
         link: 'https://fse.catchthemes.com/outwit/',
         title: 'OutWit',
         image: Outwit
     },
     {
-        id: 3,
+        id: 5,
         link: 'https://fse.catchthemes.com/artsylens-pro/',
         title: 'Atstsylens',
         image: Artsylens
     },
     {
-        id: 4,
+        id: 6,
         link: 'https://fse.catchthemes.com/visionart-pro/',
         title: 'Visionart',
         image: Visionart
     },
     {
-        id: 5,
+        id: 7,
         link: 'https://fse.catchthemes.com/rhythimic-pro/',
         title: 'Rhythmic',
         image: Rhythmic
     },
     {
-        id: 6,
+        id: 7,
         link: 'https://fse.catchthemes.com/lyna-pro',
         title: 'Lyna',
         image: Lyna
     },
     {
-        id: 7,
+        id: 8,
         link: 'https://bodylogic.physio/',
         title: 'BodyLogic',
         image: BodyLogic
     },
     {
-        id: 8,
+        id: 9,
         link: 'https://demo.wenthemes.com/signify-pro-ecommerce/',
         title: 'Signify Ecommerce',
         image: ecommerce
     },
     {
-        id: 9,
+        id: 10,
         link: 'https://demo.wenthemes.com/signify-pro-wedding/',
         title: 'Signify Wedding',
         image: wedding
     },
     {
-        id: 10,
+        id: 11,
         link: 'https://twesupply.com/',
         title: 'Twe Supply',
         image: Twe
     },
     {
-        id: 11,
+        id: 12,
         link: 'https://9ky.bcf.myftpupload.com/',
         title: 'Texas',
         image: Texas
     },
     {
-        id: 12,
+        id: 13,
         link: 'https://civilhomes.com.np/',
         title: 'Civil Homes',
         image: Civil
     },
     {
-        id: 13,
+        id: 14,
         link: 'http://fgtelecom.com.au/',
         title: 'FG Telecom',
         image: FgTelecom
     },
     {
-        id: 14,
+        id: 15,
         link: 'https://demo.wenthemes.com/signify-pro/',
         title: 'Signify Pro',
         image: SignifyPro
     },
     {
-        id: 15,
+        id: 16,
         link: 'https://catchthemes.com/demo/catch-sketch-pro/',
         title: 'Catch Sketch Pro',
         image: Main
     },
     {
-        id: 16,
+        id: 17,
         link: 'https://catchthemes.com/demo/catch-sketch-blog/',
         title: 'Catch Sketch Blog',
         image: Blog
     },
     {
-        id: 17,
+        id: 18,
         link: 'https://catchthemes.com/demo/corporate-biz-pro/',
         title: 'Corporate Biz Pro',
         image: Biz
     },
     {
-        id: 18,
+        id: 19,
         link: 'https://catchthemes.com/demo/simclick-pro/',
         title: 'Sim Click Pro',
         image: SimClick
     },
     {
-        id: 19,
+        id: 20,
         link: 'https://catchthemes.com/demo/abletone-dark',
         title: 'Abletone Dark',
         image: Abletone
