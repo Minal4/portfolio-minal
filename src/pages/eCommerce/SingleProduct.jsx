@@ -14,8 +14,6 @@ const SingleProduct = ({ cartHandler }) => {
     useEffect(() => {
         fetchApi(params.id)
     }, [params.id])
-
-    console.log(data, 'data')
     return (
         <div>
             <section className="section">
@@ -25,9 +23,11 @@ const SingleProduct = ({ cartHandler }) => {
                             <img src={data.image} alt={data.title} />
                         </div>
                         <div className="single__content shop__content">
-                            <span className='cat py-2 px-5 rounded-3xl text-white text-xs '>{data.category}</span>
-                            <h2 className='text-3xl font-bold text-black my-7'>{data.title}</h2>
-                            <span className='price text-black'>Rs {data.price}</span>
+                            <div className='cat py-2 px-5 rounded-3xl text-xs '>{data.category}</div>
+                            <h2 className='text-3xl font-bold'>{data.title}</h2>
+                            <div className='price'>Rs {data.price}</div>
+                            <p>{data.description}</p>
+
                             <button className='btn__link' onClick={() => cartHandler(data)}> Add to cart</button>
                         </div>
                     </div>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// core version + navigation, pagination modules:
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
-import { Autoplay } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
-import 'swiper/css';
+import "swiper/css";
 import SearchCard from './SearchCard';
 
 const SearchItem = () => {
@@ -41,10 +43,10 @@ const SearchItem = () => {
                 }}
             >
                 {
-                    searchData.map((movie) => {
+                    searchData.map((movie, index) => {
                         return (
-                            <SwiperSlide className="swiper-slide">
-                                <SearchCard key={movie.id} movie={movie} />
+                            <SwiperSlide className="swiper-slide" key={movie.id}>
+                                <SearchCard movie={movie} />
                             </SwiperSlide>
                         )
                     })

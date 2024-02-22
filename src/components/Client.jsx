@@ -2,7 +2,7 @@ import React from 'react'
 
 const Client = () => {
     return (
-        <div className='client section'>
+        <section className='client section'>
             <div className="container">
                 <div className="client-wrapper">
                     <div className="client-title">
@@ -25,7 +25,7 @@ const Client = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

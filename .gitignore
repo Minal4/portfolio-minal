@@ -1,4 +1,7 @@
-src/css/style.css.map
+/css/style.css.map
 node_modules
 .sass-cache
 build
+.gitignore
+*.map
+package.json

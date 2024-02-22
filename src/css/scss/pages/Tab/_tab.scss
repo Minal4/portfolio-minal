@@ -1,4 +1,4 @@
-section:nth-child(odd) {
+.section:nth-child(odd) {
 
     .tab__lists li.active-tab,
     .tabs .content,
@@ -7,7 +7,7 @@ section:nth-child(odd) {
     }
 }
 
-section:nth-child(even) {
+.section:nth-child(even) {
 
     .tab li.active-tab,
     .tabs .content,

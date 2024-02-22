@@ -1,5 +1,8 @@
+import React from 'react';
 import ExampleDoc from '../assets/resume.pdf';
+import video from '../assets/video.mp4';
 import Button from './Button';
+
 
 
 export default function Hero() {
@@ -18,10 +21,17 @@ export default function Hero() {
         window.location.replace('/#contact')
     }
 
-
     return (
         <>
             <section className="section about-section">
+                <video
+                    src={video}
+                    type='video/mp4'
+                    loop
+                    autoPlay={true}
+                    muted="muted"
+                    controls={false}
+                />
                 <div className="inner_wrap container">
                     <div className="about__inner ">
                         <h2 className='md:w-5/12 md:mb-0 mb-4'>{`Minal - FrontEnd Web Designer & Enthusiast`}</h2>
@@ -40,9 +50,9 @@ export default function Hero() {
                     </div>
                 </div>
             </section>
-            <div className="text-slide">
+            <section className="text-slide">
                 <div className='inner-slide'>{sliderElement}</div>
-            </div>
+            </section>
         </>
     );
 }

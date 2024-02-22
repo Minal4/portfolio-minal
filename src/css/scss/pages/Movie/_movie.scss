@@ -46,7 +46,6 @@ section.movies {
 .banner__content {
     .btn__link {
         display: inline-block;
-        background-color: transparent;
         border: 2px solid var(--border-color);
         @include border(45px);
         width: 100%;
@@ -150,7 +149,6 @@ section.movies {
     }
 
     &__content {
-        color: var(--primary-color);
 
         .title {
             font-size: 1.35rem;

@@ -3,11 +3,15 @@
 
         --secondary-color: #06b7ff;
 
+        --black-color: #000;
+
         --dark-color: #333;
 
         --color-light: #fff;
 
         --btn-background: #fff;
+
+        --shadow: rgba(0, 0, 0, 0.2);
 
         // color: map-get(--theme-color, theme-dark-color); // #000
 
@@ -33,6 +37,8 @@
 
         --color-light: #000;
 
+        --black-color: #fff;
+
         --dark-color: #fff;
 
         --btn-background: #3d3d3d;
@@ -41,9 +47,9 @@
 
         --background-primary-color: #000;
 
-        --background-secondary-color: #403f3f;
+        --background-secondary-color: #141414;
 
-        --background-dark-color: #333;
+        --background-dark-color: #020202;
 
         --background-button: #fff;
 

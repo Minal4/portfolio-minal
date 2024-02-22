@@ -24,8 +24,8 @@ const Cuisine = () => {
     }
 
     return (
-        <div>
-            <div className="container">
+        <>
+            <div className="cuisine-container px-14 my-5">
                 <Heading>{param.type}</Heading>
                 <Wrap className="wrapper">
                     <Splide options={{
@@ -60,10 +60,10 @@ const Cuisine = () => {
                         },
                     }}
                         extensions={{ AutoScroll }}>
-                        {italian.map((item) => {
+                        {italian.map((item, index) => {
                             return (
-                                <SplideSlide>
-                                    <Card className="card" key={item.id}>
+                                <SplideSlide key={index}>
+                                    <Card className="card" >
                                         <img src={item.image} alt="" />
                                         <p>{item.title}</p>
                                     </Card>
@@ -73,7 +73,7 @@ const Cuisine = () => {
                     </Splide>
                 </Wrap>
             </div>
-        </div>
+        </>
     )
 }
 

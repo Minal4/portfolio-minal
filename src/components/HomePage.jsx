@@ -12,9 +12,9 @@ export default function HomePage() {
       {/* <FormField /> */}
       <Hero />
       <Portfolio />
-      <Video />
       <Client />
       <Faq />
+      <Video />
       <Contact />
     </main>
   );

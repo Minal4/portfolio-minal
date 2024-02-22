@@ -22,7 +22,7 @@ const Searched = () => {
 
 
     return (
-        <div>
+        <>
             <div className="container">
                 <Heading>{param.search}</Heading>
 
@@ -70,7 +70,7 @@ const Searched = () => {
                     })}
                 </Splide>
             </div>
-        </div>
+        </>
     )
 }
 

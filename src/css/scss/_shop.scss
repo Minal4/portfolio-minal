@@ -31,13 +31,19 @@
 
     &__content {
         button {
-            width: 100%;
+            display: block;
         }
 
         span.cat {
             background-color: var(--background-hover-button);
         }
     }
+}
+
+.shop__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 span.number {

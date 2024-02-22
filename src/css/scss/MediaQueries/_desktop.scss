@@ -1,8 +1,4 @@
 @include media(desktop) {
-  .portfolio .portfolio__content ul {
-    grid-gap: 35px;
-  }
-
   .header__top .navbar .navbar-nav {
     flex-direction: row;
     display: flex;
@@ -27,7 +23,7 @@
   }
 
   .video {
-    height: 100vh;
+    height: 60vh;
   }
 
   .header__top .navbar .navbar-nav li.has-child {
@@ -44,7 +40,7 @@
   .header__top .navbar .navbar-nav li .sub-menu {
     position: absolute;
     top: 140%;
-    width: 200px;
+    width: 250px;
     opacity: 0;
     visibility: hidden;
     display: flex;

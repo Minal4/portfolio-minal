@@ -4,9 +4,10 @@ import Card from './Card';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
-import { Autoplay } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
+import 'swiper/css/navigation';
 import "swiper/css";
 import { useNavigate } from 'react-router-dom';
 

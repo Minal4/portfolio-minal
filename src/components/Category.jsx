@@ -5,14 +5,14 @@ import styled from 'styled-components';
 
 const Category = () => {
     return (
-        <div>
+        <>
             <ListWrap>
                 <NavLink to={"/menus/cuisine/American"}><FaHamburger /> American</NavLink>
                 <NavLink to={"/menus/cuisine/Italian"} ><FaHouzz /> Italian</NavLink>
                 <NavLink to={"/menus/cuisine/Thai"} ><FaCentos />  Thai</NavLink>
                 <NavLink to={"/menus/cuisine/Japanese"} ><FaEnvira /> Japanese</NavLink>
             </ListWrap>
-        </div >
+        </ >
     )
 }
 

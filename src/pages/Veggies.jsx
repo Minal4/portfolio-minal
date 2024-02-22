@@ -33,9 +33,9 @@ const Veggies = () => {
     })
 
     return (
-        <div>
-            <div className="container">
-                <Heading>Veggies</Heading>
+        <>
+            <div className="veggies-container px-14">
+                <Heading className="mb-5">Veggies</Heading>
                 <div className="wrapper">
                     <Splide options={{
                         type: 'loop',
@@ -82,7 +82,7 @@ const Veggies = () => {
                     </Splide>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -8,9 +8,11 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #06b7ff;
+  --black-color: #000;
   --dark-color: #333;
   --color-light: #fff;
   --btn-background: #fff;
+  --shadow: rgba(0, 0, 0, 0.2);
   --background-primary-color: #fff;
   --background-secondary-color: #f8f8f8;
   --background-dark-color: #333;
@@ -24,11 +26,12 @@
   --primary-color: #fff;
   --secondary-color: #06b7ff;
   --color-light: #000;
+  --black-color: #fff;
   --dark-color: #fff;
   --btn-background: #3d3d3d;
   --background-primary-color: #000;
-  --background-secondary-color: #403f3f;
-  --background-dark-color: #333;
+  --background-secondary-color: #141414;
+  --background-dark-color: #020202;
   --background-button: #fff;
   --button-color: #000;
   --background-hover-button: #05a394;
@@ -45,13 +48,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body.dark {
-  background-color: var(--background-dark-color);
-  color: var(--primary-color);
-}
-
 body {
   box-sizing: border-box;
+  background-color: var(--background-primary-color);
+  color: var(--dark-color);
 }
 
 .entry-content {
@@ -89,7 +89,7 @@ ul {
   padding: 0;
 }
 
-section:nth-child(odd) {
+.section:nth-child(odd) {
   background-color: var(--background-secondary-color);
 }
 
@@ -118,6 +118,7 @@ h4,
 h5,
 h6 {
   font-family: "Ibarra Real Nova", serif;
+  color: var(--dark-color);
   margin-top: 0;
   font-weight: 700;
 }
@@ -161,8 +162,9 @@ h6 {
 
 input,
 textarea {
-  padding: 12px;
+  padding: clamp(10px, 3.5vw, 15px) clamp(21px, 3.5vw, 45px);
   color: var(--dark-color);
+  outline: none;
 }
 
 .time.btn__link {
@@ -339,11 +341,10 @@ textarea {
   width: 100%;
   background-color: var(--background-secondary-color);
   display: none;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .header__top .navbar .navbar-nav li .sub-menu li {
-  padding: 10px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -526,15 +527,15 @@ button.hamburger svg {
   -o-border-radius: 50%;
 }
 
-section:nth-child(odd) .tab__lists li.active-tab,
-section:nth-child(odd) .tabs .content,
-section:nth-child(odd) .tab__lists li.active-tab:after {
+.section:nth-child(odd) .tab__lists li.active-tab,
+.section:nth-child(odd) .tabs .content,
+.section:nth-child(odd) .tab__lists li.active-tab:after {
   background-color: var(--background-primary-color);
 }
 
-section:nth-child(even) .tab li.active-tab,
-section:nth-child(even) .tabs .content,
-section:nth-child(even) .tab__lists li.active-tab:after {
+.section:nth-child(even) .tab li.active-tab,
+.section:nth-child(even) .tabs .content,
+.section:nth-child(even) .tab__lists li.active-tab:after {
   background-color: var(--background-secondary-color);
 }
 
@@ -661,7 +662,6 @@ section.movies {
 
 .banner__content .btn__link {
   display: inline-block;
-  background-color: transparent;
   border: 2px solid var(--border-color);
   border-radius: 45px;
   -webkit-border-radius: 45px;
@@ -764,10 +764,6 @@ section.movies {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.single__content {
-  color: var(--primary-color);
-}
-
 .single__content .title {
   font-size: 1.35rem;
   font-weight: 700;
@@ -865,11 +861,11 @@ section.movies {
   margin-top: 0;
 }
 
-section:nth-child(odd).faq .faq__accordion h3 {
+.section:nth-child(odd).faq .faq__accordion h3 {
   background-color: var(--background-primary-color);
 }
 
-section:nth-child(even).faq .faq__accordion h3 {
+.section:nth-child(even).faq .faq__accordion h3 {
   background-color: var(--background-secondary-color);
 }
 
@@ -918,7 +914,7 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .faq__accordion p {
-  border: 1px solid #ebebeb;
+  border: 1px solid var(--border-color);
 }
 
 .skills {
@@ -929,8 +925,8 @@ section:nth-child(even).faq .faq__accordion h3 {
 }
 
 .skills li {
-  color: var(--color-light);
   padding: 0.5rem 1rem;
+  border: 1px solid transparent;
   text-align: center;
   border-radius: 0.7rem;
   background: var(--dark-color);
@@ -945,14 +941,24 @@ section:nth-child(even).faq .faq__accordion h3 {
   transition: 0.5s ease-in-out;
 }
 
+.skills li .title,
+.skills li svg {
+  color: var(--color-light);
+}
+
 .skills li:hover {
-  color: var(--dark-color);
   flex: 5;
+  border-color: var(--border-color);
   -moz-transform: scale(1.1);
   -o-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   background: var(--background-secondary-color);
+}
+
+.skills li:hover .title,
+.skills li:hover svg {
+  color: var(--dark-color);
 }
 
 .skills li h2 {
@@ -964,12 +970,6 @@ section:nth-child(even).faq .faq__accordion h3 {
   display: grid;
   gap: 30px;
   grid-template-columns: 1fr;
-}
-
-.portfolio .portfolio__content ul {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 30px;
 }
 
 .portfolio .portfolio__content ul li {
@@ -1173,7 +1173,7 @@ section.contact {
   display: grid;
 }
 
-section.todo {
+.section.todo {
   background: #0cebeb;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
@@ -1242,13 +1242,13 @@ button.btn:hover {
   background-color: #20e3b2;
 }
 
-section:nth-child(odd) input,
-section:nth-child(odd) textarea {
+.section:nth-child(odd) input,
+.section:nth-child(odd) textarea {
   background-color: var(--background-primary-color);
 }
 
-section:nth-child(even) input,
-section:nth-child(even) textarea {
+.section:nth-child(even) input,
+.section:nth-child(even) textarea {
   background-color: var(--background-secondary-color);
 }
 
@@ -1297,8 +1297,42 @@ p.input-field {
   background-color: #20e3b2;
 }
 
+.about-section {
+  position: relative;
+  color: var(--black-color);
+}
+
+.about-section:after {
+  content: "";
+  background: rgba(77, 75, 75, 0.19);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.about-section video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.about-section .inner_wrap {
+  position: relative;
+  z-index: 1;
+}
+
 .about-section h2 {
   font-size: clamp(42px, 3.5vw, 65px);
+  text-shadow: 2px 2px 2px var(--shadow);
+  color: #fff;
 }
 
 .excerpt-btn {
@@ -1379,9 +1413,11 @@ p.input-field {
 :root {
   --primary-color: #fff;
   --secondary-color: #06b7ff;
+  --black-color: #000;
   --dark-color: #333;
   --color-light: #fff;
   --btn-background: #fff;
+  --shadow: rgba(0, 0, 0, 0.2);
   --background-primary-color: #fff;
   --background-secondary-color: #f8f8f8;
   --background-dark-color: #333;
@@ -1395,11 +1431,12 @@ p.input-field {
   --primary-color: #fff;
   --secondary-color: #06b7ff;
   --color-light: #000;
+  --black-color: #fff;
   --dark-color: #fff;
   --btn-background: #3d3d3d;
   --background-primary-color: #000;
-  --background-secondary-color: #403f3f;
-  --background-dark-color: #333;
+  --background-secondary-color: #141414;
+  --background-dark-color: #020202;
   --background-button: #fff;
   --button-color: #000;
   --background-hover-button: #05a394;
@@ -1456,11 +1493,17 @@ p.input-field {
 }
 
 .shop__content button {
-  width: 100%;
+  display: block;
 }
 
 .shop__content span.cat {
   background-color: var(--background-hover-button);
+}
+
+.shop__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 span.number {
@@ -1564,10 +1607,6 @@ a {
     justify-content: flex-end;
   }
 
-  .portfolio .portfolio__content ul {
-    grid-template-columns: 2fr 2fr;
-  }
-
   .contact .input-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -1622,10 +1661,6 @@ a {
   .about__inner {
     display: flex;
     margin: 0 auto;
-  }
-
-  .portfolio .portfolio__content ul {
-    grid-template-columns: 3fr 3fr 3fr;
   }
 
   .container,
@@ -1711,10 +1746,6 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
-  .portfolio .portfolio__content ul {
-    grid-gap: 35px;
-  }
-
   .header__top .navbar .navbar-nav {
     flex-direction: row;
     display: flex;
@@ -1739,7 +1770,7 @@ a {
   }
 
   .video {
-    height: 100vh;
+    height: 60vh;
   }
 
   .header__top .navbar .navbar-nav li.has-child:hover .sub-menu {
@@ -1752,7 +1783,7 @@ a {
   .header__top .navbar .navbar-nav li .sub-menu {
     position: absolute;
     top: 140%;
-    width: 200px;
+    width: 250px;
     opacity: 0;
     visibility: hidden;
     display: flex;

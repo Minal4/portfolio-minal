@@ -44,6 +44,7 @@ export const ProductGallery = () => {
     }, [])
 
 
+
     const notify = () => toast.error("Product Not Found");
 
     const handleOnCat = (cat, i) => {
@@ -58,17 +59,17 @@ export const ProductGallery = () => {
     }
 
     return (
-        <div className='container section'>
+        <div className='container section product-gallery-section !bg-transparent'>
             <div className=' mb-5'>
                 <form action="" className='flex w-full' onSubmit={handleOnSubmit}>
-                    <input className='border-black border-4 flex-1 ' type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-                    <button className='border-black border-4  ml-2 text-black  h-full p-4'>Search</button>
+                    <input className='flex-1 border-2 border-[var(--border-color)]' type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
+                    <button className='btn__link !mt-0 !rounded-none'>Search</button>
                 </form>
             </div>
             <ul className='flex gap-2 justify-center mb-3 flex-wrap'>
                 {
-                    uniqBy(category, 'category').map((product, index) => {
-                        return <li className={`py-2 px-4 border-black border-2 capitalize ${index === active ? 'bg-lime-400 border-transparent text-white' : ''} cursor-pointer hover:bg-lime-400 transition duration-500 hover:text-white hover:border-transparent`} onClick={() => handleOnCat(product.category, index)}>{product.category}</li>
+                    uniqBy(category, 'category').map((cat, index) => {
+                        return <li key={index} className={`py-2 px-4 border-2 border-[var(--border-color)] capitalize ${index === active ? 'bg-lime-400 border-transparent text-white' : ''} cursor-pointer hover:bg-lime-400 transition duration-500 hover:text-white hover:border-transparent`} onClick={() => handleOnCat(cat.category, index)}>{cat.category}</li>
                     })
                 }
             </ul>
@@ -78,10 +79,9 @@ export const ProductGallery = () => {
 
                         return (
                             <>
-
                                 <Product
                                     id={product.id}
-                                    key={index}
+                                    key={product.id}
                                     index={index}
                                     title={product.title}
                                     brand={product.brand}

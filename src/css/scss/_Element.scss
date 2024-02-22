@@ -8,13 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body.dark {
-  background-color: var(--background-dark-color);
-  color: var(--primary-color);
-}
-
 body {
   box-sizing: border-box;
+  background-color: var(--background-primary-color);
+  color: var(--dark-color);
 
 }
 
@@ -53,7 +50,7 @@ ul {
   padding: 0;
 }
 
-section:nth-child(odd) {
+.section:nth-child(odd) {
   background-color: var(--background-secondary-color);
 }
 
@@ -82,6 +79,7 @@ h4,
 h5,
 h6 {
   font-family: 'Ibarra Real Nova', serif;
+  color: var(--dark-color);
   margin-top: 0;
   font-weight: 700;
 }
@@ -129,8 +127,9 @@ h6 {
 
 input,
 textarea {
-  padding: 12px;
+  padding: $btn-vertical-spacing $btn-horizontal-spacing;
   color: var(--dark-color);
+  outline: none;
 }
 
 .time.btn__link {

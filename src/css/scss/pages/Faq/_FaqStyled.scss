@@ -1,8 +1,8 @@
-section:nth-child(odd).faq .faq__accordion h3 {
+.section:nth-child(odd).faq .faq__accordion h3 {
   background-color: var(--background-primary-color)
 }
 
-section:nth-child(even).faq .faq__accordion h3 {
+.section:nth-child(even).faq .faq__accordion h3 {
   background-color: var(--background-secondary-color);
   ;
 
@@ -50,7 +50,7 @@ section:nth-child(even).faq .faq__accordion h3 {
   }
 
   p {
-    border: 1px solid #ebebeb;
+    border: 1px solid var(--border-color);
   }
 }
 
@@ -61,8 +61,8 @@ section:nth-child(even).faq .faq__accordion h3 {
   gap: 5px;
 
   li {
-    color: var(--color-light);
     padding: 0.5rem 1rem;
+    border: 1px solid transparent;
     text-align: center;
     border-radius: 0.7rem;
     background: var(--dark-color);
@@ -73,11 +73,21 @@ section:nth-child(even).faq .faq__accordion h3 {
     cursor: pointer;
     @include transition(0.5s ease-in-out);
 
+    .title,
+    svg {
+      color: var(--color-light);
+    }
+
     &:hover {
-      color: var(--dark-color);
       flex: 5;
+      border-color: var(--border-color);
       @include transform(scale(1.1));
       background: var(--background-secondary-color);
+
+      .title,
+      svg {
+        color: var(--dark-color);
+      }
 
     }
 

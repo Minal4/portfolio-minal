@@ -64,85 +64,85 @@ let portfolioData = [
         image: Rhythmic
     },
     {
-        id: 7,
+        id: 8,
         link: 'https://fse.catchthemes.com/lyna-pro',
         title: 'Lyna',
         image: Lyna
     },
     {
-        id: 8,
+        id: 9,
         link: 'https://bodylogic.physio/',
         title: 'BodyLogic',
         image: BodyLogic
     },
     {
-        id: 9,
+        id: 10,
         link: 'https://demo.wenthemes.com/signify-pro-ecommerce/',
         title: 'Signify Ecommerce',
         image: ecommerce
     },
     {
-        id: 10,
+        id: 11,
         link: 'https://demo.wenthemes.com/signify-pro-wedding/',
         title: 'Signify Wedding',
         image: wedding
     },
     {
-        id: 11,
+        id: 12,
         link: 'https://twesupply.com/',
         title: 'Twe Supply',
         image: Twe
     },
     {
-        id: 12,
+        id: 13,
         link: 'https://9ky.bcf.myftpupload.com/',
         title: 'Texas',
         image: Texas
     },
     {
-        id: 13,
+        id: 14,
         link: 'https://civilhomes.com.np/',
         title: 'Civil Homes',
         image: Civil
     },
     {
-        id: 14,
+        id: 15,
         link: 'http://fgtelecom.com.au/',
         title: 'FG Telecom',
         image: FgTelecom
     },
     {
-        id: 15,
+        id: 16,
         link: 'https://demo.wenthemes.com/signify-pro/',
         title: 'Signify Pro',
         image: SignifyPro
     },
     {
-        id: 16,
+        id: 17,
         link: 'https://catchthemes.com/demo/catch-sketch-pro/',
         title: 'Catch Sketch Pro',
         image: Main
     },
     {
-        id: 17,
+        id: 18,
         link: 'https://catchthemes.com/demo/catch-sketch-blog/',
         title: 'Catch Sketch Blog',
         image: Blog
     },
     {
-        id: 18,
+        id: 19,
         link: 'https://catchthemes.com/demo/corporate-biz-pro/',
         title: 'Corporate Biz Pro',
         image: Biz
     },
     {
-        id: 19,
+        id: 20,
         link: 'https://catchthemes.com/demo/simclick-pro/',
         title: 'Sim Click Pro',
         image: SimClick
     },
     {
-        id: 20,
+        id: 21,
         link: 'https://catchthemes.com/demo/abletone-dark',
         title: 'Abletone Dark',
         image: Abletone

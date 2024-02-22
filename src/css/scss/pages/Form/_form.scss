@@ -1,4 +1,4 @@
-section.todo {
+.section.todo {
     background: #0cebeb;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);
@@ -65,7 +65,7 @@ button.btn {
     }
 }
 
-section:nth-child(odd) {
+.section:nth-child(odd) {
 
     input,
     textarea {
@@ -73,7 +73,7 @@ section:nth-child(odd) {
     }
 }
 
-section:nth-child(even) {
+.section:nth-child(even) {
 
     input,
     textarea {
