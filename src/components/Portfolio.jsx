@@ -49,9 +49,9 @@ export default function Portfolio() {
           }}
             extensions={{ AutoScroll }}>
             {
-              portfolioData.map((data) => {
+              portfolioData.map((data, index) => {
                 return (
-                  <SplideSlide key={data.id}>
+                  <SplideSlide key={index}>
                     <div className='project group'>
                       <img src={data.image} alt={data.title} />
                       <div className="caption">{data.title}</div>
