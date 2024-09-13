@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -22,52 +22,56 @@ export default function Header({ showCartHandler }) {
     }
   }, []);
 
-  const reference = useRef();
-  const spaceAdd = () => {
-    const headerTop = reference.current.clientHeight;
-    const bodyWidth = document.body;
-    bodyWidth.style.paddingBottom = headerTop;
-    bodyWidth.setAttribute('style', `padding-top: ${headerTop}px`)
-  }
 
-  useEffect(() => {
-    spaceAdd();
-  }, [])
-
+  var lastScrollTop = 0;
 
   window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
-    const bodyTop = document.body.scrollTop;
-    var scrollTop = window.pageYOffset;
-    if (bodyTop <= 10) {
-      header.classList.add('elem');
+    const body = document.body
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      body.classList.remove('scrolled')
+      header.setAttribute('style', 'transform: translateY(-100px)')
 
+    } else {
+      body.classList.add('scrolled')
+      header.setAttribute('style', 'transform: translateY(0)')
     }
+
     if (scrollTop === 0) {
-      header.classList.remove('elem')
+      body.classList.remove('scrolled')
     }
+
+    lastScrollTop = scrollTop;
   })
 
   const handleOnClick = () => {
     setActive(false);
+
+
   }
 
   const showHandler = () => {
     setSubMenu(!subMenu);
+
   }
 
   return (
-    <header className='header' ref={reference}>
+    <header className='header'>
       <div className="header__top">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="inner-container">
-            <h1><img className='logo' src={logo} alt="logo"></img><NavLink className="nav-item nav-link" to={"/"}>Minal Munakarmi</NavLink></h1>
+            <div className="site-branding flex gap-1">
+              <img className='logo' src={logo} alt="logo" width={'55px'}></img>
+              <h1><NavLink className="nav-item nav-link text-base md:text-lg" to={"/"}>Minal Munakarmi</NavLink></h1>
+            </div>
+            <button onClick={() => setActive(!active)} className='hamburger md:hidden'>{active ? <IoCloseOutline /> : <IoMenu />}Menu</button>
             <div
-              className="custom-nav">
-              <button onClick={() => setActive(!active)} className='hamburger'>{active ? <IoCloseOutline /> : <IoMenu />}Menu</button>
-              <ul className={`navbar-nav ${active ? 'active' : ''}`}>
+              className={`custom-nav ${active ? 'active' : ''}`}>
+
+              <ul className={`navbar-nav`}>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"/"}>Home</NavLink></li>
-                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Portfolio</NavLink></li>
+                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./PortfolioPage"}>Portfolio</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
                 <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link" >App</a><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />

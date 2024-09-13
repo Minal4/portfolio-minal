@@ -20,8 +20,32 @@ import Outwit from '../assets/images/outwit.png';
 import Sportspot from '../assets/images/sportspot.jpg';
 import Pawscentral from '../assets/images/pawscentral.jpg';
 import RockTune from '../assets/images/rocktune.jpg';
+import Wrap from '../assets/images/warp.jpg';
+import Esara from '../assets/images/esara.jpg';
+import Syn from '../assets/images/syn.jpg';
+import Nmf from '../assets/images/nmf.jpg';
 
 let portfolioData = [
+    {
+        link: 'https://www.nepalmagicfoundation.org.np/',
+        title: 'Nepal Magic Foundations',
+        image: Nmf
+    },
+    {
+        link: 'https://syndromeinnov.com/',
+        title: 'Syndrome Innovations',
+        image: Syn
+    },
+    {
+        link: 'https://esarapathedu.com/',
+        title: 'Esara',
+        image: Esara
+    },
+    {
+        link: 'https://warpandweftrug.com/',
+        title: 'Warp & Weft',
+        image: Wrap
+    },
     {
         link: 'https://fse.catchthemes.com/rock-tune-pro/',
         title: 'Rock Tune',

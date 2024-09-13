@@ -11,10 +11,13 @@
         grid-template-columns: (1fr);
 
         .client-title {
-            color: var(--primary-color);
             font-size: 35px;
             display: flex;
             align-items: center;
+
+            h2 {
+                color: var(--primary-color);
+            }
         }
 
         .client-content-inner {

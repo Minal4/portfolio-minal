@@ -2,8 +2,8 @@ import Hero from './Hero';
 import Faq from './Faq';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
-import Client from './Client';
-import Video from './Video';
+// import Client from './Client';
+// import Video from './Video';
 
 export default function HomePage() {
 
@@ -12,9 +12,9 @@ export default function HomePage() {
       {/* <FormField /> */}
       <Hero />
       <Portfolio />
-      <Client />
+      {/* <Client /> */}
       <Faq />
-      <Video />
+      {/* <Video /> */}
       <Contact />
     </main>
   );

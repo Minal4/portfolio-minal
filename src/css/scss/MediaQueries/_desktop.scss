@@ -2,12 +2,20 @@
   .header__top .navbar .navbar-nav {
     flex-direction: row;
     display: flex;
-    background-color: transparent;
-    box-shadow: none;
     position: relative;
-    padding: 0;
     transform: none;
     align-items: center;
+    min-height: auto;
+  }
+
+  .header__top .navbar .custom-nav {
+    min-height: auto;
+    transform: none;
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+
   }
 
   button.hamburger {

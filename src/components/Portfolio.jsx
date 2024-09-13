@@ -1,11 +1,9 @@
-import { BsSearch } from "react-icons/bs";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-import '@splidejs/splide/css';
+import { IoArrowForward } from "react-icons/io5";
 
 // or only core styles
 import '@splidejs/splide/css/core';
 import portfolioData from '../Datas/portfolioData';
+import { Link } from "react-router-dom";
 
 export default function Portfolio() {
 
@@ -13,58 +11,26 @@ export default function Portfolio() {
   return (
     <section className="section portfolio">
       <div className="container">
-        <div className="section__heading">
-          <h2 data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="800">Portfolio</h2>
+        <div className="section__heading flex justify-between items-center">
+          <h2>Selected Work</h2>
+          <div className="btn-wrap">
+            <Link to={"./PortfolioPage"} className="flex items-center gap-4 hover:gap-2 transition-all">See More <IoArrowForward /></Link >
+          </div>
         </div>
-        <div className="portfolio__content" data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="1000">
-          <Splide options={{
-            type: 'loop',
-            gap: '1rem',
-            AutoScroll: true,
-            arrows: false,
-            autoScroll: {
-              pauseOnHover: true,
-              pauseOnFocus: true,
-              rewind: false,
-              speed: 1
-            },
-            pagination: false,
-            breakpoints: {
-              2560: {
-                perPage: 3,
-              },
-              1024: {
-                perPage: 2,
-              },
-              640: {
-                perPage: 1,
-              },
+        <div className="portfolio__content grid grid-cols-2 gap-8">
+          {
+            portfolioData.slice(0, 4).map((data, index) => {
+              return (
+                <div className='project group relative brightness-50 transition-all hover:brightness-100' key={index}>
+                  <img src={data.image} alt={data.title} className="aspect-square object-cover object-top" />
+                  <a href={data.link} className="-translate-y-3/4 transition opacity-0 group-hover:translate-y-0 group-hover:opacity-100 caption absolute bottom-6 bg-dark-color text-color-light hover:bg-background-hover-button hover:text-dark-color p-4 w-11/12 mx-auto left-0 right-0 backdrop-blur">{data.title}</a>
 
-
-            },
-          }}
-            extensions={{ AutoScroll }}>
-            {
-              portfolioData.map((data, index) => {
-                return (
-                  <SplideSlide key={index}>
-                    <div className='project group'>
-                      <img src={data.image} alt={data.title} />
-                      <div className="caption">{data.title}</div>
-                      <a className='link absolute md:-translate-y-56 h-full md:opacity-0 opacity-100 transition md:hover:text-white duration-1000 group-hover:translate-y-0 w-full group-hover:opacity-100 text-black top-0 left-0 text-5xl flex justify-center items-center bg-transparent md:bg-gradient-to-b from-emerald-500 to-emerald-500/[0.9]' target="_blank" rel='noopener noreferrer' href={data.link}>{<BsSearch className='hover:scale-150 transition duration-1000 animate-wiggle' />}</a>
-                    </div>
-                  </SplideSlide>
-                )
-              })
-            }
-          </Splide>
-
+                </div>
+              )
+            })
+          }
         </div>
       </div>
-    </section >
+    </section>
   );
 };

@@ -3,25 +3,19 @@
     ul {
 
       li {
-        box-shadow: 0 0 14px 2px #4b49492e;
         overflow: hidden;
         padding: 10px;
         position: relative;
 
         .caption {
-          border-top: 1px solid var(--border-color);
-          bottom: 0;
           background-color: var(--background-primary-color);
           font-family: 'Ibarra Real Nova', serif;
+          display: block;
           font-size: 26px;
-          left: 0;
-          position: absolute;
           padding: 15px;
-          transform: translateY(100%);
-          -webkit-transform: translateY(100%);
-          -moz-transform: translateY(100%);
           width: 100%;
-          z-index: 9;
+          position: relative;
+          z-index: 99;
         }
 
         .project {
@@ -32,6 +26,11 @@
             img {
               transform: scale(1.1);
             }
+
+            .caption {
+              background-color: var(--background-hover-button);
+              color: var(--color-light);
+            }
           }
 
           img {
@@ -40,11 +39,7 @@
           }
         }
 
-        &:hover {
-          .caption {
-            transform: translateY(0);
-          }
-        }
+
       }
     }
   }
