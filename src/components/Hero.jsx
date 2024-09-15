@@ -20,8 +20,8 @@ export default function Hero() {
                         <img src={HeroImage} alt="Hero" className='object-cover h-full w-full' />
                     </div>
                     <div className="inner_wrap container text-center">
-                        <div className="about__inner md:w-6/12 mx-auto flex flex-col justify-center items-center">
-                            <h2 className='md:mb-0 mb-4 text-7xl'>Web Designer & Enthusiast </h2>
+                        <div className="about__inner lg:w-6/12 8/12 mx-auto flex flex-col justify-center items-center">
+                            <h2 className='md:mb-0 mb-4 lg:text-7xl sm:text-5xl text-3xl'>Web Designer & Enthusiast </h2>
                             <div className="about__content">
                                 <p className=''>Hello, I'm Minal. My relationship with Web Design started at a
                                     young age, and has become my life-long love. On this website,

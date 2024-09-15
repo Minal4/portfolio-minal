@@ -25,6 +25,7 @@ import Menus from './Menus';
 import Portfolio from './Portfolio';
 import Tab from './React/Tab/Tab';
 import { CartContext } from '../context';
+import PortfolioPage from '../pages/PortfolioPage';
 
 
 export default function Main({ quantity, setQuantity }) {
@@ -80,7 +81,7 @@ export default function Main({ quantity, setQuantity }) {
           <div className="scroll-up" ref={scrollBtn} onClick={UpArrow}><BsFillArrowUpCircleFill /></div>
           <Routes>
             <Route path='/' element={<HomePage />}></Route>
-            <Route path='/portfolio' element={<Portfolio />}></Route>
+            <Route path='/portfolio' element={<PortfolioPage />}></Route>
             <Route path='/hero' element={<Hero />}></Route>
             <Route path='/faq' element={<Faq />}></Route>
             <Route path='/menus/' element={<Menus />}>

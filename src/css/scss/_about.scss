@@ -68,3 +68,19 @@
   animation: marquee 50s linear infinite;
   display: flex;
 }
+
+.about-section,
+.inner-banner {
+  &:after {
+    content: "";
+    background: rgba(77, 75, 75, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.1px);
+    -webkit-backdrop-filter: blur(12.1px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
