@@ -71,10 +71,10 @@ export default function Header({ showCartHandler }) {
 
               <ul className={`navbar-nav`}>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"/"}>Home</NavLink></li>
-                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./portfolio"}>Portfolio</NavLink></li>
+                <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"/portfolio"}>Portfolio</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./hero"}>About us</NavLink></li>
                 <li><NavLink onClick={handleOnClick} className="nav-item nav-link" to={"./faq"}>Faq</NavLink></li>
-                <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link" >App</a><BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} />
+                <li className='has-child'><a href='#!' onClick={showHandler} className="nav-item nav-link flex items-center gap-1" >App <BiChevronDown onClick={showHandler} style={{ cursor: 'pointer' }} /></a>
                   <ul className={`sub-menu ${subMenu ? 'show-sub' : ''}`}>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/shop'}>eCommerce</NavLink></li>
                     <li><NavLink className='nav-item-nav-link' onClick={handleOnClick} to={'/todo'}>Todo list</NavLink></li>

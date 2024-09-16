@@ -26,6 +26,14 @@
     position: relative;
   }
 
+  body:not(.scrolled) {
+
+    .header__top .navbar .navbar-nav>li>a {
+      color: var(--color-light);
+    }
+  }
+
+
   .client.section .client-wrapper .client-content-inner {
     margin-bottom: -200px;
   }

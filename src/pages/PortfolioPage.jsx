@@ -6,7 +6,7 @@ import portfolioData from '../Datas/portfolioData';
 import { Link, useLocation } from "react-router-dom";
 import InnerBanner from "../components/InnerBanner";
 
-export default function PortfolioPage() {
+export default function Works() {
     const location = useLocation();
     const pageTitle = location.pathname.substring(1);
 
@@ -18,7 +18,7 @@ export default function PortfolioPage() {
                     <div className="section__heading flex justify-between items-center">
                         <h2>Selected Work</h2>
                         <div className="btn-wrap">
-                            <Link to={"./portfolio"} className="flex items-center gap-4 hover:gap-2 transition-all">See More <IoArrowForward /></Link >
+                            <Link to={"/portfolio"} className="flex items-center gap-4 hover:gap-2 transition-all">See More <IoArrowForward /></Link >
                         </div>
                     </div>
                     <div className="portfolio__content grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

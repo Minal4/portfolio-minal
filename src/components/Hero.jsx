@@ -14,8 +14,8 @@ export default function Hero() {
 
     return (
         <>
-            <section className="section about-section relative h-screen">
-                <div className="about-wrapper flex justify-center items-center flex-col h-full">
+            <section className="section about-section relative md:h-screen">
+                <div className="about-wrapper flex justify-center items-center flex-col md:h-full md:py-0 py-28">
                     <div className="hero-image absolute h-full w-full left-0 top-0">
                         <img src={HeroImage} alt="Hero" className='object-cover h-full w-full' />
                     </div>
@@ -27,10 +27,10 @@ export default function Hero() {
                                     young age, and has become my life-long love. On this website,
                                     you'll discover some of my most challenging and intimate design
                                     I've taken date.</p>
-                                <div className="excerpt-btn gap-4 text-center flex justify-center">
+                                <div className="excerpt-btn gap-4 text-center flex justify-center sm:flex-row flex-col btn-wrap">
                                     <Button title='Contact us' click={handleOnSwitch} />
                                     <a href={ExampleDoc} download="resume" target='_blank' rel='noopener noreferrer'>
-                                        <button className='btn__link'>Download CV</button>
+                                        <button className='btn__link w-full'>Download CV</button>
                                     </a>
                                 </div>
                             </div>

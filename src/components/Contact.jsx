@@ -64,25 +64,25 @@ export default function Contact() {
                     <Form ref={form}>
                       <div className="input-row">
                         <div className="input-group">
-                          <label>First Name</label>
+                          <label htmlFor="First Name">First Name</label>
                           <Field placeholder="First Name" style={{ borderColor: `${errors.name && touched.name ? " red" : " var(--border-color)"}` }} type="text" name="name" />
                           <ErrorMessage name="name" component="div" />
                         </div>
                         <div className="input-group">
-                          <label>Last Name</label>
+                          <label htmlFor="lastName">Last Name</label>
                           <Field placeholder="Your Last Name" type="text" name="lastName" />
                           <ErrorMessage name="las tName" component="div" />
                         </div>
                       </div>
                       <div className="input-group">
-                        <label>Email</label>
+                        <label htmlFor="email">Email</label>
                         <Field placeholder="Your Email" style={{ borderColor: `${errors.email && touched.email ? "red" : " var(--border-color)"}` }} type="text" name="email" />
                         <ErrorMessage name="email" component="div" />
 
 
                       </div>
                       <div className="input-group">
-                        <label>Message</label>
+                        <label htmlFor="message">Message</label>
 
                         <Field name="message" placeholder="Message" />
                         <ErrorMessage name="message" component="div" />

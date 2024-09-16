@@ -72,14 +72,22 @@
 body:not(.scrolled) {
 
   .header__top .navbar .navbar-nav>li>a,
-  .site-branding a {
+  .navbar:has(.custom-nav.active) .hamburger {
+    color: var(--dark-color);
+  }
+}
+
+body:not(.scrolled) {
+
+  .site-branding a,
+  .hamburger {
     color: var(--color-light);
   }
 }
 
 body.scrolled {
   .site-branding a {
-    color: var(--color-light);
+    color: var(--dark-color);
   }
 
   &.dark {

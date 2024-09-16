@@ -1,6 +1,9 @@
+.btn-wrap {
+  margin-top: clamp(21px, 3vw, 35px);
+}
+
 .btn__link {
   background-color: var(--background-button);
-  margin-top: clamp(21px, 3vw, 35px);
   color: var(--button-color);
   border-radius: 45px;
   text-transform: uppercase;

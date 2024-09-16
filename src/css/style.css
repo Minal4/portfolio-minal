@@ -336,12 +336,17 @@ textarea {
 }
 
 body:not(.scrolled) .header__top .navbar .navbar-nav > li > a,
-body:not(.scrolled) .site-branding a {
+body:not(.scrolled) .navbar:has(.custom-nav.active) .hamburger {
+  color: var(--dark-color);
+}
+
+body:not(.scrolled) .site-branding a,
+body:not(.scrolled) .hamburger {
   color: var(--color-light);
 }
 
 body.scrolled .site-branding a {
-  color: var(--color-light);
+  color: var(--dark-color);
 }
 body.scrolled.dark .site-branding a {
   color: var(--dark-color);
@@ -1359,9 +1364,12 @@ p.input-field {
   --border-color: #2e2d2d;
 }
 
+.btn-wrap {
+  margin-top: clamp(21px, 3vw, 35px);
+}
+
 .btn__link {
   background-color: var(--background-button);
-  margin-top: clamp(21px, 3vw, 35px);
   color: var(--button-color);
   border-radius: 45px;
   text-transform: uppercase;
@@ -1632,6 +1640,9 @@ a {
   }
   .header__top .navbar .navbar-nav {
     position: relative;
+  }
+  body:not(.scrolled) .header__top .navbar .navbar-nav > li > a {
+    color: var(--color-light);
   }
   .client.section .client-wrapper .client-content-inner {
     margin-bottom: -200px;
